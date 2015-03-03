@@ -3,13 +3,13 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
+$this->pageTitle=Yii::app()->name . ' - 登录';
 $this->breadcrumbs=array(
-	'Login',
+	'登录',
 );
 ?>
 
-<h1>Login</h1>
+<h1>登录</h1>
 
 <p>Please fill out the following form with your login credentials:</p>
 

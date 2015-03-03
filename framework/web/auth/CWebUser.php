@@ -278,6 +278,34 @@ class CWebUser extends CApplicationComponent implements IWebUser
 			$this->afterLogout();
 		}
 	}
+	
+	/**
+	 * Regist
+	 * @return boolean whether the user is regist success
+	 */
+	public function regist($identity,$duration=0)
+	{
+		$id=$identity->getId();
+		$states=$identity->getPersistentStates();
+		if($this->beforeLogin($id,$states,false))
+		{
+			$this->changeIdentity($id,$identity->getName(),$states);
+
+			if($duration>0)
+			{
+				if($this->allowAutoLogin)
+					$this->saveToCookie($duration);
+				else
+					throw new CException(Yii::t('yii','{class}.allowAutoLogin must be set true in order to use cookie-based authentication.',
+						array('{class}'=>get_class($this))));
+			}
+
+			if ($this->absoluteAuthTimeout)
+				$this->setState(self::AUTH_ABSOLUTE_TIMEOUT_VAR, time()+$this->absoluteAuthTimeout);
+			$this->afterLogin(false);
+		}
+		return !$this->getIsGuest();
+	}
 
 	/**
 	 * Returns a value indicating whether the user is a guest (not authenticated).

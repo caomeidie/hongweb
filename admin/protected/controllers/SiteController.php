@@ -80,24 +80,15 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 	        $model=new LoginForm;
-	        
-	        // if it is ajax validation request
-	        /*
-	        if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-	        {
-	            echo CActiveForm::validate($model);
-	            Yii::app()->end();
-	        }
-	        */
-	        
+	        	        
 	        // collect user input data
 	        if(isset($_POST['LoginForm']))
 	        {
 	            $model->attributes=$_POST['LoginForm'];
 	            // validate user input and redirect to the previous page if valid
-	            if($model->validate() && $model->login())
+	            if($model->validate() && $model->login()){
 	                $this->redirect(Yii::app()->user->returnUrl);
-	            var_dump($model);
+	            }	                
 	        }
 	        // display the login form
 	        $this->renderPartial('login',array('model'=>$model));
@@ -111,4 +102,24 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	/**
+	 * Registe in the website
+	 */
+    public function actionRegister()
+    {
+        $model=new RegisterForm;
+        
+        if(isset($_POST['RegisterForm']))
+        {
+            $model->attributes=$_POST['RegisterForm'];
+            if($model->validate())
+            {
+                // form inputs are valid, do something here
+                var_dump($model->register());
+                return;
+            }
+        }
+        $this->render('register',array('model'=>$model));
+    }
 }
