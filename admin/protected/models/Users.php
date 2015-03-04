@@ -36,10 +36,9 @@ class Users extends CActiveRecord
 			array('username, password', 'required'),
 			array('logintimes', 'numerical', 'integerOnly'=>true),
 			array('username, email, phone', 'length', 'max'=>50),
-			array('password', 'length', 'max'=>32),
+			array('password', 'length', 'max'=>60),
 			array('addtime, updatetime, lastip', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>1),
-		    array('username, email, phone', 'unique'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('user_id, username, password, email, phone, addtime, updatetime, logintimes, lastip, status', 'safe', 'on'=>'search'),

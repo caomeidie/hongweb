@@ -116,10 +116,11 @@ class SiteController extends Controller
             if($model->validate())
             {
                 // form inputs are valid, do something here
-                var_dump($model->register());
-                return;
+                if($model->register()){
+                    $this->render('home');
+                }
             }
         }
-        $this->render('register',array('model'=>$model));
+        $this->renderPartial('register',array('model'=>$model));
     }
 }

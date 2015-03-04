@@ -494,3 +494,208 @@ in F:\wamp\www\hongweb\admin\index.php (13)
 2015/03/03 09:28:00 [warning] [application] Failed to set unsafe attribute "phone" of "RegisterForm".
 in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (115)
 in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:37:17 [warning] [application] Failed to set unsafe attribute "email" of "RegisterForm".
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (115)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:37:17 [warning] [application] Failed to set unsafe attribute "phone" of "RegisterForm".
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (115)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:40:10 [warning] [application] Failed to set unsafe attribute "email" of "RegisterForm".
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (115)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:40:10 [warning] [application] Failed to set unsafe attribute "phone" of "RegisterForm".
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (115)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:48:20 [error] [exception.CException] exception 'CException' with message 'Property "CRegularExpressionValidator.0" is not defined.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CValidator.php(189): CComponent->__set('0', '/^(1(([35][0-9]...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(287): CValidator::createValidator('match', Object(RegisterForm), 'phone', Array)
+#2 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(547): CModel->getValidators()
+#4 F:\wamp\www\hongweb\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 F:\wamp\www\hongweb\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(115): CComponent->__set('attributes', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/register
+---
+2015/03/04 01:48:45 [error] [exception.CException] exception 'CException' with message 'Property "CRegularExpressionValidator.0" is not defined.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CValidator.php(189): CComponent->__set('0', '^(1(([35][0-9])...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(287): CValidator::createValidator('match', Object(RegisterForm), 'phone', Array)
+#2 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(547): CModel->getValidators()
+#4 F:\wamp\www\hongweb\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 F:\wamp\www\hongweb\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(115): CComponent->__set('attributes', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/register
+---
+2015/03/04 01:49:10 [error] [exception.CException] exception 'CException' with message 'Property "CRegularExpressionValidator.0" is not defined.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CValidator.php(189): CComponent->__set('0', '/13[123569]{1}\...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(287): CValidator::createValidator('match', Object(RegisterForm), 'phone', Array)
+#2 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(547): CModel->getValidators()
+#4 F:\wamp\www\hongweb\framework\base\CModel.php(468): CModel->getSafeAttributeNames()
+#5 F:\wamp\www\hongweb\framework\base\CComponent.php(152): CModel->setAttributes(Array)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(115): CComponent->__set('attributes', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/register
+---
+2015/03/04 01:49:12 [error] [exception.CException] exception 'CException' with message 'Property "CRegularExpressionValidator.0" is not defined.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CValidator.php(189): CComponent->__set('0', '/13[123569]{1}\...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(287): CValidator::createValidator('match', Object(RegisterForm), 'phone', Array)
+#2 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(304): CModel->getValidators('username')
+#4 F:\wamp\www\hongweb\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('username')
+#5 F:\wamp\www\hongweb\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#6 F:\wamp\www\hongweb\admin\protected\views\site\register.php(29): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#7 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\wamp\www\hon...')
+#8 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\wamp\www\hon...', Array, true)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\wamp\www\hon...', Array, true)
+#10 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('register', Array, true)
+#11 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(124): CController->render('register', Array)
+#12 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#13 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#17 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#18 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+---
+2015/03/04 01:49:29 [error] [exception.CException] exception 'CException' with message 'Property "CRegularExpressionValidator.0" is not defined.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CValidator.php(189): CComponent->__set('0', '/13[123569]{1}\...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(287): CValidator::createValidator('match', Object(RegisterForm), 'phone', Array)
+#2 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(304): CModel->getValidators('username')
+#4 F:\wamp\www\hongweb\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('username')
+#5 F:\wamp\www\hongweb\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#6 F:\wamp\www\hongweb\admin\protected\views\site\register.php(29): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#7 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\wamp\www\hon...')
+#8 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\wamp\www\hon...', Array, true)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\wamp\www\hon...', Array, true)
+#10 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('register', Array, true)
+#11 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(124): CController->render('register', Array)
+#12 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#13 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#17 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#18 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+---
+2015/03/04 01:50:03 [error] [exception.CException] exception 'CException' with message 'RegisterForm has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in F:\wamp\www\hongweb\framework\base\CModel.php:289
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(304): CModel->getValidators('username')
+#2 F:\wamp\www\hongweb\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('username')
+#3 F:\wamp\www\hongweb\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#4 F:\wamp\www\hongweb\admin\protected\views\site\register.php(29): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#5 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\wamp\www\hon...')
+#6 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\wamp\www\hon...', Array, true)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\wamp\www\hon...', Array, true)
+#8 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('register', Array, true)
+#9 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(124): CController->render('register', Array)
+#10 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#11 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#15 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#16 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+---
+2015/03/04 01:50:32 [error] [exception.CException] exception 'CException' with message 'RegisterForm has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in F:\wamp\www\hongweb\framework\base\CModel.php:289
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\base\CModel.php(260): CModel->createValidators()
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(304): CModel->getValidators('username')
+#2 F:\wamp\www\hongweb\framework\web\helpers\CHtml.php(1414): CModel->isAttributeRequired('username')
+#3 F:\wamp\www\hongweb\framework\web\widgets\CActiveForm.php(597): CHtml::activeLabelEx(Object(RegisterForm), 'username', Array)
+#4 F:\wamp\www\hongweb\admin\protected\views\site\register.php(29): CActiveForm->labelEx(Object(RegisterForm), 'username')
+#5 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\wamp\www\hon...')
+#6 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\wamp\www\hon...', Array, true)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\wamp\www\hon...', Array, true)
+#8 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('register', Array, true)
+#9 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(124): CController->render('register', Array)
+#10 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#11 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#15 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#16 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+---
+2015/03/04 01:52:06 [error] [php] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: No ending delimiter '^' found (F:\wamp\www\hongweb\framework\validators\CRegularExpressionValidator.php:53)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\base\CModel.php(159): CRegularExpressionValidator->validate()
+#1 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(116): RegisterForm->validate()
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): SiteController->runAction()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): SiteController->run()
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=site/register
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (116)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/04 01:55:40 [error] [exception.CException] exception 'CException' with message 'RegisterForm and its behaviors do not have a method or closure named "getTableSchema".' in F:\wamp\www\hongweb\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\validators\CUniqueValidator.php(96): CComponent->__call('getTableSchema', Array)
+#1 F:\wamp\www\hongweb\framework\validators\CUniqueValidator.php(96): RegisterForm->getTableSchema()
+#2 F:\wamp\www\hongweb\framework\validators\CValidator.php(213): CUniqueValidator->validateAttribute(Object(RegisterForm), 'username')
+#3 F:\wamp\www\hongweb\framework\base\CModel.php(159): CValidator->validate(Object(RegisterForm), NULL)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(116): CModel->validate()
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): SiteController->actionRegister()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('register')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/register')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=site/register
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/register
+---
