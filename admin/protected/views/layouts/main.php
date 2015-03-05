@@ -95,6 +95,7 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">
+				    <li><?=loginName();?></li>
 					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
 						<ul>
 							<li><a href="sidebar_1.html">北京</a></li>

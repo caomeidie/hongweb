@@ -29,7 +29,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-	    $this->redirect(Yii::app()->homeUrl.'?r=login');
+	    $this->redirect(Yii::app()->homeUrl.'?r=site/login');
 	    exit;
 		$this->render('index');
 	}
@@ -87,7 +87,8 @@ class SiteController extends Controller
 	            $model->attributes=$_POST['LoginForm'];
 	            // validate user input and redirect to the previous page if valid
 	            if($model->validate() && $model->login()){
-	                $this->redirect(Yii::app()->user->returnUrl);
+	                //$this->redirect(Yii::app()->user->returnUrl);
+	                $this->render('index');
 	            }	                
 	        }
 	        // display the login form

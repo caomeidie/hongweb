@@ -126,7 +126,7 @@ class Users extends CActiveRecord
 	 * @return ture or false
 	 */
 	public function validatePassword($password){
-	    return CPasswordHelper::verifyPassword($password, $this->password);
+	    return CPasswordHelper::verifyPassword($password,$this->password);
 	}
 
 	/**
@@ -135,6 +135,6 @@ class Users extends CActiveRecord
 	 * @return ture or false
 	 */
 	public function validateUsers($username, $phone, $email){
-	    return CPasswordHelper::verifyPassword($password, $this->password);
+	    //return CPasswordHelper::verifyPassword($password, $this->password);
 	}
 }
