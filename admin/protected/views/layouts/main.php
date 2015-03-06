@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>简单实用国产jQuery UI框架 - DWZ富客户端框架(J-UI.com)</title>
+<title>hongweb system</title>
 
 <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -95,22 +95,8 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">
-				    <li><?=loginName();?></li>
-					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
-						<ul>
-							<li><a href="sidebar_1.html">北京</a></li>
-							<li><a href="sidebar_2.html">上海</a></li>
-							<li><a href="sidebar_2.html">南京</a></li>
-							<li><a href="sidebar_2.html">深圳</a></li>
-							<li><a href="sidebar_2.html">广州</a></li>
-							<li><a href="sidebar_2.html">天津</a></li>
-							<li><a href="sidebar_2.html">杭州</a></li>
-						</ul>
-					</li>
-					<li><a href="https://me.alipay.com/dwzteam" target="_blank">捐赠</a></li>
-					<li><a href="changepwd.html" target="dialog" width="600">设置</a></li>
-					<li><a href="http://www.cnblogs.com/dwzjs" target="_blank">博客</a></li>
-					<li><a href="http://weibo.com/dwzui" target="_blank">微博</a></li>
+				    <li><a href="javascript:"><?=Yii::app()->user->getName();?></a></li>
+					<li><a href="https://me.alipay.com/dwzteam" target="_blank">消息（0）</a></li>
 					<li><a href="login.html">退出</a></li>
 				</ul>
 				<ul class="themeList" id="themeList">
@@ -137,6 +123,27 @@ $(function(){
 				<div class="toggleCollapse"><h2>主菜单</h2><div>收缩</div></div>
 
 				<div class="accordion" fillSpace="sidebar">
+				    <div class="accordionHeader">
+						<h2><span>Folder</span>用户管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a href="tabsPage.html" target="navTab">用户列表</a>
+								<ul>
+									<li><a href="main.html" target="navTab" rel="main">全部用户</a></li>
+									<li><a href="http://www.baidu.com" target="navTab" rel="page1">管理员</a></li>
+									<li><a href="demo_page2.html" target="navTab" rel="external" external="true">VIP用户</a></li>
+									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">普通用户</a></li>
+									<li><a href="demo_page2.html" target="navTab" rel="page2">已注销用户</a></li>
+									<li><a href="demo_page2.html" target="navTab" rel="page2">被举报用户</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="w_validation.html" target="navTab" rel="w_validation">添加用户</a></li>
+									
+							<li><a href="w_validation.html" target="navTab" rel="w_validation">用户类型</a></li>
+						</ul>
+					</div>
 					<div class="accordionHeader">
 						<h2><span>Folder</span>界面组件</h2>
 					</div>

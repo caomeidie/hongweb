@@ -8,10 +8,8 @@ $this->breadcrumbs=array(
 	'登录',
 );
 ?>
-
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/jquery-1.7.2.js" type="text/javascript"></script>
 <h1>登录</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -22,7 +20,7 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">带*为必填项</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
@@ -34,10 +32,28 @@ $this->breadcrumbs=array(
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
 	</div>
+	<?php if(CCaptcha::checkRequirements()): ?>
+            <div class="row">
+                <?php echo $form->textField($model,'verifyCode');?>
+                <?php $this->widget('CCaptcha',
+                  array(
+                    'showRefreshButton'=>false,
+                    'clickableImage'=>true,
+                    'buttonLabel'=>'刷新验证码',
+                    'imageOptions'=>array(
+                        'alt'=>'点击换图',
+                        'title'=>'点击换图',
+                        'style'=>'cursor:pointer',
+                        'padding'=>'0',
+                        'height'=>'35',
+                    ),
+                    'id'=>'captcha_change'
+                  )
+                ); ?>
+            </div>
+            <?php echo $form->error($model,'verifyCode'); ?>
+       <?php endif;?>
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
@@ -46,8 +62,7 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+		<?php echo CHtml::submitButton('登录'); ?>
 	</div>
-
 <?php $this->endWidget(); ?>
 </div><!-- form -->
