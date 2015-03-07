@@ -2,3 +2,4 @@
 /admin/assets/*
 /protect/assets/*
 /admin/protected/runtime/*
+/protect/protected/runtime/*
