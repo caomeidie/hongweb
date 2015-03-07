@@ -12,6 +12,8 @@ class SiteController extends Controller
 			'captcha'=>array(
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
+			    'maxLength'=>4,
+                'minLength'=>4,
 			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
 			// They can be accessed via: index.php?r=site/page&view=FileName
@@ -20,7 +22,7 @@ class SiteController extends Controller
 			),
 		);
 	}
-
+	
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -29,9 +31,10 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-	    $this->redirect(Yii::app()->homeUrl.'?r=site/login');
-	    exit;
-		$this->render('index');
+		if(!Yii::app()->user->isGuest){
+		    $this->render('index');		    
+		}else
+	        $this->redirect(Yii::app()->homeUrl.'?r=site/login');
 	}
 
 	/**
@@ -88,11 +91,10 @@ class SiteController extends Controller
 	            // validate user input and redirect to the previous page if valid
 	            if($model->validate() && $model->login()){
 	                //$this->redirect(Yii::app()->user->returnUrl);
-	                $this->render('index');
+	                $this->render('index',array('model'=>$model));
 	            }	                
-	        }
-	        // display the login form
-	        $this->renderPartial('login',array('model'=>$model));
+	        }else
+	            $this->renderPartial('login',array('model'=>$model),$return=false,$processOutput=true);
 	}
 
 	/**

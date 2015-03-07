@@ -1,0 +1,4 @@
+/.settings/*
+/admin/assets/*
+/protect/assets/*
+/admin/protected/runtime/*
