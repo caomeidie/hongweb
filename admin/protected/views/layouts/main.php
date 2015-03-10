@@ -97,7 +97,7 @@ $(function(){
 				<ul class="nav">
 				    <li><a href="javascript:"><?=Yii::app()->user->getName();?></a></li>
 					<li><a href="https://me.alipay.com/dwzteam" target="_blank">消息（0）</a></li>
-					<li><a href="login.html">退出</a></li>
+					<li><a href="<?php Yii::app()->request->getUrl(); ?>?r=site/logout">退出</a></li>
 				</ul>
 				<ul class="themeList" id="themeList">
 					<li theme="default"><div class="selected">蓝色</div></li>
