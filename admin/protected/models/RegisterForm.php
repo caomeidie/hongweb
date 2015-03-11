@@ -61,7 +61,13 @@ class RegisterForm extends CFormModel
             $users_model->updatetime = time();
             $users_model->logintimes = 1;
             $users_model->lastip = Yii::app()->request->userHostAddress;
-            return $users_model->save();
+            
+            if(!$users_model->save()){
+                return false;
+            }else{
+                Yii::app()->user->login($this->_identity,0);
+                return true;
+            }            
         }else{
             return false;
         }

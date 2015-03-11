@@ -8,7 +8,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'hongweb system',
 	'language'=>'zh_cn',
-
+        
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -86,5 +86,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+        'sessionTimeoutSeconds'=>3600,
 	),
 );

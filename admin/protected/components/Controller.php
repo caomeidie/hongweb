@@ -20,4 +20,19 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	public function beforeAction(){
+	    if(!Yii::app()->user->isGuest){
+	        if(time()<Yii::app()->user->getState('sessionTimeoutSeconds')){
+	            Yii::app()->user->setState('sessionTimeoutSeconds', time()+Yii::app()->params['sessionTimeoutSeconds']);
+	            return true;
+	        }else{
+	            Yii::app()->user->logout();	             
+	            $this->redirect('?r=site/login');
+	        }
+	    }else{
+	        return true;
+	    }
+	}
 }
+?>

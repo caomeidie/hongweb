@@ -121,7 +121,7 @@ class SiteController extends Controller
             {
                 // form inputs are valid, do something here
                 if($model->register()){
-                    $this->render('home');
+                    $this->redirect(Yii::app()->homeUrl.'?r=site/index');
                 }
             }
         }
