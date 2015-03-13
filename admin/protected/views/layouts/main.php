@@ -95,7 +95,7 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">
-				    <li><a href="javascript:"><?=Yii::app()->user->getName();?></a></li>
+				    <li><a href="javascript:"><?=Yii::app()->user->getName();?><?=Yii::app()->user->getId();?></a></li>
 					<li><a href="https://me.alipay.com/dwzteam" target="_blank">消息（0）</a></li>
 					<li><a href="<?php Yii::app()->request->getUrl(); ?>?r=site/logout">退出</a></li>
 				</ul>

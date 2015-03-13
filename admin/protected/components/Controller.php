@@ -27,7 +27,7 @@ class Controller extends CController
 	            Yii::app()->user->setState('sessionTimeoutSeconds', time()+Yii::app()->params['sessionTimeoutSeconds']);
 	            return true;
 	        }else{
-	            Yii::app()->user->logout();	             
+	            Yii::app()->user->logout();
 	            $this->redirect('?r=site/login');
 	        }
 	    }else{
