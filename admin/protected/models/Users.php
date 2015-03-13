@@ -53,6 +53,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		        'UsersRole'=>array(self::HAS_ONE, 'UsersRole', 'user_id'),
 		);
 	}
 
@@ -127,14 +128,5 @@ class Users extends CActiveRecord
 	 */
 	public function validatePassword($password){
 	    return CPasswordHelper::verifyPassword($password,$this->password);
-	}
-
-	/**
-	 * validate if username or phone or email exsit
-	 * @param string $username,$phone,$email
-	 * @return ture or false
-	 */
-	public function validateUsers($username, $phone, $email){
-	    //return CPasswordHelper::verifyPassword($password, $this->password);
 	}
 }

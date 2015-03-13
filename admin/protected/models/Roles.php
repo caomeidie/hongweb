@@ -1,21 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "users_role".
+ * This is the model class for table "roles".
  *
- * The followings are the available columns in table 'users_role':
- * @property string $id
- * @property string $user_id
- * @property string $roles
+ * The followings are the available columns in table 'roles':
+ * @property string $role_id
+ * @property string $role_value
+ * @property string $action
+ * @property string $role_desc
+ * @property string $parent_role_id
+ * @property integer $related_role_id
  */
-class UsersRole extends CActiveRecord
+class Roles extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'users_role';
+		return 'roles';
 	}
 
 	/**
@@ -26,12 +29,14 @@ class UsersRole extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, roles', 'required'),
-			array('user_id', 'length', 'max'=>11),
-			array('roles', 'length', 'max'=>255),
+			array('role_value, action, parent_role_id', 'required'),
+			array('related_role_id', 'numerical', 'integerOnly'=>true),
+			array('role_value', 'length', 'max'=>50),
+			array('action, role_desc', 'length', 'max'=>255),
+			array('parent_role_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, roles', 'safe', 'on'=>'search'),
+			array('role_id, role_value, action, role_desc, parent_role_id, related_role_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,7 +48,6 @@ class UsersRole extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		        'Users'=>array(self::HAS_ONE, 'Users', 'user_id'),
 		);
 	}
 
@@ -53,9 +57,12 @@ class UsersRole extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'user_id' => 'User',
-			'roles' => 'Roles',
+			'role_id' => 'Role',
+			'role_value' => 'Role Value',
+			'action' => 'Action',
+			'role_desc' => 'Role Desc',
+			'parent_role_id' => '父权限role_id',
+			'related_role_id' => '同级权限相关的role_id',
 		);
 	}
 
@@ -77,9 +84,12 @@ class UsersRole extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('roles',$this->roles,true);
+		$criteria->compare('role_id',$this->role_id,true);
+		$criteria->compare('role_value',$this->role_value,true);
+		$criteria->compare('action',$this->action,true);
+		$criteria->compare('role_desc',$this->role_desc,true);
+		$criteria->compare('parent_role_id',$this->parent_role_id,true);
+		$criteria->compare('related_role_id',$this->related_role_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -90,19 +100,28 @@ class UsersRole extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return UsersRole the static model class
+	 * @return Roles the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
+	
 	/**
-	 * Get user's UsersRole relationship
-	 * @param int $id
-	 * @return Array or null
+	 * Get role by $value and class $type
+	 * @param string or int $value
+	 * @param string $type(NAME, ID) defaule 'NAME'
+	 * @return array or null
 	 */
-	public function getRoles($id){
-	    return $this->findByPk($id);
+	public function getRole($value, $type='NAME')
+	{
+	    $value == 'index' ? 'all' : $value;
+	    if($type == 'NAME'){
+	        return $this->findByAttributes(array(
+	                'action'=>$value,
+	        ));
+	    }else{
+	        return $this->findByPk($value);
+	    }
 	}
 }

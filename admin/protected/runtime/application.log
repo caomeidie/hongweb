@@ -1108,3 +1108,46 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=site/login
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/login
 ---
+2015/03/13 10:03:55 [error] [php] explode() expects parameter 2 to be string, object given (F:\wamp\www\hongweb\admin\protected\components\Controller.php:35)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(286): SiteController->runAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): SiteController->run()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=site/index
+in F:\wamp\www\hongweb\admin\protected\components\Controller.php (35)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/13 10:07:06 [error] [exception.CDbException] exception 'CDbException' with message 'Table "roles" 没有名为 "condition" 的栏位.' in F:\wamp\www\hongweb\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 F:\wamp\www\hongweb\admin\protected\models\Roles.php(121): CActiveRecord->findByAttributes(Array)
+#2 F:\wamp\www\hongweb\admin\protected\components\Controller.php(39): Roles->getRole(NULL, 'NAME')
+#3 F:\wamp\www\hongweb\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=site/index
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/login
+---
+2015/03/13 10:07:20 [error] [exception.CDbException] exception 'CDbException' with message 'Table "roles" 没有名为 "condition" 的栏位.' in F:\wamp\www\hongweb\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 F:\wamp\www\hongweb\admin\protected\models\Roles.php(121): CActiveRecord->findByAttributes(Array)
+#2 F:\wamp\www\hongweb\admin\protected\components\Controller.php(39): Roles->getRole(NULL, 'NAME')
+#3 F:\wamp\www\hongweb\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=site/index
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/login
+---
