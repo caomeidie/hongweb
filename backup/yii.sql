@@ -22,13 +22,17 @@ DROP TABLE IF EXISTS `roles`;
 
 CREATE TABLE `roles` (
   `role_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `role_value` varchar(50) NOT NULL,
-  `action` varchar(255) NOT NULL,
-  `role_desc` varchar(255) DEFAULT NULL,
-  `parent_role_id` int(11) unsigned NOT NULL COMMENT '父权限role_id',
-  `related_role_id` int(11) DEFAULT NULL COMMENT '同级权限相关的role_id',
+  `role_value` varchar(150) NOT NULL,
+  `action` varchar(765) DEFAULT NULL,
+  `role_desc` varchar(765) DEFAULT NULL,
+  `parent_role_id` int(11) unsigned NOT NULL,
+  `related_role_id` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`role_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+/*Data for the table `roles` */
+
+insert  into `roles`(`role_id`,`role_value`,`action`,`role_desc`,`parent_role_id`,`related_role_id`) values (1,'all','all','全部权限',0,NULL),(2,'users','','用户管理权限',1,NULL),(3,'users_list','','查看用户权限',2,NULL),(4,'users_del','','删除用户权限',2,3),(5,'users_add','','添加用户权限',2,3),(6,'users_update','','修改用户权限',2,3),(7,'users_type','','用户类型管理权限',2,NULL),(8,'users_type_list','','查看用户类型权限',7,NULL),(9,'users_type_del','','删除用户类型权限',7,8),(10,'users_type_add','','添加用户类型权限',7,8),(11,'users_type_update','','修改用户类型权限',7,8);
 
 /*Table structure for table `users` */
 
@@ -48,6 +52,10 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
+/*Data for the table `users` */
+
+insert  into `users`(`user_id`,`username`,`password`,`email`,`phone`,`addtime`,`updatetime`,`logintimes`,`lastip`,`status`) values (1,'xiaomi','$2a$13$fPCWoOuuofr3GEC1kc6MsOt7ij13BHx61Sp8XrLNHA8mFImdyRCfe','outshadow@sina.com','','1425613543','1425613543',1,'127.0.0.1',1),(2,'dadade','$2a$13$zlTeYO3fbJiib8tng63pm.3UMlAPN3qu4XeWKyTcdid.XIXjvu/JW','dadade@me.com','13767960832','1426064987','1426064987',1,'127.0.0.1',1),(3,'xiaoxiao','$2a$13$aa66HfmjOTGSS7Iq0fGwcettO/DIehEx5raQtw/rFGSuuqtlo9DnS','xiaoxiao@sina.com','13767960831','1426211500','1426211500',1,'127.0.0.1',1);
+
 /*Table structure for table `users_role` */
 
 DROP TABLE IF EXISTS `users_role`;
@@ -55,9 +63,13 @@ DROP TABLE IF EXISTS `users_role`;
 CREATE TABLE `users_role` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
-  `roles` varchar(255) NOT NULL,
+  `roles` varchar(765) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `users_role` */
+
+insert  into `users_role`(`id`,`user_id`,`roles`) values (1,1,'1'),(2,2,'5');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
