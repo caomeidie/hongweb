@@ -95,7 +95,7 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">
-				    <li><a href="javascript:"><?=Yii::app()->user->getName();?><?=Yii::app()->user->getId();?></a></li>
+				    <li><a href="javascript:"><?=Yii::app()->user->getName();?></a></li>
 					<li><a href="https://me.alipay.com/dwzteam" target="_blank">消息（0）</a></li>
 					<li><a href="<?php Yii::app()->request->getUrl(); ?>?r=site/logout">退出</a></li>
 				</ul>
@@ -130,8 +130,8 @@ $(function(){
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">用户列表</a>
 								<ul>
-									<li><a href="main.html" target="navTab" rel="main">全部用户</a></li>
-									<li><a href="http://www.baidu.com" target="navTab" rel="page1">管理员</a></li>
+									<li><a href="?r=users/index" target="navTab" rel="main">全部用户</a></li>
+									<li><a href="?r=users/list" target="navTab" rel="page1">管理员</a></li>
 									<li><a href="demo_page2.html" target="navTab" rel="external" external="true">VIP用户</a></li>
 									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">普通用户</a></li>
 									<li><a href="demo_page2.html" target="navTab" rel="page2">已注销用户</a></li>
@@ -139,9 +139,9 @@ $(function(){
 								</ul>
 							</li>
 							
-							<li><a href="w_validation.html" target="navTab" rel="w_validation">添加用户</a></li>
+							<li><a href="?r=users/add" target="navTab" rel="w_validation">添加用户</a></li>
 									
-							<li><a href="w_validation.html" target="navTab" rel="w_validation">用户类型</a></li>
+							<li><a href="?r=usertype" target="navTab" rel="w_validation">用户类型</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">

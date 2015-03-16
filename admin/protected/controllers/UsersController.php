@@ -1,5 +1,5 @@
 <?php
-class UsersController extends Controller
+class UsersController extends UserBaseController
 {
     
     public function actions()
@@ -16,5 +16,20 @@ class UsersController extends Controller
     public function actionIndex()
     {
         
+    }
+    
+    public function actionAdd()
+    {
+    
+    }
+    
+    public function actionDel()
+    {
+    
+    }
+    
+    public function actionUpdate()
+    {
+    
     }
 }

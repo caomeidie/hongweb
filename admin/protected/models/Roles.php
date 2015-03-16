@@ -109,16 +109,17 @@ class Roles extends CActiveRecord
 	
 	/**
 	 * Get role by $value and class $type
-	 * @param string or int $value
+	 * @param string or int $value.(action's name or role_id)
 	 * @param string $type(NAME, ID) defaule 'NAME'
+	 * @param string or null $c_val(controller's name), default site, when $type is ID $c_val is unuseful.
 	 * @return array or null
 	 */
-	public function getRole($value, $type='NAME')
+	public function getRole($value, $type='NAME', $c_val='site')
 	{
-	    $value == 'index' ? 'all' : $value;
 	    if($type == 'NAME'){
+	        $value = ($c_val == 'site' && $value == 'index') ? 'all' : $c_val.'_'.$value;
 	        return $this->findByAttributes(array(
-	                'action'=>$value,
+	                'role_value'=>$value,
 	        ));
 	    }else{
 	        return $this->findByPk($value);
