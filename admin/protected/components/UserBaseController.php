@@ -19,6 +19,7 @@ class UserBaseController extends Controller
             echo "<script>alertMsg.error('您没有权限访问此模块，请与管理员联系！')</script>";
             exit;
         }
+        return true;
     }
     
     /**

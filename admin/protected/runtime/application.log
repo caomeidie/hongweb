@@ -1463,3 +1463,220 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=users/add&_=1426487468358
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
 ---
+2015/03/16 08:47:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "list" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('list')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('list')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/list')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/list&_=1426492035915
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:48:46 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492126785
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:49:00 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492139934
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:50:03 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "home".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('home', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(18): CController->render('home')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492203008
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:51:33 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "index".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('index')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492293470
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:52:11 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list.php".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list.php', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list.php')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492330855
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:53:50 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list.php".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->renderPartial('users_list.php')
+#1 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#7 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492430155
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:54:29 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "../users_list.php".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->renderPartial('../users_list.p...')
+#1 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#7 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492469153
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 08:55:27 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list.php".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list.php', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list.php')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492526930
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 09:01:05 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list.php".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list.php', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list.php')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426492864966
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 09:04:18 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "/users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('/users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('/users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426493058123
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 09:07:55 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "/users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('/users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('/users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426493275277
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 09:08:15 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(19): CController->render('users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426493295059
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 09:09:12 [error] [exception.CException] exception 'CException' with message 'UsersController 无法找到请求的视图 "users_list".' in F:\wamp\www\hongweb\framework\web\CController.php:878
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(782): CController->renderPartial('users_list', NULL, true)
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(18): CController->render('users_list')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426493352529
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---

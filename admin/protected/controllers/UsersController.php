@@ -15,7 +15,7 @@ class UsersController extends UserBaseController
     
     public function actionIndex()
     {
-        
+		$this->renderPartial('users_list');
     }
     
     public function actionAdd()
@@ -33,3 +33,4 @@ class UsersController extends UserBaseController
     
     }
 }
+?>
