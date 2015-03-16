@@ -34,6 +34,21 @@ CREATE TABLE `roles` (
 
 insert  into `roles`(`role_id`,`role_value`,`action`,`role_desc`,`parent_role_id`,`related_role_id`) values (1,'all','all','全部权限',0,NULL),(2,'users','','用户管理权限',1,NULL),(3,'users_list','','查看用户权限',2,NULL),(4,'users_del','','删除用户权限',2,3),(5,'users_add','','添加用户权限',2,3),(6,'users_update','','修改用户权限',2,3),(7,'users_type','','用户类型管理权限',2,NULL),(8,'users_type_list','','查看用户类型权限',7,NULL),(9,'users_type_del','','删除用户类型权限',7,8),(10,'users_type_add','','添加用户类型权限',7,8),(11,'users_type_update','','修改用户类型权限',7,8);
 
+/*Table structure for table `user_style` */
+
+DROP TABLE IF EXISTS `user_style`;
+
+CREATE TABLE `user_style` (
+  `style_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `style_value` varchar(50) NOT NULL,
+  `roles` varchar(255) NOT NULL,
+  PRIMARY KEY (`style_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `user_style` */
+
+insert  into `user_style`(`style_id`,`style_value`,`roles`) values (1,'admin','1'),(2,'user_editor','2');
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -49,27 +64,13 @@ CREATE TABLE `users` (
   `logintimes` int(10) DEFAULT '1',
   `lastip` varchar(20) DEFAULT NULL,
   `status` int(1) unsigned NOT NULL DEFAULT '1',
+  `style_id` int(10) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `users` */
 
-insert  into `users`(`user_id`,`username`,`password`,`email`,`phone`,`addtime`,`updatetime`,`logintimes`,`lastip`,`status`) values (1,'xiaomi','$2a$13$fPCWoOuuofr3GEC1kc6MsOt7ij13BHx61Sp8XrLNHA8mFImdyRCfe','outshadow@sina.com','','1425613543','1425613543',1,'127.0.0.1',1),(2,'dadade','$2a$13$zlTeYO3fbJiib8tng63pm.3UMlAPN3qu4XeWKyTcdid.XIXjvu/JW','dadade@me.com','13767960832','1426064987','1426064987',1,'127.0.0.1',1),(3,'xiaoxiao','$2a$13$aa66HfmjOTGSS7Iq0fGwcettO/DIehEx5raQtw/rFGSuuqtlo9DnS','xiaoxiao@sina.com','13767960831','1426211500','1426211500',1,'127.0.0.1',1);
-
-/*Table structure for table `users_role` */
-
-DROP TABLE IF EXISTS `users_role`;
-
-CREATE TABLE `users_role` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) unsigned NOT NULL,
-  `roles` varchar(765) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-/*Data for the table `users_role` */
-
-insert  into `users_role`(`id`,`user_id`,`roles`) values (1,1,'1'),(2,2,'5');
+insert  into `users`(`user_id`,`username`,`password`,`email`,`phone`,`addtime`,`updatetime`,`logintimes`,`lastip`,`status`,`style_id`) values (1,'xiaomi','$2a$13$fPCWoOuuofr3GEC1kc6MsOt7ij13BHx61Sp8XrLNHA8mFImdyRCfe','outshadow@sina.com','','1425613543','1425613543',1,'127.0.0.1',1,1),(2,'dadade','$2a$13$zlTeYO3fbJiib8tng63pm.3UMlAPN3qu4XeWKyTcdid.XIXjvu/JW','dadade@me.com','13767960832','1426064987','1426064987',1,'127.0.0.1',1,2),(3,'xiaoxiao','$2a$13$aa66HfmjOTGSS7Iq0fGwcettO/DIehEx5raQtw/rFGSuuqtlo9DnS','xiaoxiao@sina.com','13767960831','1426211500','1426211500',1,'127.0.0.1',1,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

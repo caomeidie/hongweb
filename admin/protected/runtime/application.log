@@ -1680,3 +1680,57 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=users/index&_=1426493352529
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
 ---
+2015/03/16 16:38:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "list" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('list')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('list')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/list')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/list&_=1426520300868
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 16:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "list" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('list')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('list')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/list')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/list&_=1426520534150
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/16 16:42:16 [error] [php] include(UsersStyle.php): failed to open stream: No such file or directory (F:\wamp\www\hongweb\framework\YiiBase.php:427)
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php(7): spl_autoload_call()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#5 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&_=1426520536619
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (7)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/16 16:42:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1103 Nom de table illégal: ''. The SQL statement executed was: SHOW FULL COLUMNS FROM ``.
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (7)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/16 16:42:43 [error] [exception.CDbException] exception 'CDbException' with message '数据库中无法找到 active record class "UserStyle" 对应的 table "".' in F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(UserStyle))
+#1 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php(7): CActiveRecord->__construct()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(306): UserBaseController->beforeAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426520563582
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---

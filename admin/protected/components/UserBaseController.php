@@ -4,9 +4,9 @@ class UserBaseController extends Controller
     public function beforeAction(){
         parent::beforeAction();
         //判断用户是否有权限操作当前action
-        $usersRole_model = new UsersRole();
-        $roles = $usersRole_model->getRoles(Yii::app()->user->getId());
-
+        $userStyle_model = new UserStyle();
+        $roles = $userStyle_model->getStyle(Yii::app()->user->getId());
+        
         $roles_arr = explode(',', $roles['roles']);
          
         $action_name = $this->getAction()->getId();

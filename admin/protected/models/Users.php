@@ -34,14 +34,15 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password', 'required'),
-			array('logintimes', 'numerical', 'integerOnly'=>true),
+			array('logintimes, style_id', 'numerical', 'integerOnly'=>true),
 			array('username, email, phone', 'length', 'max'=>50),
 			array('password', 'length', 'max'=>60),
 			array('addtime, updatetime, lastip', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>1),
+		    array('style_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_id, username, password, email, phone, addtime, updatetime, logintimes, lastip, status', 'safe', 'on'=>'search'),
+			array('user_id, username, password, email, phone, addtime, updatetime, logintimes, lastip, status, style_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,7 +54,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		        'UsersRole'=>array(self::HAS_ONE, 'UsersRole', 'user_id'),
+		        'UserStyle'=>array(self::BELONGS_TO, 'UserStyle', 'style_id'),
 		);
 	}
 
@@ -73,6 +74,7 @@ class Users extends CActiveRecord
 			'logintimes' => 'Logintimes',
 			'lastip' => 'Lastip',
 			'status' => 'Status',
+		    'style_id' => 'Style_id',
 		);
 	}
 
@@ -104,6 +106,7 @@ class Users extends CActiveRecord
 		$criteria->compare('logintimes',$this->logintimes);
 		$criteria->compare('lastip',$this->lastip,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('style_id',$this->style_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -128,5 +131,12 @@ class Users extends CActiveRecord
 	 */
 	public function validatePassword($password){
 	    return CPasswordHelper::verifyPassword($password,$this->password);
+	}
+	
+	/**
+	 * Get users by condition
+	 */
+	public function usersList(){
+	    
 	}
 }

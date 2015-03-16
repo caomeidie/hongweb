@@ -15,6 +15,8 @@ class UsersController extends UserBaseController
     
     public function actionIndex()
     {
+        $users_model = new Users();
+        $users_list = $users_model->usersList();
 		$this->renderPartial('users_list');
     }
     
