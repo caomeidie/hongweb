@@ -1734,3 +1734,167 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=users/index&_=1426520563582
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
 ---
+2015/03/17 03:25:05 [error] [exception.CException] exception 'CException' with message '属性 "CDbCriteria.param" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\schema\CDbCriteria.php(160): CComponent->__set('param', Array)
+#1 F:\wamp\www\hongweb\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 F:\wamp\www\hongweb\admin\protected\models\Users.php(148): CActiveRecord->findAll(Array)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(20): Users->usersList(Array)
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426559105336
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/17 03:26:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `users` `t` WHERE lastip=:lastipuser_id>=:user_id.
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (148)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (20)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/17 03:26:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `users` `t` WHERE lastip=:lastipuser_id>=:user_id' in F:\wamp\www\hongweb\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\wamp\www\hongweb\admin\protected\models\Users.php(148): CActiveRecord->findAll(Array)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(20): Users->usersList(Array)
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426559217442
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/17 04:05:45 [error] [php] Invalid argument supplied for foreach() (F:\wamp\www\hongweb\admin\protected\views\users\users_list.php:6)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(869): UsersController->renderFile()
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(21): UsersController->renderPartial()
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&_=1426561545734
+in F:\wamp\www\hongweb\admin\protected\views\users\users_list.php (6)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (21)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/17 04:06:15 [error] [exception.CException] exception 'CException' with message '属性 "UsersController.user_list" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\views\users\users_list.php(6): CComponent->__get('user_list')
+#1 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\\wamp\\www\\hon...')
+#2 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\wamp\\www\\hon...', Array, true)
+#3 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\\wamp\\www\\hon...', Array, true)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(21): CController->renderPartial('users_list', Array)
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426561575777
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/17 04:12:40 [error] [exception.CException] exception 'CException' with message '属性 "UsersController.user_list" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\views\users\users_list.php(6): CComponent->__get('user_list')
+#1 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\\wamp\\www\\hon...')
+#2 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\wamp\\www\\hon...', Array, true)
+#3 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\\wamp\\www\\hon...', Array, true)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(21): CController->renderPartial('users_list', Array)
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426561960283
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/17 04:42:33 [error] [php] Missing argument 3 for Users::usersList(), called in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php on line 20 and defined (F:\wamp\www\hongweb\admin\protected\models\Users.php:142)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&_=1426563752986
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (142)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (20)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/17 04:47:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'ORDER BY user_id DESC' à la ligne 1. The SQL statement executed was: SELECT * FROM `users` `t` WHERE lastip=:lastip AND user_id>=:user_id ORDER BY  ORDER BY user_id DESC .
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (159)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (20)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/17 04:47:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'ORDER BY user_id DESC' à la ligne 1. The SQL statement executed was: SELECT * FROM `users` `t` WHERE lastip=:lastip AND user_id>=:user_id ORDER BY  ORDER BY user_id DESC ' in F:\wamp\www\hongweb\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 F:\wamp\www\hongweb\admin\protected\models\Users.php(159): CActiveRecord->findAll(Array)
+#4 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(20): Users->usersList(Array, 'user_id DESC', '10')
+#5 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#6 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#10 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#11 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426564073385
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/17 08:36:54 [error] [php] Object of class Users could not be converted to string (F:\wamp\www\hongweb\admin\protected\views\users\users_list.php:55)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(869): UsersController->renderFile()
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(22): UsersController->renderPartial()
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&_=1426577814016
+in F:\wamp\www\hongweb\admin\protected\views\users\users_list.php (55)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (22)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/17 09:35:46 [error] [exception.CException] exception 'CException' with message '属性 "CWebApplication.getRequest" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\base\CModule.php(105): CComponent->__get('getRequest')
+#1 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(18): CModule->__get('getRequest')
+#2 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
+#8 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/admin/index.php?r=users/index&_=1426581346311
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---

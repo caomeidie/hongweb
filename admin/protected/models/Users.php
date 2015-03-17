@@ -135,8 +135,48 @@ class Users extends CActiveRecord
 	
 	/**
 	 * Get users by condition
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 * @param string $order
+	 * @param string $limit
+	 * 
+	 * @return array
 	 */
-	public function usersList(){
+	public function usersList($condition, $order='addtime DESC', $limit){
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= ' AND ';
+	        $param[':'.$key] = $value[1];
+	    }
 	    
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	            'order'=>$order,
+	    );
+	    
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    	    
+	    return $this->findAll($arr);
+	}
+	
+	/**
+	 * Count user's number
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 */
+	public function usersCount($condition){
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= ' AND ';
+	        $param[':'.$key] = $value[1];
+	    }
+	     
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	    );
+	
+	    return $this->count($arr);
 	}
 }
