@@ -141,7 +141,7 @@ class Users extends CActiveRecord
 	 * 
 	 * @return array
 	 */
-	public function usersList($condition, $order='addtime DESC', $limit){
+	public function usersList($condition, $order='addtime DESC', $limit, $offset){
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
 	        if(current($condition) != end($condition))
@@ -156,6 +156,8 @@ class Users extends CActiveRecord
 	    );
 	    
 	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	    
 	    	    
 	    return $this->findAll($arr);
 	}

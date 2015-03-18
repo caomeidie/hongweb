@@ -3,6 +3,19 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
+<form id="pagerForm" method="post" action="?r=users/index">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="<?php echo $pagination['perpage']; ?>" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+<div class="pageHeader">
+	<form onsubmit="return navTabSearch(this);" action="?r=users/index" method="post">
+	<div class="searchBar">
+	</div>
+	</form>
+</div>
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
@@ -56,6 +69,6 @@ $this->pageTitle=Yii::app()->name;
 			<span>条，共<?php echo $pagination['count']; ?>条</span>
 		</div>
 		
-		<div class="pagination" targetType="navTab" totalCount="<?php echo $pagination['count']; ?>" numPerPage="<?php echo $pagination['perpage']; ?>" pageNumShown="10" currentPage="<?php echo $pagination['page']+1; ?>"></div>
+		<div class="pagination" targetType="navTab" totalCount="<?php echo $pagination['count']; ?>" numPerPage="<?php echo $pagination['perpage']; ?>" pageNumShown="<?php echo $pagination['pagenum']; ?>" currentPage="<?php echo $pagination['page']+1; ?>"></div>
 	</div>
 </div>

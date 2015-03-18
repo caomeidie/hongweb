@@ -1898,3 +1898,37 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=users/index&_=1426581346311
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
 ---
+2015/03/18 08:32:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index?page=" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('index?page=')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index?page=')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index?page...')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/index?page=
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/03/18 09:52:23 [error] [php] Missing argument 1 for CHttpRequest::getParam(), called in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php on line 28 and defined (F:\wamp\www\hongweb\framework\web\CHttpRequest.php:169)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&id=520&_=1426668743376
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (28)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/03/18 09:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "list" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('list')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('list')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/list')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/list&_=1426668786489
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
