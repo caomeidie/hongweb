@@ -8,6 +8,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'hongweb system',
 	'language'=>'zh_cn',
+	'timeZone'=>'Asia/Chongqing',
         
 	// preloading 'log' component
 	'preload'=>array('log'),
