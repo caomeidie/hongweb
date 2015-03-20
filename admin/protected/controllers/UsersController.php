@@ -36,12 +36,15 @@ class UsersController extends UserBaseController
             if($model->validate())
             {
                 if($model->addUser()){
-                    echo json_encode(array("statusCode"=>"200", "message"=>"添加成功"));
+                    $result = json_encode(array("statusCode"=>"200", "message"=>"添加成功"));
                 }else{
-                    echo json_encode(array("statusCode"=>"300", "message"=>"添加失败"));
+                    $result = json_encode(array("statusCode"=>"300", "message"=>"添加失败"));
                 }
-                exit;
+            }else{
+                $result = json_encode(array("statusCode"=>"300", "message"=>"用户名已存在"));
             }
+            echo $result;
+            exit;
         }
         $this->renderPartial('users_add',array('model'=>$model));
     
