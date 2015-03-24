@@ -40,5 +40,13 @@ class UserBaseController extends Controller
             return true;
         return false;
     }
+    
+    /**
+     * 信息提醒
+     * 
+     */
+    public function message($message, $code=200){
+        return json_encode(array("statusCode"=>$code, "message"=>$message));
+    }
 }
 ?>

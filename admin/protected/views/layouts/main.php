@@ -16,10 +16,10 @@
 <script src="js/speedup.js" type="text/javascript"></script>
 <![endif]-->
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/jquery-1.7.2.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/jquery.cookie.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/jquery.validate.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/jquery.bgiframe.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/jquery.cookie.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/jquery.validate.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/jquery.bgiframe.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/data/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/data/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/data/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
@@ -32,42 +32,42 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/chart/g.pie.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/chart/g.dot.js"></script>
 
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.core.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.util.date.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.validate.method.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.barDrag.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.drag.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.tree.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.accordion.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.ui.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.theme.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.switchEnv.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.alertMsg.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.contextmenu.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.navTab.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.tab.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.resize.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.dialog.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.dialogDrag.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.sortDrag.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.cssTable.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.stable.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.taskBar.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.ajax.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.pagination.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.database.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.datepicker.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.effects.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.panel.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.checkbox.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.history.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.combox.js" type="text/javascript"></script>
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.print.js" type="text/javascript"></script>
-
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.core.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.util.date.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.validate.method.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.barDrag.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.drag.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.tree.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.accordion.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.ui.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.theme.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.switchEnv.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.alertMsg.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.contextmenu.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.navTab.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.tab.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.resize.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.dialog.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.dialogDrag.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.sortDrag.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.cssTable.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.stable.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.taskBar.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.ajax.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.pagination.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.database.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.datepicker.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.effects.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.panel.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.checkbox.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.history.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.combox.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.print.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/hong.common.js" type="text/javascript"></script>
 <!-- 可以用dwz.min.js替换前面全部dwz.*.js (注意：替换是下面dwz.regional.zh.js还需要引入)
 <script src="bin/dwz.min.js" type="text/javascript"></script>
 -->
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/js/dwz.regional.zh.js" type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/dwz.regional.zh.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -280,19 +280,5 @@ $(function(){
 	</div>
 
 	<div id="footer">Copyright &copy; 2010 <a href="demo_page2.html" target="dialog">DWZ团队</a> 京ICP备05019125号-10</div>
-
-<!-- 注意此处js代码用于google站点统计，非DWZ代码，请删除 -->
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-16716654-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? ' https://ssl' : ' http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
 </body>
 </html>

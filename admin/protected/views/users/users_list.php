@@ -13,14 +13,41 @@ $this->pageTitle=Yii::app()->name;
 <div class="pageHeader">
 	<form onsubmit="return navTabSearch(this);" action="?r=users/index" method="post">
 	<div class="searchBar">
+	    <table class="searchContent">
+			<tr>
+				<td>
+					我的客户：<input type="text" name="keyword" />
+				</td>
+				<td>
+					<select class="combox" name="province">
+						<option value="">所有省市</option>
+						<option value="北京">北京</option>
+						<option value="上海">上海</option>
+						<option value="天津">天津</option>
+						<option value="重庆">重庆</option>
+						<option value="广东">广东</option>
+					</select>
+				</td>
+				<td>
+					建档日期：<input type="text" class="date" readonly="true" />
+				</td>
+			</tr>
+		</table>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li>
+			</ul>
+		</div>
 	</div>
 	</form>
 </div>
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
+		    <li><a class="all edit"><span>全选</span></a></li>
 			<li><a class="add" href="?r=users/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" href="demo/common/ajaxDone.html?uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="delete" href="demo/common/ajaxDone.html?uid=2" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
@@ -29,6 +56,7 @@ $this->pageTitle=Yii::app()->name;
 	<table class="table" width="100%" layoutH="138">
 		<thead>
 			<tr>
+			    <th></th>
 				<th width="80">id</th>
 				<th width="120">用户名</th>
 				<th>邮箱</th>
@@ -38,11 +66,13 @@ $this->pageTitle=Yii::app()->name;
 				<th width="80">最近登录IP</th>
 				<th width="80">状态</th>
 				<th width="80">用户类型</th>
+				<th width="80">操作</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach($list as $value): ?>
-    		<tr target="sid_user" rel="1">
+    		<tr target="sid_user" rel="<?php echo $value['user_id']; ?>">
+    		    <td><label><input type="checkbox" name="check" value="<?php echo $value['user_id']; ?>" /></label></td>
         		<td><?php echo $value['user_id']; ?></td>
                 <td><?php echo $value['username']; ?></td>
                 <td><?php echo $value['email']; ?></td>
@@ -52,6 +82,10 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['lastip']; ?></td>
                 <td><?php echo $value['status']; ?></td>
                 <td><?php echo $value['style_id']; ?></td>
+                <td>
+                    <a class="delete" href="demo/common/ajaxDone.html?uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a>
+                </td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
