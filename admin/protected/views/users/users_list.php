@@ -47,8 +47,7 @@ $this->pageTitle=Yii::app()->name;
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
 			<li><a class="add" href="?r=users/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" href="demo/common/ajaxDone.html?uid=2" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a></li>
+			<li><a class="delete" id="delete" href="?r=users/del&uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -83,8 +82,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['status']; ?></td>
                 <td><?php echo $value['style_id']; ?></td>
                 <td>
-                    <a class="delete" href="demo/common/ajaxDone.html?uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab"><span>修改</span></a>
+                    <a class="delete" href="?r=users/del&uid=<?php echo $value['user_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="?r=users/edit&uid=<?php echo $value['user_id']; ?>" target="navTab"><span>修改</span></a>
                 </td>
 			</tr>
 		<?php endforeach; ?>
@@ -94,11 +93,11 @@ $this->pageTitle=Yii::app()->name;
 		<div class="pages">
 			<span>显示</span>
 			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-			    <option value="2">2</option>
-				<option value="20">20</option>
-				<option value="50">50</option>
-				<option value="100">100</option>
-				<option value="200">200</option>
+			    <option value="2" <?php if($pagination['perpage']<=2): ?> selected <?php endif ?>>2</option>
+				<option value="20" <?php if(2<$pagination['perpage'] && $pagination['perpage']<=20): ?> selected <?php endif ?>>20</option>
+				<option value="50" <?php if(20<$pagination['perpage'] && $pagination['perpage']<=50): ?> selected <?php endif ?>>50</option>
+				<option value="100" <?php if(50<$pagination['perpage'] && $pagination['perpage']<=100): ?> selected <?php endif ?>>100</option>
+				<option value="200" <?php if(100<$pagination['perpage'] && $pagination['perpage']<=200): ?> selected <?php endif ?>>200</option>
 			</select>
 			<span>条，共<?php echo $pagination['count']; ?>条</span>
 		</div>
@@ -106,3 +105,6 @@ $this->pageTitle=Yii::app()->name;
 		<div class="pagination" targetType="navTab" totalCount="<?php echo $pagination['count']; ?>" numPerPage="<?php echo $pagination['perpage']; ?>" pageNumShown="<?php echo $pagination['pagenum']; ?>" currentPage="<?php echo $pagination['page']+1; ?>"></div>
 	</div>
 </div>
+<script>
+    var href = $("#delete").attr('href');
+</script>

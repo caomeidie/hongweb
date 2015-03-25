@@ -156,10 +156,19 @@ class Users extends CActiveRecord
 	    );
 	    
 	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
-	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
-	    
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;	    
 	    	    
 	    return $this->findAll($arr);
+	}
+	
+
+	/**
+	 * get users info
+	 * @param $user_id array
+	 */
+	public function usersInfo($user_id){
+	
+	    return $this->deleteAll("user_id IN(".$user_id.")");
 	}
 	
 	/**
@@ -181,4 +190,30 @@ class Users extends CActiveRecord
 	
 	    return $this->count($arr);
 	}
+	
+	/**
+	 * drop users
+	 * @param $user_id string or int
+	 */
+	public function usersDropOne($user_id){
+	    
+	    return $this->deleteByPk($user_id);
+	}
+	
+	/**
+	 * drop users
+	 * @param $user_id array
+	 */
+	public function usersDropAll($user_id){
+	     
+	    return $this->deleteAll("user_id IN(".$user_id.")");
+	}
+	
+    /**
+     * update users
+     * @param $user_id int
+     */
+    public function editUser($user_id){
+        return $this->updateByPk($user_id, array('username'=>$this->username, 'email'=>$this->email, 'phone'=>$this->phone, 'updatetime'=>time()));
+    }
 }

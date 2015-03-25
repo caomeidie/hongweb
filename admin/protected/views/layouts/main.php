@@ -130,18 +130,18 @@ $(function(){
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">用户列表</a>
 								<ul>
-									<li><a href="?r=users/index&id=520" target="navTab" rel="main">全部用户</a></li>
-									<li><a href="?r=users/list" target="navTab" rel="page1">管理员</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="external" external="true">VIP用户</a></li>
-									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">普通用户</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="page2">已注销用户</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="page2">被举报用户</a></li>
+									<li><a href="?r=users/index" target="navTab" rel="main">全部用户</a></li>
+									<li><a href="?r=users/index&s=admin" target="navTab" rel="main">管理员</a></li>
+									<li><a href="?r=users/index&s=vip" target="navTab" rel="main">VIP用户</a></li>
+									<li><a href="?r=users/index&s=normal" target="navTab" rel="main">普通用户</a></li>
+									<li><a href="?r=users/index&s=canceled" target="navTab" rel="main">已注销用户</a></li>
+									<li><a href="?r=users/index&s=reported" target="navTab" rel="main">被举报用户</a></li>
 								</ul>
 							</li>
 							
 							<li><a href="?r=users/add" target="navTab" rel="w_validation">添加用户</a></li>
 									
-							<li><a href="?r=usertype" target="navTab" rel="w_validation">用户类型</a></li>
+							<li><a href="?r=usertype/index" target="navTab" rel="w_validation">用户类型</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">

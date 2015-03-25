@@ -67,13 +67,10 @@ class UsersForm extends CFormModel
                 return false;
             }else{
                 return true;
-            }            
+            }
         }else{
             return false;
         }
     }
     
-    public function editUser(){
-        
-    }
 }
