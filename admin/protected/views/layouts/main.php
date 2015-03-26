@@ -141,7 +141,7 @@ $(function(){
 							
 							<li><a href="?r=users/add" target="navTab" rel="w_validation">添加用户</a></li>
 									
-							<li><a href="?r=usertype/index" target="navTab" rel="w_validation">用户类型</a></li>
+							<li><a href="?r=userstyle/index" target="navTab" rel="w_validation">用户类型</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">

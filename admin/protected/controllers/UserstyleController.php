@@ -1,5 +1,5 @@
 <?php
-class UsersController extends UserBaseController
+class UserstyleController extends UserBaseController
 {
     
     public function actions()
@@ -15,34 +15,14 @@ class UsersController extends UserBaseController
     
     public function actionIndex()
     {
-        $users_model = new Users();
-        $condition = array('user_id'=>array('>=', 1));
-        if($s = Yii::app()->request->getParam('s')){
-            switch ($s){
-                case 'admin':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 2)));
-                    break;
-                case 'vip':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 3)));
-                    break;
-                case 'normal':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 1)));
-                    break;
-                case 'canceled':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 4)));
-                    break;
-                case 'reported':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 5)));
-                    break;
-            }
-        }
-        $pagination['count'] = $users_model->usersCount($condition);
+        $userstyle_model = new Userstyle();
+        $pagination['count'] = $userstyle_model->stylesCount();
         $pagination['page'] = is_numeric(Yii::app()->request->getPost('pageNum')) ? Yii::app()->request->getPost('pageNum')-1 : 0;
         $pagination['perpage'] = is_numeric(Yii::app()->request->getPost('numPerPage')) ? Yii::app()->request->getPost('numPerPage') : 5;
         $pagination['pagenum'] = ceil($pagination['count'] / $pagination['perpage']);
         $pagination['offset'] = $pagination['page'] * $pagination['perpage'];
-        $users_list = $users_model->usersList($condition, 'user_id ASC', $pagination['perpage'], $pagination['offset']);
-		$this->renderPartial('users_list', array('list'=>$users_list, 'pagination'=>$pagination));
+        $styles_list = $userstyle_model->stylesList('style_id ASC', $pagination['perpage'], $pagination['offset']);
+		$this->renderPartial('style_list', array('list'=>$styles_list, 'pagination'=>$pagination));
     }
     
     public function actionAdd()

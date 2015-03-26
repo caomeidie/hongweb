@@ -43,11 +43,11 @@ CREATE TABLE `user_style` (
   `style_value` varchar(50) NOT NULL,
   `roles` varchar(255) NOT NULL,
   PRIMARY KEY (`style_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user_style` */
 
-insert  into `user_style`(`style_id`,`style_value`,`roles`) values (1,'admin','1'),(2,'user_editor','2');
+insert  into `user_style`(`style_id`,`style_value`,`roles`) values (1,'normal','a:1:{i:0;i:1;}'),(2,'admin','a:1:{i:0;i:1;}'),(3,'vip','a:1:{i:0;i:1;}'),(4,'canceled','a:1:{i:0;i:1;}'),(5,'reported','a:1:{i:0;i:1;}');
 
 /*Table structure for table `users` */
 
@@ -66,11 +66,11 @@ CREATE TABLE `users` (
   `status` int(1) unsigned NOT NULL DEFAULT '1',
   `style_id` int(10) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 /*Data for the table `users` */
 
-insert  into `users`(`user_id`,`username`,`password`,`email`,`phone`,`addtime`,`updatetime`,`logintimes`,`lastip`,`status`,`style_id`) values (1,'xiaomi','$2a$13$fPCWoOuuofr3GEC1kc6MsOt7ij13BHx61Sp8XrLNHA8mFImdyRCfe','outshadow@sina.com','','1425613543','1425613543',1,'127.0.0.1',1,1),(2,'dadade','$2a$13$zlTeYO3fbJiib8tng63pm.3UMlAPN3qu4XeWKyTcdid.XIXjvu/JW','dadade@me.com','13767960832','1426064987','1426064987',1,'127.0.0.1',1,2),(3,'xiaoxiao','$2a$13$aa66HfmjOTGSS7Iq0fGwcettO/DIehEx5raQtw/rFGSuuqtlo9DnS','xiaoxiao@sina.com','13767960831','1426211500','1426211500',1,'127.0.0.1',1,1),(4,'aaa','$2a$13$br9I2BO1MbFiUW9cCCGpte/N/MfTADYGLgexB5eU6rX0lX5UxtMVm','aaa@sina.com','13769685623','1426831986','1426831986',1,'127.0.0.1',1,1),(5,'bbb','$2a$13$RHZnfxmxN2jYsBoam5yEOetbOV/vsvYTnle6wHbQwSmePGF8lc9Im','bbb@sina.com','13767596823','1426832177','1426832177',1,'127.0.0.1',1,1),(6,'ccc','$2a$13$lcy/A5bCJ1.wbROe2M7tBeDPwe0C6tC/YVNHPRI7QZthGn00HIWpi','ccc@sina.com','13767968039','1426840609','1426840609',1,'127.0.0.1',1,1),(7,'ddd','$2a$13$lGQ/JC.e2B6OMATmelxHvuSNnan1XhF3qRXaBt7PLb8HqWE8K4Nhy','ddd@sina.com','13767968031','1426840653','1426840653',1,'127.0.0.1',1,1),(8,'eee','$2a$13$wCcnt3jLVT4hJd8ZiwYEAOJn8fCOGcOH9K8bC2hTCEt4oHHKQaPWy','eee@sina.com','13767596828','1426841122','1426841122',1,'127.0.0.1',1,1);
+insert  into `users`(`user_id`,`username`,`password`,`email`,`phone`,`addtime`,`updatetime`,`logintimes`,`lastip`,`status`,`style_id`) values (1,'xiaomi','$2a$13$fPCWoOuuofr3GEC1kc6MsOt7ij13BHx61Sp8XrLNHA8mFImdyRCfe','outshadow@sina.com','','1425613543','1425613543',1,'127.0.0.1',1,1),(2,'dadade','$2a$13$zlTeYO3fbJiib8tng63pm.3UMlAPN3qu4XeWKyTcdid.XIXjvu/JW','dadade@me.com','13767960832','1426064987','1426064987',1,'127.0.0.1',1,2),(13,'fff','$2a$13$9jwX6jA2hobhkYUtrOvcuOBjapvNryGW31B1a0YSBrbBkbzccVYlK','fff@sina.com','13767960831','1427266361','1427266361',1,'127.0.0.1',1,3),(11,'bbb','$2a$13$vsjsn5bHMQKRjRXkkh2r6.BdH/opxVaL5Viow8d/qAHzCs6B.XgM.','bbbedit@sina.com','13767960831','1427266290','1427269073',1,'127.0.0.1',1,4),(12,'ddd','$2a$13$DZcGBhm13IlPHztNJUVlzuv7iHY7fQOuhkNIxDzUx7rZb93Us.BuC','ddd@sina.com','','1427266300','1427266300',1,'127.0.0.1',1,5),(6,'ccc','$2a$13$lcy/A5bCJ1.wbROe2M7tBeDPwe0C6tC/YVNHPRI7QZthGn00HIWpi','ccc@sina.com','13767968039','1426840609','1427268820',1,'127.0.0.1',1,4),(10,'aaa','$2a$13$ce0H5je.KpoXcTMK2wlZquPkACzbZe00r7i1s2pmtkZnGuC8maB9a','aaa@sina.com','13767596823','1427266274','1427266274',1,'127.0.0.1',1,3),(8,'eee','$2a$13$wCcnt3jLVT4hJd8ZiwYEAOJn8fCOGcOH9K8bC2hTCEt4oHHKQaPWy','eee@sina.com','13767596828','1426841122','1426841122',1,'127.0.0.1',1,2),(9,'小明','$2a$13$Pd7hfBlKrZU3YaPjX0w.7e4hYwMvYpBS1g/Rbzw5RnL3rSBlEv/C.','xiaoming@me.com','13768598456','1427092617','1427092617',1,'127.0.0.1',1,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

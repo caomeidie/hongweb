@@ -7,7 +7,7 @@ class UserBaseController extends Controller
         $userStyle_model = new UserStyle();
         $roles = $userStyle_model->getStyle(Yii::app()->user->getId());
         
-        $roles_arr = explode(',', $roles['roles']);
+        $roles_arr = unserialize($roles['roles']);
          
         $action_name = $this->getAction()->getId();
         $controller_name = $this->getId();

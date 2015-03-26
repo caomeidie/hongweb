@@ -3,7 +3,7 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-<form id="pagerForm" method="post" action="?r=users/index">
+<form id="pagerForm" method="post" action="?r=userstyle/index">
 	<input type="hidden" name="status" value="${param.status}">
 	<input type="hidden" name="keywords" value="${param.keywords}" />
 	<input type="hidden" name="pageNum" value="1" />
@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name;
 	<input type="hidden" name="orderField" value="${param.orderField}" />
 </form>
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="?r=users/index" method="post">
+	<form onsubmit="return navTabSearch(this);" action="?r=userstyle/index" method="post">
 	<div class="searchBar">
 	    <table class="searchContent">
 			<tr>
@@ -46,8 +46,8 @@ $this->pageTitle=Yii::app()->name;
 	<div class="panelBar">
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
-			<li><a class="add" href="?r=users/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=users/del&uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="add" href="?r=userstyle/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="delete" id="delete" href="?r=userstyle/del&uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -57,33 +57,21 @@ $this->pageTitle=Yii::app()->name;
 			<tr>
 			    <th width="40"></th>
 				<th width="80">id</th>
-				<th width="120">用户名</th>
-				<th>邮箱</th>
-				<th width="100">手机</th>
-				<th width="150">添加时间</th>
-				<th width="150">最近更新时间</th>
-				<th width="80">最近登录IP</th>
-				<th width="80">状态</th>
-				<th width="80">用户类型</th>
+				<th width="120">用户类型</th>
+				<th>角色</th>
 				<th width="80">操作</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach($list as $value): ?>
-    		<tr target="sid_user" rel="<?php echo $value['user_id']; ?>">
-    		    <td><label><input type="checkbox" name="check" value="<?php echo $value['user_id']; ?>" /></label></td>
-        		<td><?php echo $value['user_id']; ?></td>
-                <td><?php echo $value['username']; ?></td>
-                <td><?php echo $value['email']; ?></td>
-                <td><?php echo $value['phone']; ?></td>
-                <td><?php echo date('Y-m-d H:i:s', $value['addtime']); ?></td>
-                <td><?php echo date('Y-m-d H:i:s', $value['updatetime']); ?></td>
-                <td><?php echo $value['lastip']; ?></td>
-                <td><?php echo $value['status']; ?></td>
-                <td><?php echo $value['style_id']; ?></td>
+    		<tr target="sid_user" rel="<?php echo $value['style_id']; ?>">
+    		    <td><label><input type="checkbox" name="check" value="<?php echo $value['style_id']; ?>" /></label></td>
+        		<td><?php echo $value['style_id']; ?></td>
+                <td><?php echo $value['style_value']; ?></td>
+                <td><?php echo $value['roles']; ?></td>
                 <td>
-                    <a class="delete" href="?r=users/del&uid=<?php echo $value['user_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=users/edit&uid=<?php echo $value['user_id']; ?>" target="navTab"><span>修改</span></a>
+                    <a class="delete" href="?r=userstyle/del&uid=<?php echo $value['style_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="?r=userstyle/edit&uid=<?php echo $value['style_id']; ?>" target="navTab"><span>修改</span></a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

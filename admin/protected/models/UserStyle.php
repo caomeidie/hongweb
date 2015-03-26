@@ -105,4 +105,34 @@ class UserStyle extends CActiveRecord
 	public function getStyle($id){
 	    return $this->findByPk($id);
 	}
+	
+	/**
+	 * Get userstyles by condition
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function stylesList($order='style_id DESC', $limit, $offset){
+	    $arr = array(
+	            'order'=>$order,
+	    );
+	     
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	
+	    return $this->findAll($arr);
+	}
+	
+	/**
+	 * Count userstyle's number
+	 */
+	public function stylesCount(){
+	
+	    $arr = array(
+	            'condition'=>"1",
+	    );
+	
+	    return $this->count('1=1');
+	}
 }
