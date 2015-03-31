@@ -27,24 +27,22 @@ class UserstyleController extends UserBaseController
     
     public function actionAdd()
     {
-        $model=new UsersForm();
-        if(isset($_POST['UsersForm']))
+        $model = new StyleForm();
+        if(isset($_POST['StyleForm']))
         {
-            $model->attributes=$_POST['UsersForm'];
-            if($model->validate())
-            {
-                if($model->addUser()){
-                    $result = $this->message("添加成功");
-                }else{
-                    $result = $this->message("添加失败", "300");
-                }
+            $model->stylename = $_POST['StyleForm']['stylename'];
+            $model->roles = $_POST['StyleForm']['roles'];
+            if($model->addStyle()){
+                $result = $this->message("添加成功");
             }else{
-                $result = $this->message("该用户名或手机号或邮箱已存在", "300");
+                $result = $this->message("添加失败", "300");
             }
             echo $result;
             exit;
         }
-        $this->renderPartial('users_add',array('model'=>$model));
+        $roles_model = new Roles();
+        $roles = $roles_model->getAllRoles();
+        $this->renderPartial('style_add',array('model'=>$model, 'roles'=>$roles));
     
     }
     
@@ -69,22 +67,25 @@ class UserstyleController extends UserBaseController
     
     public function actionEdit()
     {
-        $user_id = Yii::app()->request->getParam('uid');
+        $style_id = Yii::app()->request->getParam('sid');
         
-        if(isset($_POST['Users']))
+        if(isset($_POST['UserStyle']))
         {
-            $model=new Users();
-            $model->attributes=$_POST['Users'];
-            if($model->editUser($user_id)){
+            $model=new UserStyle();
+            $model->style_value = $_POST['UserStyle']['style_value'];
+            $model->roles = $_POST['UserStyle']['roles'];
+            if($model->editStyle($style_id)){
                 $result = $this->message("修改成功", "200");
             }else{
                 $result = $this->message("修改失败", "300");
             }
             echo $result;
         }else{
-            $model=new Users();
-            $users_info = $model->findAllByPk($user_id);
-            $this->renderPartial('users_edit',array('user'=>$users_info[0]));
+            $model=new UserStyle();
+            $style_info = $model->findAllByPk($style_id);
+            $roles_model = new Roles();
+            $roles = $roles_model->getAllRoles();
+            $this->renderPartial('style_edit',array('style'=>$style_info[0], 'roles'=>$roles));
         }
     }
 }

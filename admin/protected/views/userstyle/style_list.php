@@ -70,8 +70,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['style_value']; ?></td>
                 <td><?php echo $value['roles']; ?></td>
                 <td>
-                    <a class="delete" href="?r=userstyle/del&uid=<?php echo $value['style_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=userstyle/edit&uid=<?php echo $value['style_id']; ?>" target="navTab"><span>修改</span></a>
+                    <a class="delete" href="?r=userstyle/del&sid=<?php echo $value['style_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="?r=userstyle/edit&sid=<?php echo $value['style_id']; ?>" target="navTab"><span>修改</span></a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

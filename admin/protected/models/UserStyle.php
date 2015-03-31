@@ -28,7 +28,6 @@ class UserStyle extends CActiveRecord
 		return array(
 			array('style_value, roles', 'required'),
 			array('style_value', 'length', 'max'=>50),
-			array('roles', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('style_id, style_value, roles', 'safe', 'on'=>'search'),
@@ -121,7 +120,19 @@ class UserStyle extends CActiveRecord
 	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
 	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
 	
-	    return $this->findAll($arr);
+	    $styleList = $this->findAll($arr);
+	    $role_model = new Roles();
+	    $rolesList = $role_model->getAllRoles();
+	    foreach ($styleList as $key=>$value){
+	        $roleArr = unserialize($value['roles']);
+	        $roleStr = '';
+	        
+	        foreach($roleArr as $id=>$role){
+	            $roleStr = $roleStr.$rolesList[$id]['role_desc'].' ';
+	        }
+	        $styleList[$key]['roles'] = $roleStr;
+	    }
+	    return $styleList;
 	}
 	
 	/**
@@ -134,5 +145,13 @@ class UserStyle extends CActiveRecord
 	    );
 	
 	    return $this->count('1=1');
+	}
+	
+	/**
+	 * update userstyle
+	 * @param $style_id int
+	 */
+	public function editStyle($style_id){
+	    return $this->updateByPk($style_id, array('style_value'=>$this->style_value, 'roles'=>serialize($this->roles)));
 	}
 }

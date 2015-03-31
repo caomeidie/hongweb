@@ -125,4 +125,13 @@ class Roles extends CActiveRecord
 	        return $this->findByPk($value);
 	    }
 	}
+	
+	/**
+	 * Get all roles
+	 * @return array or null
+	 */
+	public function getAllRoles()
+	{
+	    return $this->findAll();
+	}
 }
