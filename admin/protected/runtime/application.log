@@ -1,0 +1,99 @@
+2015/04/02 07:04:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:05:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:11:33 [error] [php] Undefined variable: model (F:\wamp\www\hongweb\admin\protected\views\site\login.php:28)
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 F:\wamp\www\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(32): SiteController->render()
+#3 F:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 F:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\wamp\www\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 F:\wamp\www\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 F:\wamp\www\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php
+in F:\wamp\www\hongweb\admin\protected\views\site\login.php (28)
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (32)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/02 07:17:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:29:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:29:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+---
+2015/04/02 07:30:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('contact')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=contact
+---
+2015/04/02 08:24:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/login
+---
+2015/04/02 08:24:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in F:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 F:\wamp\www\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/index.php?r=login
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/login
+---
