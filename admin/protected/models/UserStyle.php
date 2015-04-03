@@ -124,11 +124,12 @@ class UserStyle extends CActiveRecord
 	    $role_model = new Roles();
 	    $rolesList = $role_model->getAllRoles();
 	    foreach ($styleList as $key=>$value){
+	        $roleArr = array();
 	        $roleArr = unserialize($value['roles']);
 	        $roleStr = '';
 	        
-	        foreach($roleArr as $id=>$role){
-	            $roleStr = $roleStr.$rolesList[$id]['role_desc'].' ';
+	        foreach($roleArr as $role){
+	            $roleStr = $roleStr.$rolesList[$role]['role_desc'].' ';
 	        }
 	        $styleList[$key]['roles'] = $roleStr;
 	    }
@@ -153,5 +154,23 @@ class UserStyle extends CActiveRecord
 	 */
 	public function editStyle($style_id){
 	    return $this->updateByPk($style_id, array('style_value'=>$this->style_value, 'roles'=>serialize($this->roles)));
+	}
+	
+	/**
+	 * drop style
+	 * @param $style_id string or int
+	 */
+	public function styleDropOne($style_id){
+	     
+	    return $this->deleteByPk($style_id);
+	}
+	
+	/**
+	 * drop styles
+	 * @param $style_id array
+	 */
+	public function styleDropAll($style_id){
+	
+	    return $this->deleteAll("style_id IN(".$style_id.")");
 	}
 }

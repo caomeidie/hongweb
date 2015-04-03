@@ -2504,3 +2504,230 @@ REQUEST_URI=/admin/index.php?r=userstyle/edit&uid=5&_=1427792579968
 in F:\wamp\www\hongweb\admin\protected\views\userstyle\style_edit.php (20)
 in F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php (90)
 in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/03 15:36:11 [error] [php] Invalid argument supplied for foreach() (F:\wamp\www\hongweb\admin\protected\models\UserStyle.php:130)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UserstyleController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UserstyleController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UserstyleController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428046571811
+in F:\wamp\www\hongweb\admin\protected\models\UserStyle.php (130)
+in F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php (24)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/03 15:36:16 [error] [php] Invalid argument supplied for foreach() (F:\wamp\www\hongweb\admin\protected\models\UserStyle.php:130)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UserstyleController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UserstyleController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UserstyleController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428046576379
+in F:\wamp\www\hongweb\admin\protected\models\UserStyle.php (130)
+in F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php (24)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/03 16:04:02 [error] [exception.CException] exception 'CException' with message '属性 "UserStyle.desc" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(161): CComponent->__set('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(607): CActiveRecord->__set('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#2 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(134): CModel->offsetSet('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#3 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#4 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#10 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428048242758
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 16:05:10 [error] [exception.CException] exception 'CException' with message '属性 "UserStyle.desc" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(161): CComponent->__set('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(607): CActiveRecord->__set('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#2 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(134): CModel->offsetSet('desc', '\xE5\x85\xA8\xE9\x83\xA8\xE6\x9D\x83\xE9\x99\x90 \xE7\x94...')
+#3 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#4 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#10 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428048310768
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 16:52:00 [error] [php] Missing argument 1 for CActiveRecord::findAllByPk(), called in F:\wamp\www\hongweb\admin\protected\models\Roles.php on line 135 and defined (F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php:1497)
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList()
+#1 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 F:\wamp\www\hongweb\framework\web\CController.php(286): UserstyleController->runAction()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(265): UserstyleController->runActionWithFilters()
+#5 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UserstyleController->run()
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428051120772
+in F:\wamp\www\hongweb\admin\protected\models\Roles.php (135)
+in F:\wamp\www\hongweb\admin\protected\models\UserStyle.php (125)
+in F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php (24)
+2015/04/03 16:55:24 [error] [exception.CException] exception 'CException' with message '属性 "Roles.style_id" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('style_id')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(596): CActiveRecord->__get('style_id')
+#2 F:\wamp\www\hongweb\admin\protected\views\userstyle\style_list.php(67): CModel->offsetGet('style_id')
+#3 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\\wamp\\www\\hon...')
+#4 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\wamp\\www\\hon...', Array, true)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\\wamp\\www\\hon...', Array, true)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(26): CController->renderPartial('style_list', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428051324205
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:05:54 [error] [exception.CException] exception 'CException' with message '属性 "Roles.style_id" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('style_id')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(596): CActiveRecord->__get('style_id')
+#2 F:\wamp\www\hongweb\admin\protected\views\userstyle\style_list.php(67): CModel->offsetGet('style_id')
+#3 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\\wamp\\www\\hon...')
+#4 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\wamp\\www\\hon...', Array, true)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\\wamp\\www\\hon...', Array, true)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(26): CController->renderPartial('style_list', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428051954706
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:06:15 [error] [exception.CException] exception 'CException' with message '属性 "Roles.style_id" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('style_id')
+#1 F:\wamp\www\hongweb\framework\base\CModel.php(596): CActiveRecord->__get('style_id')
+#2 F:\wamp\www\hongweb\admin\protected\views\userstyle\style_list.php(67): CModel->offsetGet('style_id')
+#3 F:\wamp\www\hongweb\framework\web\CBaseController.php(126): require('F:\\wamp\\www\\hon...')
+#4 F:\wamp\www\hongweb\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\\wamp\\www\\hon...', Array, true)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(869): CBaseController->renderFile('F:\\wamp\\www\\hon...', Array, true)
+#6 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(26): CController->renderPartial('style_list', Array)
+#7 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#8 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#12 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#13 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428051974843
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:09:41 [error] [exception.CException] exception 'CException' with message '属性 "Roles.pk" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pk')
+#1 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): CActiveRecord->__get('pk')
+#2 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#3 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#9 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052181795
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:09:59 [error] [exception.CException] exception 'CException' with message '属性 "Roles.pk" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('pk')
+#1 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): CActiveRecord->__get('pk')
+#2 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#3 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#9 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052199523
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:10:09 [error] [exception.CException] exception 'CException' with message '属性 "Roles._pk" 未被定义.' in F:\wamp\www\hongweb\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(145): CComponent->__get('_pk')
+#1 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): CActiveRecord->__get('_pk')
+#2 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#3 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#4 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#9 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052209770
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:11:00 [error] [exception.CException] exception 'CException' with message 'Roles and its behaviors do not have a method or closure named "get".' in F:\wamp\www\hongweb\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(227): CComponent->__call('get', Array)
+#1 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): CActiveRecord->__call('get', Array)
+#2 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): Roles->get('pk')
+#3 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#4 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#10 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052260404
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---
+2015/04/03 17:11:47 [error] [exception.CException] exception 'CException' with message 'Roles and its behaviors do not have a method or closure named "_get".' in F:\wamp\www\hongweb\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\db\ar\CActiveRecord.php(227): CComponent->__call('_get', Array)
+#1 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): CActiveRecord->__call('_get', Array)
+#2 F:\wamp\www\hongweb\admin\protected\models\UserStyle.php(133): Roles->_get('pk')
+#3 F:\wamp\www\hongweb\admin\protected\controllers\UserstyleController.php(24): UserStyle->stylesList('style_id ASC', 5, 0)
+#4 F:\wamp\www\hongweb\framework\web\actions\CInlineAction.php(49): UserstyleController->actionIndex()
+#5 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('index')
+#9 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('userstyle/index')
+#10 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052306863
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
+---

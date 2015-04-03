@@ -48,16 +48,16 @@ class UserstyleController extends UserBaseController
     
     public function actionDel()
     {
-        $user_id = Yii::app()->request->getParam('uid');
-        $users_model = new Users();
-        $user_arr = explode(',', $user_id);
-        if(count($user_arr) <= 1){
-            if($users_model->usersDropOne($user_id))
+        $style_id = Yii::app()->request->getParam('sid');
+        $userstyle_model = new Userstyle();
+        $style_arr = explode(',', $style_id);
+        if(count($style_arr) <= 1){
+            if($userstyle_model->styleDropOne($style_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $users_model->usersDropAll($user_id))
+            if($count = $userstyle_model->styleDropAll($style_id))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");
