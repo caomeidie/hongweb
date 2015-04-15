@@ -122,15 +122,18 @@ class UserStyle extends CActiveRecord
 	
 	    $styleList = $this->findAll($arr);
 	    $role_model = new Roles();
-	    $rolesList = $role_model->getAllRoles();
+	    $rolesList = $role_model->getAllRoles();//获取所有权限列表
 	    foreach ($styleList as $key=>$value){
 	        $roleArr = array();
-	        $roleArr = unserialize($value['roles']);
+	        $roleArr = unserialize($value['roles']);//获取当前用户的权限
 	        $roleStr = '';
 	        
-	        foreach($roleArr as $role){
-	            $roleStr = $roleStr.$rolesList[$role]['role_desc'].' ';
+	        foreach($rolesList as $role){
+	            if(in_array($role['role_id'], $roleArr)){
+	                $roleStr = $roleStr.$role['role_desc'].' ';
+	            }
 	        }
+	        	        
 	        $styleList[$key]['roles'] = $roleStr;
 	    }
 	    return $styleList;
