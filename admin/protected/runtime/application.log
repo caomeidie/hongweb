@@ -2731,3 +2731,90 @@ Stack trace:
 REQUEST_URI=/admin/index.php?r=userstyle/index&_=1428052306863
 HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/index
 ---
+2015/04/20 14:36:04 [error] [php] Declaration of Controller::beforeAction() should be compatible with CController::beforeAction($action) (F:\wamp\www\hongweb\admin\protected\components\Controller.php:7)
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php(4): spl_autoload_call()
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(354): require()
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/
+in F:\wamp\www\hongweb\admin\protected\components\Controller.php (7)
+in F:\wamp\www\hongweb\admin\protected\controllers\SiteController.php (4)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:39:02 [error] [php] Declaration of UserBaseController::beforeAction() should be compatible with Controller::beforeAction($action) (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:3)
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php(3): spl_autoload_call()
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(354): require()
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(276): CWebApplication->createController()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&s=reported&_=1429511942940
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (3)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (3)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:39:35 [error] [php] Missing argument 1 for Controller::beforeAction(), called in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php on line 5 and defined (F:\wamp\www\hongweb\admin\protected\components\Controller.php:24)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&s=reported&_=1429511975338
+in F:\wamp\www\hongweb\admin\protected\components\Controller.php (24)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (5)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:39:53 [error] [php] Missing argument 1 for Controller::beforeAction(), called in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php on line 5 and defined (F:\wamp\www\hongweb\admin\protected\components\Controller.php:24)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&_=1429511993203
+in F:\wamp\www\hongweb\admin\protected\components\Controller.php (24)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (5)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:40:11 [error] [php] Undefined variable: cond (F:\wamp\www\hongweb\admin\protected\models\Users.php:180)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&_=1429512011070
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (180)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (39)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:41:00 [error] [php] Undefined variable: cond (F:\wamp\www\hongweb\admin\protected\models\Users.php:146)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&_=1429512060666
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (146)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (44)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/20 14:41:06 [error] [php] Undefined variable: cond (F:\wamp\www\hongweb\admin\protected\models\Users.php:146)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&_=1429512065925
+in F:\wamp\www\hongweb\admin\protected\models\Users.php (146)
+in F:\wamp\www\hongweb\admin\protected\controllers\UsersController.php (44)
+in F:\wamp\www\hongweb\admin\index.php (13)
