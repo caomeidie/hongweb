@@ -3596,3 +3596,234 @@ Stack trace:
 REQUEST_URI=/hongweb/admin/index.php?r=site/hjghj
 ---
 >>>>>>> 46b208e6382f02231babc2a298b4d63b58649fb6
+2015/04/23 21:34:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfas" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfas')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfas')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/asfas')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/asfas
+---
+2015/04/23 21:35:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "lasfas" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('lasfas')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('lasfas')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/lasfas')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/lasfas
+---
+2015/04/23 21:39:59 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "message".' in F:\wamp\www\hongweb\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\wamp\www\hongweb\admin\protected\components\Controller.php(33): CComponent->__call('message', Array)
+#1 F:\wamp\www\hongweb\admin\protected\components\Controller.php(33): SiteController->message('\xE7\x99\xBB\xE5\xBD\x95\xE8\xB6\x85\xE6\x97\xB6', '301')
+#2 F:\wamp\www\hongweb\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#3 F:\wamp\www\hongweb\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 F:\wamp\www\hongweb\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('logout')
+#6 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/logout')
+#7 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/admin/index.php?r=site/logout
+HTTP_REFERER=http://www.hongweb.dev/admin/index.php?r=site/lasfas
+---
+2015/04/23 21:43:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfs" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfs')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfs')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/asfs')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/asfs
+---
+2015/04/23 21:47:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ldfev" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('ldfev')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('ldfev')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ldfev')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/ldfev
+---
+2015/04/23 21:48:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ldfev" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('ldfev')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('ldfev')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ldfev')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/ldfev
+---
+2015/04/23 21:50:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ldfev" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('ldfev')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('ldfev')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/ldfev')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/ldfev
+---
+2015/04/23 21:50:37 [error] [php] in_array() expects parameter 2 to be array, boolean given (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:33)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index&s=normal&_=1429797037158
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (33)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (18)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/23 21:51:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "rhfg" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('rhfg')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('rhfg')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/rhfg')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/rhfg
+---
+2015/04/23 21:51:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "rhfg" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('rhfg')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('rhfg')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/rhfg')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/rhfg
+---
+2015/04/23 21:52:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "rhfg" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('rhfg')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('rhfg')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/rhfg')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/rhfg
+---
+2015/04/23 21:53:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "rhfg" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('rhfg')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('rhfg')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/rhfg')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/rhfg
+---
+2015/04/23 21:53:23 [error] [php] in_array() expects parameter 2 to be array, boolean given (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:33)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/admin/index.php?r=users/index
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (33)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (18)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/23 21:53:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "zCc" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('zCc')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('zCc')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/zCc')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/zCc
+---
+2015/04/23 21:55:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "zCc" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('zCc')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('zCc')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/zCc')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/zCc
+---
+2015/04/23 21:56:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "zCc" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('zCc')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('zCc')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/zCc')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/zCc
+---
+2015/04/23 22:27:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "zCc" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('zCc')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('zCc')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/zCc')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/zCc
+---
+2015/04/23 22:31:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dfsg" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('dfsg')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('dfsg')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/dfsg')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/dfsg
+---
+2015/04/23 22:31:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('login')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('login')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/login')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/login
+---
+2015/04/23 22:32:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfsd" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfsd')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfsd')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/asfsd')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=users/asfsd
+---
+2015/04/23 22:32:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfsd" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfsd')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfsd')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/asfsd')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/asfsd
+---
+2015/04/23 22:32:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfsd" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfsd')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfsd')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/asfsd')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/admin/index.php?r=site/asfsd
+---

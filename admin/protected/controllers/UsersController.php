@@ -107,5 +107,17 @@ class UsersController extends UserBaseController
             $this->renderPartial('users_edit',array('user'=>$users_info[0]));
         }
     }
+    
+    public function actionError()
+    {
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                echo "<script>alert('请不要乱操作123！')</script>";
+            //$this->render('error', $error);
+        }
+    }
 }
 ?>
