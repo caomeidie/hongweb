@@ -21,7 +21,7 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
-	public function beforeAction(){
+	public function beforeAction($action){
 	    //判断用户登录时间是否已过期
 	    if(!Yii::app()->user->isGuest){
 	        if(time()<Yii::app()->user->getState('sessionTimeoutSeconds')){

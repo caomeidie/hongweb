@@ -142,6 +142,7 @@ class Users extends CActiveRecord
 	 * @return array
 	 */
 	public function usersList($condition, $order='addtime DESC', $limit, $offset){
+	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
 	        if(current($condition) != end($condition))
@@ -176,6 +177,7 @@ class Users extends CActiveRecord
 	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
 	 */
 	public function usersCount($condition){
+	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
 	        if(current($condition) != end($condition))
