@@ -3827,3 +3827,128 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/admin/index.php?r=site/asfsd
 ---
+2015/04/24 11:43:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "slogin" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('slogin')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('slogin')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/slogin')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=users/slogin
+---
+2015/04/24 11:43:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "afsdf" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('afsdf')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('afsdf')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/afsdf')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=site/afsdf
+---
+2015/04/24 13:27:40 [error] [php] in_array() expects parameter 2 to be array, boolean given (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:33)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&s=reported&_=1429853260481
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (33)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (18)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/24 13:31:13 [error] [php] in_array() expects parameter 2 to be array, boolean given (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:33)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/add&_=1429853473638
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (33)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (18)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/24 13:31:16 [error] [php] in_array() expects parameter 2 to be array, boolean given (F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php:33)
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(306): UsersController->beforeAction()
+#1 F:\wamp\www\hongweb\framework\web\CController.php(286): UsersController->runAction()
+#2 F:\wamp\www\hongweb\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#3 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): UsersController->run()
+#4 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 F:\wamp\www\hongweb\admin\index.php(13): CWebApplication->run()
+REQUEST_URI=/hongweb/admin/index.php?r=users/index&s=vip&_=1429853476912
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (33)
+in F:\wamp\www\hongweb\admin\protected\components\UserBaseController.php (18)
+in F:\wamp\www\hongweb\admin\index.php (13)
+2015/04/24 13:36:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('login')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('login')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/login')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=users/login
+---
+2015/04/24 13:36:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "dds" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('dds')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('dds')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/dds')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=users/dds
+---
+2015/04/24 13:36:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "login" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('login')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('login')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/login')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=users/login
+---
+2015/04/24 13:36:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "asfsaf" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('asfsaf')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('asfsaf')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('site/asfsaf')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=site/asfsaf
+---
+2015/04/24 13:37:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "inasfsa" 动作.' in F:\wamp\www\hongweb\framework\web\CController.php:483
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CController.php(270): CController->missingAction('inasfsa')
+#1 F:\wamp\www\hongweb\framework\web\CWebApplication.php(282): CController->run('inasfsa')
+#2 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('users/inasfsa')
+#3 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=users/inasfsa
+---
+2015/04/24 13:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "index/inasfsa"。' in F:\wamp\www\hongweb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('index/inasfsa')
+#1 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=index/inasfsa
+---
+2015/04/24 13:37:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "index/index"。' in F:\wamp\www\hongweb\framework\web\CWebApplication.php:286
+Stack trace:
+#0 F:\wamp\www\hongweb\framework\web\CWebApplication.php(141): CWebApplication->runController('index/index')
+#1 F:\wamp\www\hongweb\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 F:\wamp\www\hongweb\admin\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hongweb/admin/index.php?r=index/index
+---

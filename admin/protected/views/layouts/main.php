@@ -85,7 +85,13 @@ $(function(){
 		}
 	});
 });
-
+function testConfirmMsg(text, url){
+	alertMsg.error(text, {
+		okCall: function(){
+			window.location.href=url;
+		}
+	});
+}
 </script>
 </head>
 

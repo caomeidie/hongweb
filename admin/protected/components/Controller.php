@@ -30,7 +30,8 @@ class Controller extends CController
 	        }else{
 	            Yii::app()->user->logout();
 	            //$this->redirect(Yii::app()->homeUrl.'?r=site/login');
-	            echo $this->message("登录超时", "301");
+	            //echo $this->message("登录超时", "301");
+	            echo "<script>testConfirmMsg('登陆超时，请重新登陆！', '".Yii::app()->request->baseUrl."');</script>";
 	            exit;
 	        }
 	    }else{
