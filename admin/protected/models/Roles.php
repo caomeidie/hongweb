@@ -132,6 +132,6 @@ class Roles extends CActiveRecord
 	 */
 	public function getAllRoles()
 	{
-	    return $this->findAll();
+	    return $this->findAll(array('index'=> 'role_id'));
 	}
 }

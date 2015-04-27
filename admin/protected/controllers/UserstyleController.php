@@ -42,8 +42,7 @@ class UserstyleController extends UserBaseController
         }
         $roles_model = new Roles();
         $roles = $roles_model->getAllRoles();
-        $this->renderPartial('style_add',array('model'=>$model, 'roles'=>$roles));
-    
+        $this->renderPartial('style_add',array('model'=>$model, 'roles'=>$roles));    
     }
     
     public function actionDel()

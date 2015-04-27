@@ -151,6 +151,16 @@ function testConfirmMsg(text, url){
 						</ul>
 					</div>
 					<div class="accordionHeader">
+						<h2><span>Folder</span>文章管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a href="?r=article/index" target="navTab" rel="main">文章列表</a></li>
+							<li><a href="?r=article/add" target="navTab" rel="w_validation">添加文章</a></li>									
+							<li><a href="?r=articleclass/index" target="navTab" rel="w_validation">文章分类</a></li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
 						<h2><span>Folder</span>界面组件</h2>
 					</div>
 					<div class="accordionContent">

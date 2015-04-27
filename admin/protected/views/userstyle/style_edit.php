@@ -15,13 +15,10 @@
 			        <?php $style['roles'] = unserialize($style['roles']); ?>
 			        
     			    <?php foreach ($roles as $id=>$role): ?>
-    			    <?php if(($roles[$id+1]['parent_role_id'] === $role['role_id']) || ($id==0)):?>
-    			    <?php echo '<div class="role_list">'.$role['role_desc'].'<br>'; ?>
+    			    <?php if(($role['parent_role_id'] !=0 && $roles[$role['parent_role_id']]['parent_role_id'] == 0) || $role['parent_role_id'] == 0):?>
+    			    <div class="role_list"><?php echo $role['role_desc']; ?><br>
     			    <?php endif;?>
     			    <input name="UserStyle[roles][]" type="checkbox" <?php if(in_array($role['role_id'], $style['roles'])): ?> checked="checked" <?php endif;?> value=<?php echo $role['role_id']?> <?php if($role['related_role_id']): ?> related="<?php echo $role['related_role_id']; ?>" <?php endif;?> /><?php echo $role['role_desc']?>
-    			    <?php if(($roles[$id+1]['parent_role_id'] !== $role['parent_role_id']) && ($roles[$id+1]['parent_role_id'] !== $role['role_id']) || ($id==0)) :?>
-    			    <?php echo "</div><br>"; ?>
-    			    <?php endif;?>    			    
     			    <?php endforeach;?>
 			    </div>
 			</dd>

@@ -1,6 +1,5 @@
 /.settings/*
 /admin/assets/*
-/protect/assets/*
 /admin/protected/runtime/*
+/protect/assets/*
 /protect/protected/runtime/*
-/admin/protected/runtime/application.log
