@@ -28,7 +28,7 @@ class ArticleClass extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ac_name', 'required'),
+			array('ac_name,ac_sort,ac_parent_id', 'required'),
 			array('ac_sort', 'numerical', 'integerOnly'=>true),
 			array('ac_code', 'length', 'max'=>20),
 			array('ac_name', 'length', 'max'=>100),
@@ -36,6 +36,8 @@ class ArticleClass extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('ac_id, ac_code, ac_name, ac_parent_id, ac_sort', 'safe', 'on'=>'search'),
+		    array('ac_name', 'unique'),
+		    array('ac_code', 'unique'),
 		);
 	}
 
@@ -102,5 +104,67 @@ class ArticleClass extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	/**
+	 * Get all AC
+	 * @return array or null
+	 */
+	public function getAllAC()
+	{
+	    return $this->findAll(array('index'=> 'ac_id'));
+	}
+	
+	/**
+	 * add a AC
+	 * @return boolean add AC's id
+	 */
+	public function addAC()
+	{
+        return $this->save();
+	}
+	
+	/**
+	 * Count AC's number
+	 */
+	public function ACCount(){
+	    return $this->count();
+	}
+	
+	/**
+	 * Get AC list by condition
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function ACList($order='ac_sort DESC', $limit, $offset){
+	    $arr = array(
+	            'order'=>$order,
+	    );
+	
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	
+	    $ACList = $this->findAll($arr);
+	    return $ACList;
+	}
+	
+	/**
+	 * drop AC
+	 * @param $ac_id string or int
+	 */
+	public function ACDropOne($ac_id){
+	
+	    return $this->deleteByPk($ac_id);
+	}
+	
+	/**
+	 * drop AC all
+	 * @param $ac_id array
+	 */
+	public function ACDropAll($ac_id){
+	
+	    return $this->deleteAll("ac_id IN(".$ac_id.")");
 	}
 }

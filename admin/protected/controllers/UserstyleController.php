@@ -27,10 +27,10 @@ class UserstyleController extends UserBaseController
     
     public function actionAdd()
     {
-        $model = new StyleForm();
+        $model = new UserStyle();
         if(isset($_POST['StyleForm']))
         {
-            $model->stylename = $_POST['StyleForm']['stylename'];
+            $model->style_value = $_POST['StyleForm']['stylename'];
             $model->roles = $_POST['StyleForm']['roles'];
             if($model->addStyle()){
                 $result = $this->message("添加成功");
@@ -42,7 +42,7 @@ class UserstyleController extends UserBaseController
         }
         $roles_model = new Roles();
         $roles = $roles_model->getAllRoles();
-        $this->renderPartial('style_add',array('model'=>$model, 'roles'=>$roles));    
+        $this->renderPartial('style_add',array('model'=>$model, 'roles'=>$roles));
     }
     
     public function actionDel()

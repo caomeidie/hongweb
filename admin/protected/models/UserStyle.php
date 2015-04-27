@@ -97,6 +97,15 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
+	 * @return boolean add user's style
+	 */
+	public function addStyle()
+	{
+	    $this->roles = serialize($this->roles);	
+	    return $this->save();
+	}
+	
+	/**
 	 * Get user's style & roles
 	 * @param int $id
 	 * @return Array or null

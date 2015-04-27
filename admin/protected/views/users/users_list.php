@@ -47,7 +47,7 @@ $this->pageTitle=Yii::app()->name;
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
 			<li><a class="add" href="?r=users/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=users/del&uid={sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="delete" id="delete" href="?r=users/del&uid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -70,7 +70,7 @@ $this->pageTitle=Yii::app()->name;
 		</thead>
 		<tbody>
 		<?php foreach($list as $value): ?>
-    		<tr target="sid_user" rel="<?php echo $value['user_id']; ?>">
+    		<tr target="sid" rel="<?php echo $value['user_id']; ?>">
     		    <td><label><input type="checkbox" name="check" value="<?php echo $value['user_id']; ?>" /></label></td>
         		<td><?php echo $value['user_id']; ?></td>
                 <td><?php echo $value['username']; ?></td>
