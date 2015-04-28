@@ -31,6 +31,7 @@ class Article extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+		    array('article_title, article_show, article_time', 'required'),
 			array('ac_id, article_show, article_sort', 'numerical', 'integerOnly'=>true),
 			array('article_url, article_title', 'length', 'max'=>100),
 			array('article_time', 'length', 'max'=>10),
@@ -110,5 +111,14 @@ class Article extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	/**
+	 * add an article
+	 * @return boolean add article_id
+	 */
+	public function addArticle()
+	{
+	    return $this->save();
 	}
 }

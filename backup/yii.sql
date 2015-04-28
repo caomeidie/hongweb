@@ -26,12 +26,12 @@ CREATE TABLE `article` (
   `article_url` varchar(100) DEFAULT NULL COMMENT '跳转链接',
   `article_show` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否显示，0为否，1为是，默认为1',
   `article_sort` tinyint(3) unsigned NOT NULL DEFAULT '255' COMMENT '排序',
-  `article_title` varchar(100) DEFAULT NULL COMMENT '标题',
+  `article_title` varchar(100) NOT NULL COMMENT '标题',
   `article_content` text COMMENT '内容',
   `article_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发布时间',
   PRIMARY KEY (`article_id`),
   KEY `ac_id` (`ac_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 /*Data for the table `article` */
 
@@ -47,11 +47,11 @@ CREATE TABLE `article_class` (
   `ac_sort` tinyint(1) unsigned NOT NULL DEFAULT '255' COMMENT '排序',
   PRIMARY KEY (`ac_id`),
   KEY `ac_parent_id` (`ac_parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='文章分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='文章分类表';
 
 /*Data for the table `article_class` */
 
-insert  into `article_class`(`ac_id`,`ac_code`,`ac_name`,`ac_parent_id`,`ac_sort`) values (6,'notice','公告',0,1);
+insert  into `article_class`(`ac_id`,`ac_code`,`ac_name`,`ac_parent_id`,`ac_sort`) values (7,'sysnotice','系统公告',6,255),(8,'platform','平台公告',6,255),(6,'notice','公告',0,1);
 
 /*Table structure for table `roles` */
 
