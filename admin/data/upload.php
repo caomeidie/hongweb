@@ -15,7 +15,8 @@
 header('Content-Type: text/html; charset=UTF-8');
 
 $inputName='filedata';//表单文件域name
-$attachDir='../data/upload';//上传文件保存路径，结尾不要带/
+$attachDir='../../data/upload';//上传文件保存路径，结尾不要带/
+$showDir = '../data/upload';
 $dirType=1;//1:按天存入目录 2:按月存入目录 3:按扩展名存目录  建议使用按天存
 $maxAttachSize=2097152;//最大上传大小，默认是2M
 $upExt='txt,rar,zip,jpg,jpeg,gif,png,swf,wmv,avi,wma,mp3,mid';//上传扩展名
@@ -95,8 +96,8 @@ if($err==''){
 			PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
 			$newFilename=date("YmdHis").mt_rand(1000,9999).'.'.$extension;
 			$targetPath = $attachDir.'/'.$newFilename;
-			
 			rename($tempPath,$targetPath);
+			$targetPath = $showDir.'/'.$attachSubDir.'/'.$newFilename;
 			@chmod($targetPath,0755);
 			$targetPath=jsonString($targetPath);
 			if($immediate=='1')$targetPath='!'.$targetPath;

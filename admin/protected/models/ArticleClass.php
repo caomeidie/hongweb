@@ -149,6 +149,14 @@ class ArticleClass extends CActiveRecord
 	    $ACList = $this->findAll($arr);
 	    return $ACList;
 	}
+
+	/**
+	 * update AC
+	 * @param $ac_id int
+	 */
+	public function editAC($ac_id){
+	    return $this->updateByPk($ac_id, array('ac_code'=>$this->ac_code, 'ac_name'=>$this->name, 'ac_parent_id'=>$this->ac_parent_id, 'ac_sort'=>$this->ac_sort));
+	}
 	
 	/**
 	 * drop AC

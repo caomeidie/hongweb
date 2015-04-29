@@ -121,4 +121,56 @@ class Article extends CActiveRecord
 	{
 	    return $this->save();
 	}
+	/**
+	 * Count articles' number
+	 */
+	public function articleCount(){
+	    return $this->count();
+	}
+	
+	/**
+	 * Get article list by condition
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function articleList($order='article_sort DESC', $limit, $offset){
+	    $arr = array(
+	            'order'=>$order,
+	    );
+	
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	
+	    $List = $this->findAll($arr);
+	    return $List;
+	}
+	
+	/**
+	 * update article
+	 * @param $article_id int
+	 */
+	public function editArticle($article_id){
+	    return $this->updateByPk($article_id, array('ac_id'=>$this->ac_id, 'article_url'=>$this->article_url, 'article_show'=>$this->article_show, 'article_sort'=>$this->article_sort, 'article_title'=>$this->article_title, 'article_content'=>$this->article_content, 'article_time'=>$this->article_time));
+	}
+	
+	/**
+	 * drop one article
+	 * @param $article_id string or int
+	 */
+	public function articleDropOne($article_id){
+	
+	    return $this->deleteByPk($article_id);
+	}
+	
+	/**
+	 * drop all article
+	 * @param $article_id array
+	 */
+	public function articleDropAll($article_id){
+	
+	    return $this->deleteAll("article_id IN(".$article_id.")");
+	}
+	
 }

@@ -70,7 +70,7 @@ class UsersController extends UserBaseController
     
     public function actionDel()
     {
-        $user_id = Yii::app()->request->getParam('uid');
+        $user_id = Yii::app()->request->getParam('sid');
         $users_model = new Users();
         $user_arr = explode(',', $user_id);
         if(count($user_arr) <= 1){
