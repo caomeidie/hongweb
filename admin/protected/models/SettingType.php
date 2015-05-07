@@ -1,22 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "{{setting}}".
+ * This is the model class for table "{{setting_type}}".
  *
- * The followings are the available columns in table '{{setting}}':
- * @property string $setting_id
- * @property string $setting_key
- * @property string $setting_val
+ * The followings are the available columns in table '{{setting_type}}':
  * @property string $type_id
+ * @property string $type_name
  */
-class Setting extends CActiveRecord
+class SettingType extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{setting}}';
+		return '{{setting_type}}';
 	}
 
 	/**
@@ -27,13 +25,10 @@ class Setting extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('setting_key', 'required'),
-			array('setting_key', 'length', 'max'=>50),
-			array('setting_val', 'length', 'max'=>255),
-			array('type_id', 'length', 'max'=>10),
+			array('type_name', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('setting_id, setting_key, setting_val, type_id', 'safe', 'on'=>'search'),
+			array('type_id, type_name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,7 +40,7 @@ class Setting extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		        'SettingType'=>array(self::BELONGS_TO, 'SettingType', 'type_id'),
+		        'Setting' => array(self::HAS_MANY, 'Setting', 'type_id'),
 		);
 	}
 
@@ -55,10 +50,8 @@ class Setting extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'setting_id' => 'Setting',
-			'setting_key' => 'Setting Key',
-			'setting_val' => 'Setting Val',
 			'type_id' => 'Type',
+			'type_name' => 'Type Name',
 		);
 	}
 
@@ -80,10 +73,8 @@ class Setting extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('setting_id',$this->setting_id,true);
-		$criteria->compare('setting_key',$this->setting_key,true);
-		$criteria->compare('setting_val',$this->setting_val,true);
 		$criteria->compare('type_id',$this->type_id,true);
+		$criteria->compare('type_name',$this->type_name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,23 +85,10 @@ class Setting extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Setting the static model class
+	 * @return SettingType the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-	
-	/**
-	 * Get setting list by type_id
-	 * @param string $order
-	 * @param string $limit
-	 *
-	 * @return array
-	 */
-	public function settingList($type_id=1){;
-	
-	    $list = $this->findAll(array('index'=>'setting_key', 'condition'=>'type_id=:type_id', 'params'=>array(':type_id'=>$type_id)));
-	    return $list;
 	}
 }

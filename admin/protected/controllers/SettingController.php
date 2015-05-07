@@ -1,36 +1,37 @@
 <?php
 
-class SettingController extends Controller
+class SettingController extends UserBaseController
 {
 	public function actionIndex()
 	{
-		$this->render('index');
+	    $model = new Setting();
+        $list = $model->settingList();
+		$this->renderPartial('base', array('setting_list'=>$list, 'model'=>$model));
 	}
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
+	
+	public function actionSave()
 	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
+	    require_once  dirname(Yii::app()->basePath).'/../framework/utils/upload.php';
+	    $model = new Setting();
+	    
+	    $file = new upload();
+	    $file->set_dir('../data/upload/file/','{y}/{m}');
+	    $file->set_thumb(100,80);
+	    $file->set_watermark('../data/sys/watermark.png',6,90);
+	    $fs = $file->execute();
+	    	    
+	    $res = $model->updateAll(array('setting_val'=>$_POST['name']),'setting_key=:key',array(':key'=>'site_name')) ? true : false;
+	    $res = $model->updateAll(array('setting_val'=>$fs[0]['dir'].$fs[0]['name']),'setting_key=:key',array(':key'=>'site_logo')) ? ($res && true) : ($res && false);
+	    $res = $model->updateAll(array('setting_val'=>$_POST['phone']),'setting_key=:key',array(':key'=>'site_phone')) ? ($res && true) : ($res && false);
+	    $res = $model->updateAll(array('setting_val'=>$_POST['email']),'setting_key=:key',array(':key'=>'site_email')) ? ($res && true) : ($res && false);
+	    $res = $model->updateAll(array('setting_val'=>$_POST['icp']),'setting_key=:key',array(':key'=>'icp_number')) ? ($res && true) : ($res && false);
 
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
+        if($res){
+            $result = $this->message("添加成功");
+        }else{
+            $result = $this->message("添加失败", "300");
+        }
+        echo $result;
+        exit;
 	}
-	*/
 }

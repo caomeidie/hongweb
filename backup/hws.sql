@@ -81,10 +81,27 @@ CREATE TABLE `hws_setting` (
   `setting_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `setting_key` varchar(50) NOT NULL,
   `setting_val` varchar(255) DEFAULT '',
+  `type_id` int(10) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 /*Data for the table `hws_setting` */
+
+insert  into `hws_setting`(`setting_id`,`setting_key`,`setting_val`,`type_id`) values (1,'site_logo','../data/upload/file/2015/05/1430989152615.jpg',1),(2,'site_name','hws系统',1),(3,'site_phone','1376796831',1),(4,'site_email','outshadow@sina.com',1),(5,'icp_number','asfsafsdsd',1),(6,'email_type','123345',2),(7,'email_host','123345',2),(8,'email_port','123345',2),(9,'email_addr','123345',2),(10,'email_id','123345',2),(11,'email_pass','123345',2);
+
+/*Table structure for table `hws_setting_type` */
+
+DROP TABLE IF EXISTS `hws_setting_type`;
+
+CREATE TABLE `hws_setting_type` (
+  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `hws_setting_type` */
+
+insert  into `hws_setting_type`(`type_id`,`type_name`) values (1,'站点设置'),(2,'邮件设置'),(3,'SEO设置');
 
 /*Table structure for table `hws_test` */
 
