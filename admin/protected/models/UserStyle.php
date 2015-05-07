@@ -15,7 +15,7 @@ class UserStyle extends CActiveRecord
 	 */
 	public function tableName()
 	{
-	    return 'user_style';
+	    return '{{user_style}}';
 	}
 
 	/**

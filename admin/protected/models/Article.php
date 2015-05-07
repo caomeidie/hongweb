@@ -20,7 +20,7 @@ class Article extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'article';
+		return '{{article}}';
 	}
 
 	/**

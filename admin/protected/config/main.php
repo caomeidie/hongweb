@@ -54,11 +54,12 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=yii',
+			'connectionString' => 'mysql:host=localhost;dbname=hws',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '123456',
 			'charset' => 'utf8',
+			'tablePrefix' => 'hws_',
 		),
 		
 		'errorHandler'=>array(

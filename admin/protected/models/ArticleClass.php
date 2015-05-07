@@ -17,7 +17,7 @@ class ArticleClass extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'article_class';
+		return '{{article_class}}';
 	}
 
 	/**

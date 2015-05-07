@@ -18,7 +18,7 @@ class Roles extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'roles';
+		return '{{roles}}';
 	}
 
 	/**
