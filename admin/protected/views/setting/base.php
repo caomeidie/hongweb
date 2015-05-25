@@ -1,5 +1,5 @@
 <div class="pageContent">
-	<form method="post" name="SettingForm" action="?r=setting/save" class="pageForm required-validate" enctype="multipart/form-data">
+	<form method="post" name="SettingForm" action="?r=setting/save" class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);" enctype="multipart/form-data">
 		<div class="pageFormContent nowrap" layoutH="97">
 		<dl>
 			<dt>网站名称：</dt>
