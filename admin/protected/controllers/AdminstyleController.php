@@ -1,5 +1,6 @@
 <?php
-class UserstyleController extends UserBaseController
+
+class AdminstyleController extends UserBaseController
 {
     
     public function actions()
@@ -15,19 +16,19 @@ class UserstyleController extends UserBaseController
     
     public function actionIndex()
     {
-        $userstyle_model = new Userstyle();
-        $pagination['count'] = $userstyle_model->stylesCount();
+        $adminstyle_model = new Adminstyle();
+        $pagination['count'] = $adminstyle_model->stylesCount();
         $pagination['page'] = is_numeric(Yii::app()->request->getPost('pageNum')) ? Yii::app()->request->getPost('pageNum')-1 : 0;
         $pagination['perpage'] = is_numeric(Yii::app()->request->getPost('numPerPage')) ? Yii::app()->request->getPost('numPerPage') : 5;
         $pagination['pagenum'] = ceil($pagination['count'] / $pagination['perpage']);
         $pagination['offset'] = $pagination['page'] * $pagination['perpage'];
-        $styles_list = $userstyle_model->stylesList('style_id ASC', $pagination['perpage'], $pagination['offset']);
+        $styles_list = $adminstyle_model->stylesList('style_id ASC', $pagination['perpage'], $pagination['offset']);
 		$this->renderPartial('style_list', array('list'=>$styles_list, 'pagination'=>$pagination));
     }
     
     public function actionAdd()
     {
-        $model = new UserStyle();
+        $model = new AdminStyle();
         if(isset($_POST['StyleForm']))
         {
             $model->style_value = $_POST['StyleForm']['stylename'];
@@ -48,15 +49,15 @@ class UserstyleController extends UserBaseController
     public function actionDel()
     {
         $style_id = Yii::app()->request->getParam('sid');
-        $userstyle_model = new Userstyle();
+        $adminstyle_model = new Adminstyle();
         $style_arr = explode(',', $style_id);
         if(count($style_arr) <= 1){
-            if($userstyle_model->styleDropOne($style_id))
+            if($adminstyle_model->styleDropOne($style_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $userstyle_model->styleDropAll($style_id))
+            if($count = $adminstyle_model->styleDropAll($style_id))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");
@@ -68,11 +69,11 @@ class UserstyleController extends UserBaseController
     {
         $style_id = Yii::app()->request->getParam('sid');
         
-        if(isset($_POST['UserStyle']))
+        if(isset($_POST['AdminStyle']))
         {
-            $model=new UserStyle();
-            $model->style_value = $_POST['UserStyle']['style_value'];
-            $model->roles = $_POST['UserStyle']['roles'];
+            $model=new AdminStyle();
+            $model->style_value = $_POST['AdminStyle']['style_value'];
+            $model->roles = $_POST['AdminStyle']['roles'];
             if($model->editStyle($style_id)){
                 $result = $this->message("修改成功", "200");
             }else{
@@ -80,7 +81,7 @@ class UserstyleController extends UserBaseController
             }
             echo $result;
         }else{
-            $model=new UserStyle();
+            $model=new AdminStyle();
             $style_info = $model->findAllByPk($style_id);
             $roles_model = new Roles();
             $roles = $roles_model->getAllRoles();

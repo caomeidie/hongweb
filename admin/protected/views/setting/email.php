@@ -68,7 +68,11 @@ $(document).ready(function(){
 					alert('测试邮件发送失败，请重新配置邮件服务器');
 				},
 			success:function(html){
-				alert(html.msg);
+				if(html.status == 1){
+				    alert('测试邮件发送成功，请查收！');
+				}else{
+					alert('测试邮件发送失败，请重新配置邮件服务器！');
+				}
 			},
 			dataType:'json'
 		});

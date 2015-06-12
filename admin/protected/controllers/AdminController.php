@@ -1,5 +1,5 @@
 <?php
-class UsersController extends UserBaseController
+class AdminController extends UserBaseController
 {
     
     public function actions()
@@ -15,45 +15,43 @@ class UsersController extends UserBaseController
     
     public function actionIndex()
     {
-        $users_model = new Users();
-        $condition = array('user_id'=>array('>=', 1));
+        $admin_model = new Admin();
+        $condition = array('admin_id'=>array('>=', 1));
         if($s = Yii::app()->request->getParam('s')){
             switch ($s){
                 case 'admin':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 2)));
-                    break;
-                case 'vip':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 3)));
-                    break;
-                case 'normal':
                     $condition = array_merge($condition, array('style_id'=>array('=', 1)));
                     break;
-                case 'canceled':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 4)));
+                case 'editor':
+                    $condition = array_merge($condition, array('style_id'=>array('=', 2)));
                     break;
-                case 'reported':
-                    $condition = array_merge($condition, array('style_id'=>array('=', 5)));
+                case 'finance':
+                    $condition = array_merge($condition, array('style_id'=>array('=', 3)));
+                    break;
+                case 'service':
+                    $condition = array_merge($condition, array('style_id'=>array('=', 4)));
                     break;
             }
         }
-        $pagination['count'] = $users_model->usersCount($condition);
+        $pagination['count'] = $admin_model->adminCount($condition);
         $pagination['page'] = is_numeric(Yii::app()->request->getPost('pageNum')) ? Yii::app()->request->getPost('pageNum')-1 : 0;
         $pagination['perpage'] = is_numeric(Yii::app()->request->getPost('numPerPage')) ? Yii::app()->request->getPost('numPerPage') : 5;
         $pagination['pagenum'] = ceil($pagination['count'] / $pagination['perpage']);
         $pagination['offset'] = $pagination['page'] * $pagination['perpage'];
-        $users_list = $users_model->usersList($condition, 'user_id ASC', $pagination['perpage'], $pagination['offset']);
-		$this->renderPartial('users_list', array('list'=>$users_list, 'pagination'=>$pagination));
+        $admin_list = $admin_model->adminList($condition, 'admin_id ASC', $pagination['perpage'], $pagination['offset']);
+		$this->renderPartial('admin_list', array('list'=>$admin_list, 'pagination'=>$pagination));
+        exit;
     }
     
     public function actionAdd()
     {
-        $model=new UsersForm();
-        if(isset($_POST['UsersForm']))
+        $model=new AdminForm();
+        if(isset($_POST['AdminForm']))
         {
-            $model->attributes=$_POST['UsersForm'];
+            $model->attributes=$_POST['AdminForm'];
             if($model->validate())
             {
-                if($model->addUser()){
+                if($model->addAdmin()){
                     $result = $this->message("添加成功");
                 }else{
                     $result = $this->message("添加失败", "300");
@@ -64,22 +62,24 @@ class UsersController extends UserBaseController
             echo $result;
             exit;
         }
-        $this->renderPartial('users_add',array('model'=>$model));
+        $style_model = new AdminStyle();
+        $style_list = $style_model->stylesList();
+        $this->renderPartial('admin_add',array('model'=>$model, 'styles'=>$style_list));
     
     }
     
     public function actionDel()
     {
-        $user_id = Yii::app()->request->getParam('sid');
-        $users_model = new Users();
-        $user_arr = explode(',', $user_id);
-        if(count($user_arr) <= 1){
-            if($users_model->usersDropOne($user_id))
+        $admin_id = Yii::app()->request->getParam('sid');
+        $admin_model = new Admin();
+        $admin_arr = explode(',', $admin_id);
+        if(count($admin_arr) <= 1){
+            if($admin_model->adminDropOne($admin_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $users_model->usersDropAll($user_id))
+            if($count = $admin_model->adminDropAll($admin_id))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");
@@ -89,22 +89,24 @@ class UsersController extends UserBaseController
     
     public function actionEdit()
     {
-        $user_id = Yii::app()->request->getParam('uid');
+        $admin_id = Yii::app()->request->getParam('uid');
         
-        if(isset($_POST['Users']))
+        if(isset($_POST['Admin']))
         {
-            $model=new Users();
-            $model->attributes=$_POST['Users'];
-            if($model->editUser($user_id)){
+            $model=new Admin();
+            $model->attributes=$_POST['Admin'];
+            if($model->editAdmin($admin_id)){
                 $result = $this->message("修改成功", "200");
             }else{
                 $result = $this->message("修改失败", "300");
             }
             echo $result;
         }else{
-            $model=new Users();
-            $users_info = $model->findAllByPk($user_id);
-            $this->renderPartial('users_edit',array('user'=>$users_info[0]));
+            $model=new Admin();
+            $admin_info = $model->findAllByPk($admin_id);
+            $style_model = new AdminStyle();
+            $style_list = $style_model->stylesList();
+            $this->renderPartial('admin_edit',array('admin'=>$admin_info[0], 'styles'=>$style_list));
         }
     }
     

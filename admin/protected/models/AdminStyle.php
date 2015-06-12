@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "user_style".
+ * This is the model class for table "admin_style".
  *
- * The followings are the available columns in table 'user_style':
+ * The followings are the available columns in table 'admin_style':
  * @property string $style_id
  * @property string $style_value
  * @property string $roles
  */
-class UserStyle extends CActiveRecord
+class AdminStyle extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-	    return '{{user_style}}';
+	    return '{{admin_style}}';
 	}
 
 	/**
@@ -24,7 +24,7 @@ class UserStyle extends CActiveRecord
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
+		// will receive admin inputs.
 		return array(
 			array('style_value, roles', 'required'),
 			array('style_value', 'length', 'max'=>50),
@@ -42,7 +42,7 @@ class UserStyle extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		        'Users'=>array(self::HAS_MANY, 'Users', 'style_id'),
+		        'Admin'=>array(self::HAS_MANY, 'Admin', 'style_id'),
 		);
 	}
 
@@ -89,7 +89,7 @@ class UserStyle extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return UserStyle the static model class
+	 * @return AdminStyle the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -97,7 +97,7 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
-	 * @return boolean add user's style
+	 * @return boolean add admin's style
 	 */
 	public function addStyle()
 	{
@@ -106,7 +106,7 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
-	 * Get user's style & roles
+	 * Get admin's style & roles
 	 * @param int $id
 	 * @return Array or null
 	 */
@@ -115,13 +115,13 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
-	 * Get userstyles by condition
+	 * Get adminstyles by condition
 	 * @param string $order
 	 * @param string $limit
 	 *
 	 * @return array
 	 */
-	public function stylesList($order='style_id DESC', $limit, $offset){
+	public function stylesList($order='style_id ASC', $limit=0, $offset=0){
 	    $arr = array(
 	            'order'=>$order,
 	    );
@@ -149,7 +149,7 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
-	 * Count userstyle's number
+	 * Count adminstyle's number
 	 */
 	public function stylesCount(){
 	
@@ -161,7 +161,7 @@ class UserStyle extends CActiveRecord
 	}
 	
 	/**
-	 * update userstyle
+	 * update adminstyle
 	 * @param $style_id int
 	 */
 	public function editStyle($style_id){

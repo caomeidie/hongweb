@@ -1,11 +1,11 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "admin".
  *
- * The followings are the available columns in table 'users':
- * @property string $user_id
- * @property string $username
+ * The followings are the available columns in table 'admin':
+ * @property string $admin_id
+ * @property string $adminname
  * @property string $password
  * @property string $email
  * @property string $phone
@@ -15,14 +15,14 @@
  * @property string $lastip
  * @property string $status
  */
-class Users extends CActiveRecord
+class Admin extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{users}}';
+		return '{{admin}}';
 	}
 
 	/**
@@ -31,18 +31,18 @@ class Users extends CActiveRecord
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
+		// will receive admin inputs.
 		return array(
-			array('username, password', 'required'),
+			array('adminname, password', 'required'),
 			array('logintimes, style_id', 'numerical', 'integerOnly'=>true),
-			array('username, email, phone', 'length', 'max'=>50),
+			array('adminname, email, phone', 'length', 'max'=>50),
 			array('password', 'length', 'max'=>60),
 			array('addtime, updatetime, lastip', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>1),
 		    array('style_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('user_id, username, password, email, phone, addtime, updatetime, logintimes, lastip, status, style_id', 'safe', 'on'=>'search'),
+			array('admin_id, adminname, password, email, phone, addtime, updatetime, logintimes, lastip, status, style_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +54,7 @@ class Users extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		        'UserStyle'=>array(self::BELONGS_TO, 'UserStyle', 'style_id'),
+		        'AdminStyle'=>array(self::BELONGS_TO, 'AdminStyle', 'style_id'),
 		);
 	}
 
@@ -64,8 +64,8 @@ class Users extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'user_id' => 'User',
-			'username' => 'Username',
+			'admin_id' => 'Admin',
+			'adminname' => 'Adminname',
 			'password' => 'Password',
 			'email' => 'Email',
 			'phone' => 'Phone',
@@ -96,8 +96,8 @@ class Users extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('username',$this->username,true);
+		$criteria->compare('admin_id',$this->admin_id,true);
+		$criteria->compare('adminname',$this->adminname,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
@@ -117,7 +117,7 @@ class Users extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Users the static model class
+	 * @return Admin the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -125,7 +125,7 @@ class Users extends CActiveRecord
 	}
 	
 	/**
-	 * validate user's password
+	 * validate admin's password
 	 * @param string $password
 	 * @return ture or false
 	 */
@@ -134,14 +134,14 @@ class Users extends CActiveRecord
 	}
 	
 	/**
-	 * Get users by condition
+	 * Get admin by condition
 	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
 	 * @param string $order
 	 * @param string $limit
 	 * 
 	 * @return array
 	 */
-	public function usersList($condition, $order='addtime DESC', $limit, $offset){
+	public function adminList($condition, $order='addtime DESC', $limit, $offset){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -164,19 +164,19 @@ class Users extends CActiveRecord
 	
 
 	/**
-	 * get users info
-	 * @param $user_id array
+	 * get admin info
+	 * @param $admin_id array
 	 */
-	public function usersInfo($user_id){
+	public function adminInfo($admin_id){
 	
-	    return $this->deleteAll("user_id IN(".$user_id.")");
+	    return $this->deleteAll("admin_id IN(".$admin_id.")");
 	}
 	
 	/**
-	 * Count user's number
+	 * Count admin's number
 	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
 	 */
-	public function usersCount($condition){
+	public function adminCount($condition){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -194,28 +194,28 @@ class Users extends CActiveRecord
 	}
 	
 	/**
-	 * drop users
-	 * @param $user_id string or int
+	 * drop admin
+	 * @param $admin_id string or int
 	 */
-	public function usersDropOne($user_id){
+	public function adminDropOne($admin_id){
 	    
-	    return $this->deleteByPk($user_id);
+	    return $this->deleteByPk($admin_id);
 	}
 	
 	/**
-	 * drop users
-	 * @param $user_id array
+	 * drop admin
+	 * @param $admin_id array
 	 */
-	public function usersDropAll($user_id){
+	public function adminDropAll($admin_id){
 	     
-	    return $this->deleteAll("user_id IN(".$user_id.")");
+	    return $this->deleteAll("admin_id IN(".$admin_id.")");
 	}
 	
     /**
-     * update users
-     * @param $user_id int
+     * update admin
+     * @param $admin_id int
      */
-    public function editUser($user_id){
-        return $this->updateByPk($user_id, array('username'=>$this->username, 'email'=>$this->email, 'phone'=>$this->phone, 'updatetime'=>time()));
+    public function editAdmin($admin_id){
+        return $this->updateByPk($admin_id, array('adminname'=>$this->adminname, 'email'=>$this->email, 'phone'=>$this->phone, 'style_id'=>$this->style_id, 'updatetime'=>time()));
     }
 }

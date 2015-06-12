@@ -3,7 +3,7 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-<form id="pagerForm" method="post" action="?r=userstyle/index">
+<form id="pagerForm" method="post" action="?r=adminstyle/index">
 	<input type="hidden" name="status" value="${param.status}">
 	<input type="hidden" name="keywords" value="${param.keywords}" />
 	<input type="hidden" name="pageNum" value="1" />
@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name;
 	<input type="hidden" name="orderField" value="${param.orderField}" />
 </form>
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="?r=userstyle/index" method="post">
+	<form onsubmit="return navTabSearch(this);" action="?r=adminstyle/index" method="post">
 	<div class="searchBar">
 	    <table class="searchContent">
 			<tr>
@@ -46,8 +46,8 @@ $this->pageTitle=Yii::app()->name;
 	<div class="panelBar">
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
-			<li><a class="add" href="?r=userstyle/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=userstyle/del&sid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="add" href="?r=adminstyle/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="delete" id="delete" href="?r=adminstyle/del&sid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -70,8 +70,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['style_value']; ?></td>
                 <td><?php echo $value['roles']; ?></td>
                 <td>
-                    <a class="delete" href="?r=userstyle/del&sid=<?php echo $value['style_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=userstyle/edit&sid=<?php echo $value['style_id']; ?>" target="navTab"><span>修改</span></a>
+                    <a class="delete" href="?r=adminstyle/del&sid=<?php echo $value['style_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="?r=adminstyle/edit&sid=<?php echo $value['style_id']; ?>" target="navTab"><span>修改</span></a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

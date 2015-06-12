@@ -130,24 +130,23 @@ function testConfirmMsg(text, url){
 
 				<div class="accordion" fillSpace="sidebar">
 				    <div class="accordionHeader">
-						<h2><span>Folder</span>用户管理</h2>
+						<h2><span>Folder</span>后台用户管理</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">用户列表</a>
+							<li><a href="tabsPage.html" target="navTab">后台用户列表</a>
 								<ul>
-									<li><a href="?r=users/index" target="navTab" rel="main">全部用户</a></li>
-									<li><a href="?r=users/index&s=admin" target="navTab" rel="main">管理员</a></li>
-									<li><a href="?r=users/index&s=vip" target="navTab" rel="main">VIP用户</a></li>
-									<li><a href="?r=users/index&s=normal" target="navTab" rel="main">普通用户</a></li>
-									<li><a href="?r=users/index&s=canceled" target="navTab" rel="main">已注销用户</a></li>
-									<li><a href="?r=users/index&s=reported" target="navTab" rel="main">被举报用户</a></li>
+									<li><a href="?r=admin/index" target="navTab" rel="main">全部用户</a></li>
+									<li><a href="?r=admin/index&s=admin" target="navTab" rel="main">主管理员</a></li>
+									<li><a href="?r=admin/index&s=editor" target="navTab" rel="main">编辑用户</a></li>
+									<li><a href="?r=admin/index&s=finance" target="navTab" rel="main">财务用户</a></li>
+									<li><a href="?r=admin/index&s=service" target="navTab" rel="main">客服用户</a></li>
 								</ul>
 							</li>
 							
-							<li><a href="?r=users/add" target="navTab" rel="w_validation">添加用户</a></li>
+							<li><a href="?r=admin/add" target="navTab" rel="w_validation">添加后台用户</a></li>
 									
-							<li><a href="?r=userstyle/index" target="navTab" rel="w_validation">用户类型</a></li>
+							<li><a href="?r=adminstyle/index" target="navTab" rel="w_validation">后台用户类型</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">
@@ -168,7 +167,13 @@ function testConfirmMsg(text, url){
 						<ul class="tree treeFolder">
 							<li><a href="?r=setting/index" target="navTab" rel="main">站点管理</a></li>
 							<li><a href="?r=setting/email" target="navTab" rel="w_validation">邮件设置</a></li>
-							<li><a href="?r=setting/seo" target="navTab" rel="w_validation">SEO设置</a></li>
+							<li><a href="tabsPage.html" target="navTab">SEO设置</a>
+								<ul>
+									<li><a href="?setting/seo" target="navTab" rel="main">首页</a></li>
+									<li><a href="?setting/seo" target="navTab" rel="main">文章</a></li>
+									<li><a href="?setting/seo" target="navTab" rel="main">列表</a></li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 					<div class="accordionHeader">
