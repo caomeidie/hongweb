@@ -7,7 +7,7 @@
  */
 class LoginForm extends CFormModel
 {
-	public $adminname;
+	public $admin_name;
 	public $password;
 	public $rememberMe;
 	public $verifyCode;
@@ -16,14 +16,14 @@ class LoginForm extends CFormModel
 
 	/**
 	 * Declares the validation rules.
-	 * The rules state that adminname and password are required,
+	 * The rules state that admin_name and password are required,
 	 * and password needs to be authenticated.
 	 */
 	public function rules()
 	{
 		return array(
-			// adminname and password are required
-			array('adminname, password, verifyCode', 'required'),
+			// admin_name and password are required
+			array('admin_name, password, verifyCode', 'required'),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -38,7 +38,7 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-		    'adminname'=>'用户名',
+		    'admin_name'=>'用户名',
 		    'password'=>'密码',
 			'rememberMe'=>'下次记住我？',
 		    'verifyCode' =>'验证码',
@@ -53,21 +53,21 @@ class LoginForm extends CFormModel
 	{
 		if(!$this->hasErrors())
 		{
-			$this->_identity=new UserIdentity($this->adminname,$this->password);
+			$this->_identity=new UserIdentity($this->admin_name,$this->password);
 			if(!$this->_identity->authenticate())
 				$this->addError('password','用户名或密码有误.');
 		}
 	}
 
 	/**
-	 * Logs in the admin using the given adminname and password in the model.
+	 * Logs in the admin using the given admin_name and password in the model.
 	 * @return boolean whether login is successful
 	 */
 	public function login()
 	{
 		if($this->_identity===null)
 		{
-			$this->_identity=new UserIdentity($this->adminname,$this->password);
+			$this->_identity=new UserIdentity($this->admin_name,$this->password);
 			$this->_identity->authenticate();
 		}
 		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)

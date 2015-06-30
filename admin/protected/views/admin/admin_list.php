@@ -73,7 +73,7 @@ $this->pageTitle=Yii::app()->name;
     		<tr target="sid" rel="<?php echo $value['admin_id']; ?>">
     		    <td><label><input type="checkbox" name="check" value="<?php echo $value['admin_id']; ?>" /></label></td>
         		<td><?php echo $value['admin_id']; ?></td>
-                <td><?php echo $value['adminname']; ?></td>
+                <td><?php echo $value['admin_name']; ?></td>
                 <td><?php echo $value['email']; ?></td>
                 <td><?php echo $value['phone']; ?></td>
                 <td><?php echo date('Y-m-d H:i:s', $value['addtime']); ?></td>

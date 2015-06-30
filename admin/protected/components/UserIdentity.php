@@ -11,7 +11,7 @@ class UserIdentity extends CUserIdentity
     
 	/**
 	 * Authenticates a user.
-	 * The example implementation makes sure if the adminname and password
+	 * The example implementation makes sure if the admin_name and password
 	 * are both 'demo'.
 	 * In practical applications, this should be changed to authenticate
 	 * against some persistent user identity storage (e.g. database).
@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 	    $admin_model = Admin::model();
-	    $admin = $admin_model->find("adminname=:adminname or email=:email or phone=:phone", array(':adminname'=>$this->username, ':email'=>$this->username, ':phone'=>$this->username));
+	    $admin = $admin_model->find("admin_name=:admin_name or email=:email or phone=:phone", array(':admin_name'=>$this->username, ':email'=>$this->username, ':phone'=>$this->username));
 	    	    
 		if($admin == null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -34,13 +34,13 @@ class UserIdentity extends CUserIdentity
 	}
 	
 	/**
-	 * Validate if the adminname or the phone or the email has exsit
+	 * Validate if the admin_name or the phone or the email has exsit
 	 * @return boolean whether authentication succeeds.
 	 */
 	public function validate()
 	{
 	    $admin_model = Admin::model();
-	    $admin = $admin_model->find("adminname='".$this->username."' or email='".$this->username."' or phone='".$this->username."'");
+	    $admin = $admin_model->find("admin_name='".$this->username."' or email='".$this->username."' or phone='".$this->username."'");
 	    if($admin == null)
 	        return true;
 	    else

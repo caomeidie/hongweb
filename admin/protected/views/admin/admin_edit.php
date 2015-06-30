@@ -5,7 +5,7 @@
 		<dl>
 			<dt>管理员名：</dt>
 			<dd>
-		        <input name="Admin[adminname]" id="Admin_adminname" type="text"  class="required" value="<?php echo $admin['adminname']; ?>" />
+		        <input name="Admin[admin_name]" id="Admin_admin_name" type="text"  class="required" value="<?php echo $admin['admin_name']; ?>" />
 		    </dd>
 		</dl>
 		<dl>

@@ -19,9 +19,9 @@
 	<p class="note">带*为必填项</p>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'adminname'); ?>
-		<?php echo $form->textField($model,'adminname'); ?>
-		<?php echo $form->error($model,'adminname'); ?>
+		<?php echo $form->labelEx($model,'admin_name'); ?>
+		<?php echo $form->textField($model,'admin_name'); ?>
+		<?php echo $form->error($model,'admin_name'); ?>
 	</div>
 
 	<div class="row">

@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'admin':
  * @property string $admin_id
- * @property string $adminname
+ * @property string $admin_name
  * @property string $password
  * @property string $email
  * @property string $phone
@@ -33,16 +33,16 @@ class Admin extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive admin inputs.
 		return array(
-			array('adminname, password', 'required'),
+			array('admin_name, password', 'required'),
 			array('logintimes, style_id', 'numerical', 'integerOnly'=>true),
-			array('adminname, email, phone', 'length', 'max'=>50),
+			array('admin_name, email, phone', 'length', 'max'=>50),
 			array('password', 'length', 'max'=>60),
 			array('addtime, updatetime, lastip', 'length', 'max'=>20),
 			array('status', 'length', 'max'=>1),
 		    array('style_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('admin_id, adminname, password, email, phone, addtime, updatetime, logintimes, lastip, status, style_id', 'safe', 'on'=>'search'),
+			array('admin_id, admin_name, password, email, phone, addtime, updatetime, logintimes, lastip, status, style_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,7 +65,7 @@ class Admin extends CActiveRecord
 	{
 		return array(
 			'admin_id' => 'Admin',
-			'adminname' => 'Adminname',
+			'admin_name' => 'admin_name',
 			'password' => 'Password',
 			'email' => 'Email',
 			'phone' => 'Phone',
@@ -97,7 +97,7 @@ class Admin extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('admin_id',$this->admin_id,true);
-		$criteria->compare('adminname',$this->adminname,true);
+		$criteria->compare('admin_name',$this->admin_name,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('phone',$this->phone,true);
@@ -216,6 +216,6 @@ class Admin extends CActiveRecord
      * @param $admin_id int
      */
     public function editAdmin($admin_id){
-        return $this->updateByPk($admin_id, array('adminname'=>$this->adminname, 'email'=>$this->email, 'phone'=>$this->phone, 'style_id'=>$this->style_id, 'updatetime'=>time()));
+        return $this->updateByPk($admin_id, array('admin_name'=>$this->admin_name, 'email'=>$this->email, 'phone'=>$this->phone, 'style_id'=>$this->style_id, 'updatetime'=>time()));
     }
 }

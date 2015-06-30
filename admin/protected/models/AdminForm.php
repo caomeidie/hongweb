@@ -7,7 +7,7 @@
  */
 class AdminForm extends CFormModel
 {
-    public $adminname;
+    public $admin_name;
     public $password;
     public $checkpwd;
     public $email;
@@ -17,17 +17,17 @@ class AdminForm extends CFormModel
     private $_identity;
     /**
      * Declares the validation rules.
-     * The rules state that adminname and password are required,
+     * The rules state that admin_name and password are required,
      * and password needs to be authenticated.
      */
     public function rules()
     {
         return array(
-                // adminname, password, checkpwd and style_id are required
-                array('adminname, password, checkpwd, style_id', 'required'),
+                // admin_name, password, checkpwd and style_id are required
+                array('admin_name, password, checkpwd, style_id', 'required'),
                 array('checkpwd', 'compare', 'compareAttribute'=>'password'),
                 array('email', 'email'),
-                array('adminname', 'unique', 'className'=>'Admin', 'attributeName'=>'adminname'),
+                array('admin_name', 'unique', 'className'=>'Admin', 'attributeName'=>'admin_name'),
                 array('email', 'unique', 'className'=>'Admin', 'attributeName'=>'email'),
                 array('phone', 'unique', 'className'=>'Admin', 'attributeName'=>'phone'),
                 array('phone', 'match', 'pattern' =>'/^(1(([35][0-9])|(47)|[8][01236789]))\d{8}$/'),
@@ -39,7 +39,7 @@ class AdminForm extends CFormModel
      */
     public function attributeLabels() {
         return array(
-                'adminname' => '用户名',
+                'admin_name' => '用户名',
                 'password' => '密码',
                 'checkpwd' => '确认密码',
                 'email' => 'Email',
@@ -53,10 +53,10 @@ class AdminForm extends CFormModel
      */
     public function addAdmin()
     {
-        $this->_identity=new UserIdentity($this->adminname, $this->password);
+        $this->_identity=new UserIdentity($this->admin_name, $this->password);
         if($this->_identity->validate()){
             $admin_model = new Admin();
-            $admin_model->adminname = $this->adminname;
+            $admin_model->admin_name = $this->admin_name;
             $admin_model->password = CPasswordHelper::hashPassword($this->password);
             $admin_model->email = $this->email;
             $admin_model->phone = $this->phone;

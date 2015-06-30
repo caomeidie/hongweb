@@ -5,7 +5,7 @@
 		<dl>
 			<dt>管理员名：</dt>
 			<dd>
-		        <input name="AdminForm[adminname]" id="AdminForm_adminname" type="text"  class="required" />
+		        <input name="AdminForm[admin_name]" id="AdminForm_admin_name" type="text"  class="required" />
 		    </dd>
 		</dl>
 		<dl>
