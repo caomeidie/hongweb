@@ -146,6 +146,22 @@ CREATE TABLE `hws_attribute_value` (
 
 /*Data for the table `hws_attribute_value` */
 
+/*Table structure for table `hws_brand` */
+
+DROP TABLE IF EXISTS `hws_brand`;
+
+CREATE TABLE `hws_brand` (
+  `brand_id` mediumint(11) NOT NULL AUTO_INCREMENT COMMENT '索引ID',
+  `brand_name` varchar(100) DEFAULT NULL COMMENT '品牌名称',
+  `brand_class` varchar(50) DEFAULT NULL COMMENT '类别名称',
+  `brand_pic` varchar(100) DEFAULT NULL COMMENT '图片',
+  `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
+  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
+  PRIMARY KEY (`brand_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='品牌表';
+
+/*Data for the table `hws_brand` */
+
 /*Table structure for table `hws_goods` */
 
 DROP TABLE IF EXISTS `hws_goods`;
@@ -274,32 +290,34 @@ DROP TABLE IF EXISTS `hws_member`;
 CREATE TABLE `hws_member` (
   `member_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '会员id',
   `member_name` varchar(50) NOT NULL DEFAULT '' COMMENT '会员名称',
-  `member_passwd` varchar(32) NOT NULL COMMENT '会员密码',
+  `member_passwd` varchar(64) NOT NULL COMMENT '会员密码',
   `member_truename` varchar(20) DEFAULT NULL COMMENT '真实姓名',
+  `member_idcard` varchar(20) DEFAULT NULL COMMENT '身份证',
   `member_mobile` varchar(20) NOT NULL COMMENT '会员手机',
   `member_avatar` varchar(50) DEFAULT NULL COMMENT '会员头像',
   `member_sex` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '会员性别:0保密，1男，2女',
   `member_birthday` date DEFAULT NULL COMMENT '生日',
-  `member_email` varchar(100) NOT NULL COMMENT '会员邮箱',
-  `member_qq` varchar(100) DEFAULT NULL COMMENT 'qq',
-  `member_ww` varchar(100) DEFAULT NULL COMMENT '阿里旺旺',
-  `member_login_num` int(11) NOT NULL DEFAULT '1' COMMENT '登录次数',
-  `member_time` varchar(10) NOT NULL COMMENT '会员注册时间',
-  `member_login_time` varchar(10) NOT NULL COMMENT '当前登录时间',
-  `member_old_login_time` varchar(10) NOT NULL COMMENT '上次登录时间',
-  `member_login_ip` varchar(20) DEFAULT NULL COMMENT '当前登录ip',
-  `member_old_login_ip` varchar(20) DEFAULT NULL COMMENT '上次登录ip',
+  `member_email` varchar(100) DEFAULT NULL COMMENT '会员邮箱',
+  `member_login_num` int(11) unsigned DEFAULT '1' COMMENT '登录次数',
+  `member_addtime` varchar(10) DEFAULT NULL COMMENT '会员注册时间',
+  `member_logintime` varchar(10) DEFAULT NULL COMMENT '当前登录时间',
+  `member_old_logintime` varchar(10) DEFAULT NULL COMMENT '上次登录时间',
+  `member_loginip` varchar(20) DEFAULT NULL COMMENT '当前登录ip',
+  `member_old_loginip` varchar(20) DEFAULT NULL COMMENT '上次登录ip',
   `member_points` int(11) NOT NULL DEFAULT '0' COMMENT '会员积分',
   `member_state` tinyint(1) NOT NULL DEFAULT '1' COMMENT '会员的开启状态 1为开启 0为关闭',
   `member_areaid` int(11) DEFAULT NULL COMMENT '地区ID',
   `member_cityid` int(11) DEFAULT NULL COMMENT '城市ID',
   `member_provinceid` int(11) DEFAULT NULL COMMENT '省份ID',
   `member_areainfo` varchar(255) DEFAULT NULL COMMENT '地区内容',
+  `member_vip` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否是vip：0不是，1是',
   PRIMARY KEY (`member_id`),
   UNIQUE KEY `UNIQUE` (`member_name`,`member_mobile`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='会员表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='会员表';
 
 /*Data for the table `hws_member` */
+
+insert  into `hws_member`(`member_id`,`member_name`,`member_passwd`,`member_truename`,`member_idcard`,`member_mobile`,`member_avatar`,`member_sex`,`member_birthday`,`member_email`,`member_login_num`,`member_addtime`,`member_logintime`,`member_old_logintime`,`member_loginip`,`member_old_loginip`,`member_points`,`member_state`,`member_areaid`,`member_cityid`,`member_provinceid`,`member_areainfo`,`member_vip`) values (1,'xiaomi123','$2a$13$EH2jR5wPh32XQrxYNhNKl.xqV5.DbMOaoW6tv7XPzmFdRq2RPD7sC','小米','37028219894568','13767960999',NULL,2,'0000-00-00','xiaomi124@sina.com',1,'1435738005','1435738005','1435738005','127.0.0.1','127.0.0.1',0,1,NULL,NULL,NULL,NULL,0),(2,'xiaomi','$2a$13$EH2jR5wPh32XQrxYNhNKl.xqV5.DbMOaoW6tv7XPzmFdRq2RPD7sC','小米','37028219894567','13767960998',NULL,0,'1989-12-23','xiaomi@sina.com',1,'1435738005','1435738005','1435738005','127.0.0.1','127.0.0.1',0,0,NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `hws_recommend` */
 
@@ -377,6 +395,24 @@ CREATE TABLE `hws_setting_type` (
 /*Data for the table `hws_setting_type` */
 
 insert  into `hws_setting_type`(`type_id`,`type_name`) values (1,'站点设置'),(2,'邮件设置'),(3,'SEO设置');
+
+/*Table structure for table `hws_sms` */
+
+DROP TABLE IF EXISTS `hws_sms`;
+
+CREATE TABLE `hws_sms` (
+  `sms_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '信息id',
+  `mobile` varchar(20) NOT NULL COMMENT '手机号',
+  `sms_type` varchar(20) NOT NULL COMMENT '发送模板类型：code(验证码), notice(充值通知), deal(消费通知)',
+  `sms_status` int(2) NOT NULL COMMENT '发送状态：1为成功，0为失败',
+  `sms_contents` varchar(250) NOT NULL COMMENT '信息内容',
+  `sms_code` longtext COMMENT '验证码，当发送模板为code类型时使用',
+  `sms_return` varchar(50) NOT NULL COMMENT '发送返回结果',
+  `sms_send_time` varchar(50) NOT NULL COMMENT '发送时间',
+  PRIMARY KEY (`sms_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `hws_sms` */
 
 /*Table structure for table `hws_spec` */
 

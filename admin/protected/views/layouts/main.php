@@ -161,6 +161,61 @@ function testConfirmMsg(text, url){
 						</ul>
 					</div>
 					<div class="accordionHeader">
+						<h2><span>Folder</span>会员管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a href="tabsPage.html" target="navTab">会员列表</a>
+								<ul>
+									<li><a href="?r=member/index" target="navTab" rel="main">全部会员</a></li>
+									<li><a href="?r=member/index&s=vip" target="navTab" rel="main">VIP会员</a></li>
+									<li><a href="?r=member/index&s=block" target="navTab" rel="main">屏蔽的会员</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="?r=member/add" target="navTab" rel="w_validation">添加会员</a></li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
+						<h2><span>Folder</span>店铺管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a href="tabsPage.html" target="navTab">店铺列表</a>
+								<ul>
+									<li><a href="?r=store/index" target="navTab" rel="main">全部店铺</a></li>
+									<li><a href="?r=store/index&s=close" target="navTab" rel="main">关闭的店铺</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="?r=store/add" target="navTab" rel="w_validation">添加店铺</a></li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
+						<h2><span>Folder</span>商品管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a href="tabsPage.html" target="navTab">商品列表</a>
+								<ul>
+									<li><a href="?r=goods/index" target="navTab" rel="main">全部商品</a></li>
+									<li><a href="?r=goods/index&s=notshow" target="navTab" rel="main">下架的商品</a></li>
+									<li><a href="?r=goods/index&s=runout" target="navTab" rel="main">断货的商品</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="?r=goods/add" target="navTab" rel="w_validation">添加商品</a></li>
+							<li><a href="?r=goodsclass/index" target="navTab" rel="w_validation">商品分类</a></li>
+							<li><a href="?r=goodsclass/add" target="navTab" rel="w_validation">添加商品分类</a></li>
+							<li><a href="?r=goodstype/index" target="navTab" rel="w_validation">商品类型</a></li>
+							<li><a href="?r=goodstype/add" target="navTab" rel="w_validation">添加商品类型</a></li>
+							<li><a href="?r=goodsspec/index" target="navTab" rel="w_validation">商品规格</a></li>
+							<li><a href="?r=goodsspec/add" target="navTab" rel="w_validation">添加商品规格</a></li>
+							<li><a href="?r=goodsbrand/index" target="navTab" rel="w_validation">商品品牌</a></li>
+							<li><a href="?r=goodsbrand/add" target="navTab" rel="w_validation">添加商品品牌</a></li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
 						<h2><span>Folder</span>系统管理</h2>
 					</div>
 					<div class="accordionContent">

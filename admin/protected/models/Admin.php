@@ -161,17 +161,7 @@ class Admin extends CActiveRecord
 	    	    
 	    return $this->findAll($arr);
 	}
-	
-
-	/**
-	 * get admin info
-	 * @param $admin_id array
-	 */
-	public function adminInfo($admin_id){
-	
-	    return $this->deleteAll("admin_id IN(".$admin_id.")");
-	}
-	
+		
 	/**
 	 * Count admin's number
 	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))

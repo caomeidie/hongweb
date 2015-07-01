@@ -1,4 +1,3 @@
-
 <div class="pageContent">
 	<form method="post" action="?r=admin/edit&uid=<?php echo $admin['admin_id']; ?>" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
 		<div class="pageFormContent nowrap" layoutH="97">
