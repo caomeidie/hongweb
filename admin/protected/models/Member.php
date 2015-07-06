@@ -54,6 +54,10 @@ class Member extends CActiveRecord
 			array('member_addtime, member_logintime, member_old_logintime', 'length', 'max'=>10),
 			array('member_areainfo', 'length', 'max'=>255),
 			array('member_birthday', 'safe'),
+	        array('member_name', 'unique', 'attributeName'=>'member_name'),
+		    array('member_email', 'unique', 'attributeName'=>'member_email'),
+	        array('member_mobile', 'unique', 'attributeName'=>'member_mobile'),
+	        array('member_idcard', 'unique', 'attributeName'=>'member_idcard'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('member_id, member_name, member_passwd, member_truename, member_idcard, member_mobile, member_avatar, member_sex, member_birthday, member_email, member_login_num, member_addtime, member_logintime, member_old_logintime, member_loginip, member_old_loginip, member_points, member_state, member_areaid, member_cityid, member_provinceid, member_areainfo, member_vip', 'safe', 'on'=>'search'),

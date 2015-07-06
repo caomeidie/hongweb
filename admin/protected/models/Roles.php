@@ -34,6 +34,7 @@ class Roles extends CActiveRecord
 			array('role_value', 'length', 'max'=>50),
 			array('action, role_desc', 'length', 'max'=>255),
 			array('parent_role_id', 'length', 'max'=>11),
+		    array('role_value', 'unique', 'attributeName'=>'role_value'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('role_id, role_value, action, role_desc, parent_role_id, related_role_id', 'safe', 'on'=>'search'),

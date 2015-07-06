@@ -31,6 +31,7 @@ class Setting extends CActiveRecord
 			array('setting_key', 'length', 'max'=>50),
 			array('setting_val', 'length', 'max'=>255),
 			array('type_id', 'length', 'max'=>10),
+		    array('setting_key', 'unique', 'attributeName'=>'setting_key'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('setting_id, setting_key, setting_val, type_id', 'safe', 'on'=>'search'),

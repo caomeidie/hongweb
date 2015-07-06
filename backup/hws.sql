@@ -317,7 +317,7 @@ CREATE TABLE `hws_member` (
 
 /*Data for the table `hws_member` */
 
-insert  into `hws_member`(`member_id`,`member_name`,`member_passwd`,`member_truename`,`member_idcard`,`member_mobile`,`member_avatar`,`member_sex`,`member_birthday`,`member_email`,`member_login_num`,`member_addtime`,`member_logintime`,`member_old_logintime`,`member_loginip`,`member_old_loginip`,`member_points`,`member_state`,`member_areaid`,`member_cityid`,`member_provinceid`,`member_areainfo`,`member_vip`) values (1,'xiaomi123','$2a$13$EH2jR5wPh32XQrxYNhNKl.xqV5.DbMOaoW6tv7XPzmFdRq2RPD7sC','小米','37028219894568','13767960999',NULL,2,'0000-00-00','xiaomi124@sina.com',1,'1435738005','1435738005','1435738005','127.0.0.1','127.0.0.1',0,1,NULL,NULL,NULL,NULL,0),(2,'xiaomi','$2a$13$EH2jR5wPh32XQrxYNhNKl.xqV5.DbMOaoW6tv7XPzmFdRq2RPD7sC','小米','37028219894567','13767960998',NULL,0,'1989-12-23','xiaomi@sina.com',1,'1435738005','1435738005','1435738005','127.0.0.1','127.0.0.1',0,0,NULL,NULL,NULL,NULL,0);
+insert  into `hws_member`(`member_id`,`member_name`,`member_passwd`,`member_truename`,`member_idcard`,`member_mobile`,`member_avatar`,`member_sex`,`member_birthday`,`member_email`,`member_login_num`,`member_addtime`,`member_logintime`,`member_old_logintime`,`member_loginip`,`member_old_loginip`,`member_points`,`member_state`,`member_areaid`,`member_cityid`,`member_provinceid`,`member_areainfo`,`member_vip`) values (2,'xiaomi','$2a$13$EH2jR5wPh32XQrxYNhNKl.xqV5.DbMOaoW6tv7XPzmFdRq2RPD7sC','小米','37028219894567','13767960998',NULL,0,'1989-12-23','xiaomi@sina.com',1,'1435738005','1435738005','1435738005','127.0.0.1','127.0.0.1',0,1,NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `hws_recommend` */
 
@@ -461,7 +461,7 @@ CREATE TABLE `hws_store` (
   `area_info` varchar(100) NOT NULL COMMENT '地区内容',
   `store_address` varchar(100) NOT NULL COMMENT '详细地区',
   `store_zip` varchar(10) NOT NULL COMMENT '邮政编码',
-  `store_tel` varchar(50) NOT NULL COMMENT '电话号码',
+  `store_mobile` varchar(50) NOT NULL COMMENT '电话号码',
   `store_state` tinyint(1) NOT NULL DEFAULT '2' COMMENT '店铺状态，0关闭，1开启，2审核中',
   `store_close_info` varchar(255) DEFAULT NULL COMMENT '店铺关闭原因',
   `store_sort` int(11) NOT NULL DEFAULT '0' COMMENT '店铺排序',
@@ -483,9 +483,11 @@ CREATE TABLE `hws_store_grade` (
   `sg_name` char(50) DEFAULT NULL COMMENT '等级名称',
   `sg_sort` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '级别，数目越大级别越高',
   PRIMARY KEY (`sg_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='店铺等级表';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='店铺等级表';
 
 /*Data for the table `hws_store_grade` */
+
+insert  into `hws_store_grade`(`sg_id`,`sg_name`,`sg_sort`) values (4,'黄金店铺',20),(2,'普通店铺',10),(3,'白银店铺',10);
 
 /*Table structure for table `hws_type` */
 

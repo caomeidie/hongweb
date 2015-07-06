@@ -26,6 +26,7 @@ class SettingType extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('type_name', 'length', 'max'=>50),
+		    array('type_name', 'unique', 'attributeName'=>'type_name'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('type_id, type_name', 'safe', 'on'=>'search'),

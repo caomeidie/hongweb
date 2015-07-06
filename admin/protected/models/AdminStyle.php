@@ -28,6 +28,7 @@ class AdminStyle extends CActiveRecord
 		return array(
 			array('style_value, roles', 'required'),
 			array('style_value', 'length', 'max'=>50),
+		    array('style_value', 'unique', 'attributeName'=>'style_value'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('style_id, style_value, roles', 'safe', 'on'=>'search'),

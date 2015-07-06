@@ -83,10 +83,10 @@ class MemberController extends UserBaseController
     public function actionEdit()
     {
         $member_id = Yii::app()->request->getParam('uid');
+        $model=new Member();
         
         if(isset($_POST['MemberForm']))
         {
-            $model=new Member();
             $model->attributes=$_POST['MemberForm'];
             if($model->editMember($member_id)){
                 $result = $this->message("修改成功", "200");
@@ -95,7 +95,6 @@ class MemberController extends UserBaseController
             }
             echo $result;
         }else{
-            $model=new Member();
             $member_info = $model->findAllByPk($member_id);
             $this->renderPartial('member_edit',array('member'=>$member_info[0]));
         }

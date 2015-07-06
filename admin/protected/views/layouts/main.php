@@ -181,14 +181,20 @@ function testConfirmMsg(text, url){
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">店铺列表</a>
+							<li><a href="tabsPage.html" target="navTab">店铺</a>
 								<ul>
 									<li><a href="?r=store/index" target="navTab" rel="main">全部店铺</a></li>
 									<li><a href="?r=store/index&s=close" target="navTab" rel="main">关闭的店铺</a></li>
+							        <li><a href="?r=store/add" target="navTab" rel="main">添加店铺</a></li>
 								</ul>
 							</li>
 							
-							<li><a href="?r=store/add" target="navTab" rel="w_validation">添加店铺</a></li>
+							<li><a href="tabsPage.html" target="navTab">店铺等级</a>
+								<ul>
+									<li><a href="?r=storegrade/index" target="navTab" rel="main">店铺等级列表</a></li>
+									<li><a href="?r=storegrade/add" target="navTab" rel="main">添加店铺等级</a></li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 					<div class="accordionHeader">
