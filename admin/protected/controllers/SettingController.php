@@ -26,7 +26,7 @@ class SettingController extends UserBaseController
     	    $fs = $file->execute();
 	        
 	        $res[] = $model->updateAll(array('setting_val'=>$fs[0]['dir'].$fs[0]['name']),'setting_key=:key',array(':key'=>'site_logo'));
-	    }	    
+	    }
 	    
 	    $result = false;
 	    

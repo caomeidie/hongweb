@@ -17,14 +17,28 @@ class StoreController extends UserBaseController
 	public function actionAdd()
 	{
 	    $model = new Store();
-	    if(isset($_POST['StoreForm']))
+	    if($_POST)
 	    {
-	        $model->store_title = $_POST['StoreForm']['aname'];
-	        $model->store_url = $_POST['StoreForm']['url'];
-	        $model->store_show = $_POST['StoreForm']['isshow'];
-	        $model->store_sort = $_POST['StoreForm']['sort'];
-	        $model->store_content = $_POST['StoreForm']['content'];
+	        $model->store_name = $_POST['name'];
+	        $model->store_pass = md5($_POST['pass']);
+	        $model->store_name_auth = $_POST['name_auth'];
+	        $model->grade_id = $_POST['storegrade'];
+	        $model->store_owner_card = $_POST['idcard'];
+	        $model->area_id = 1;
+	        $model->store_address = $_POST['addr'];
+	        $model->store_zip = $_POST['zip'];
+	        $model->store_mobile = $_POST['mobile'];
+	        $model->store_state = $_POST['state'];
 	        $model->store_time = time();
+	        if(!empty($_FILES['attach']['tmp_name'])){
+	            $file = new upload();
+	            $file->set_dir('../data/upload/file/','{y}/{m}');
+	            $file->set_thumb(100,80);
+	            $file->set_watermark('../data/sys/watermark.png',6,90);
+	            $fs = $file->execute();
+	            
+	            $model->store_logo = $fs[0]['dir'].$fs[0]['name'];
+	        }
 	        if($model->addStore()){
 	            $result = $this->message("添加成功");
 	        }else{
@@ -33,7 +47,10 @@ class StoreController extends UserBaseController
 	        echo $result;
 	        exit;
 	    }
-	    $this->renderPartial('store_add',array('model'=>$model));
+	    $sg_model = new StoreGrade();
+	    $condition = array('sg_id'=>array('>=', 1));
+	    $sg = $sg_model->getSGList($condition,'sg_sort DESC');
+	    $this->renderPartial('store_add',array('model'=>$model, 'sg'=>$sg));
 	}
 	
 	public function actionDel()

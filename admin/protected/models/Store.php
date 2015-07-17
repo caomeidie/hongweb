@@ -41,7 +41,7 @@ class Store extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('grade_id, store_owner_card, area_id, area_info, store_address, store_zip, store_mobile, store_time', 'required'),
+			/*array('store_name, store_pass, grade_id, store_owner_card, area_id, store_address, store_zip, store_mobile, store_time', 'required'),
 			array('store_name_auth, grade_id, area_id, store_state, store_sort', 'numerical', 'integerOnly'=>true),
 			array('store_name, store_owner_card, store_mobile', 'length', 'max'=>50),
 			array('store_pass', 'length', 'max'=>64),
@@ -54,7 +54,7 @@ class Store extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('store_id, store_name, store_pass, store_name_auth, grade_id, store_owner_card, area_id, area_info, store_address, store_zip, store_mobile, store_state, store_close_info, store_sort, store_time, store_end_time, store_logo, store_workingtime', 'safe', 'on'=>'search'),
-		);
+		*/);
 	}
 
 	/**
@@ -146,5 +146,10 @@ class Store extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public function addStore()
+	{
+	    return $this->save();
 	}
 }

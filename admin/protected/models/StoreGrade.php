@@ -137,7 +137,7 @@ class StoreGrade extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function getSGList($condition, $order='sg_sort DESC', $limit, $offset, $link = ' AND '){
+	public function getSGList($condition, $order='sg_sort DESC', $limit=null, $offset=null, $link = ' AND '){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
