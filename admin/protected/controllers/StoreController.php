@@ -5,12 +5,20 @@ class StoreController extends UserBaseController
     public function actionIndex()
 	{
 		$model = new Store();
-        $pagination['count'] = $model->storeCount();
+		$condition[1] = array('=', 1);
+		if($s = Yii::app()->request->getParam('s')){
+		    switch ($s){
+		        case 'close':
+		            $condition = array_merge($condition, array('store_state'=>array('=', 0)));
+		            break;
+		    }
+		}
+        $pagination['count'] = $model->storeCount($condition);
         $pagination['page'] = is_numeric(Yii::app()->request->getPost('pageNum')) ? Yii::app()->request->getPost('pageNum')-1 : 0;
         $pagination['perpage'] = is_numeric(Yii::app()->request->getPost('numPerPage')) ? Yii::app()->request->getPost('numPerPage') : 5;
         $pagination['pagenum'] = ceil($pagination['count'] / $pagination['perpage']);
         $pagination['offset'] = $pagination['page'] * $pagination['perpage'];
-        $list = $model->storeList('store_sort DESC', $pagination['perpage'], $pagination['offset']);
+        $list = $model->storeList($condition, 'store_time DESC', $pagination['perpage'], $pagination['offset']);
 		$this->renderPartial('store_list', array('list'=>$list, 'pagination'=>$pagination));
 	}
 	
@@ -21,9 +29,9 @@ class StoreController extends UserBaseController
 	    {
 	        $model->store_name = $_POST['name'];
 	        $model->store_pass = md5($_POST['pass']);
-	        $model->store_name_auth = $_POST['name_auth'];
 	        $model->grade_id = $_POST['storegrade'];
 	        $model->store_owner_card = $_POST['idcard'];
+	        $model->store_owner_name = $_POST['name_auth'];
 	        $model->area_id = 1;
 	        $model->store_address = $_POST['addr'];
 	        $model->store_zip = $_POST['zip'];
@@ -77,15 +85,28 @@ class StoreController extends UserBaseController
 	    $store_id = Yii::app()->request->getParam('sid');
 	    $model=new Store();
 	
-	    if(isset($_POST['StoreForm']))
+	    if($_POST)
 	    {
-	        $model->store_title = $_POST['StoreForm']['aname'];
-	        $model->ac_id = $_POST['StoreForm']['ac_id'];
-	        $model->store_url = $_POST['StoreForm']['url'];
-	        $model->store_show = $_POST['StoreForm']['isshow'];
-	        $model->store_sort = $_POST['StoreForm']['sort'];
-	        $model->store_content = $_POST['StoreForm']['content'];
+	        $model->store_name = $_POST['name'];
+	        $model->store_pass = md5($_POST['pass']);
+	        $model->grade_id = $_POST['storegrade'];
+	        $model->store_owner_card = $_POST['idcard'];
+	        $model->store_owner_name = $_POST['name_auth'];
+	        $model->area_id = 1;
+	        $model->store_address = $_POST['addr'];
+	        $model->store_zip = $_POST['zip'];
+	        $model->store_mobile = $_POST['mobile'];
+	        $model->store_state = $_POST['state'];
 	        $model->store_time = time();
+	        if(!empty($_FILES['attach']['tmp_name'])){
+	            $file = new upload();
+	            $file->set_dir('../data/upload/file/','{y}/{m}');
+	            $file->set_thumb(100,80);
+	            $file->set_watermark('../data/sys/watermark.png',6,90);
+	            $fs = $file->execute();
+	            
+	            $model->store_logo = $fs[0]['dir'].$fs[0]['name'];
+	        }
 	        if($model->editStore($store_id)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
@@ -93,10 +114,11 @@ class StoreController extends UserBaseController
 	        }
 	        echo $result;
 	    }else{
-	        $ac_model=new StoreClass();
-	        $ac = $ac_model->getAllAC();
+	        $sg_model = new StoreGrade();
+    	    $condition = array('sg_id'=>array('>=', 1));
+    	    $sg = $sg_model->getSGList($condition,'sg_sort DESC');
 	        $store_info = $model->findAllByPk($store_id);
-	        $this->renderPartial('store_edit',array('store_info'=>$store_info[0], 'ac'=>$ac));
+	        $this->renderPartial('store_edit',array('store_info'=>$store_info[0], 'sg'=>$sg));
 	    }
 	}
 }

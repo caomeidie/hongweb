@@ -41,9 +41,9 @@ class Store extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			/*array('store_name, store_pass, grade_id, store_owner_card, area_id, store_address, store_zip, store_mobile, store_time', 'required'),
-			array('store_name_auth, grade_id, area_id, store_state, store_sort', 'numerical', 'integerOnly'=>true),
-			array('store_name, store_owner_card, store_mobile', 'length', 'max'=>50),
+			array('store_name, store_pass, grade_id, store_owner_card, area_id, store_address, store_zip, store_mobile, store_time', 'required'),
+			array('store_name_auth, grade_id, area_id, store_state', 'numerical', 'integerOnly'=>true),
+			array('store_name, store_owner_name, store_owner_card, store_mobile', 'length', 'max'=>50),
 			array('store_pass', 'length', 'max'=>64),
 			array('area_info, store_address, store_workingtime', 'length', 'max'=>100),
 			array('store_zip, store_time, store_end_time', 'length', 'max'=>10),
@@ -53,8 +53,8 @@ class Store extends CActiveRecord
 		    array('store_mobile', 'unique', 'attributeName'=>'store_mobile'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('store_id, store_name, store_pass, store_name_auth, grade_id, store_owner_card, area_id, area_info, store_address, store_zip, store_mobile, store_state, store_close_info, store_sort, store_time, store_end_time, store_logo, store_workingtime', 'safe', 'on'=>'search'),
-		*/);
+			array('store_id, store_name, store_pass, store_name_auth, grade_id, store_owner_name, store_owner_card, area_id, area_info, store_address, store_zip, store_mobile, store_state, store_close_info, store_sort, store_time, store_end_time, store_logo, store_workingtime', 'safe', 'on'=>'search'),
+		);
 	}
 
 	/**
@@ -79,6 +79,7 @@ class Store extends CActiveRecord
 			'store_pass' => '店铺登录密码',
 			'store_name_auth' => '店主认证',
 			'grade_id' => '店铺等级',
+		    'store_owner_name' => '店主姓名',
 			'store_owner_card' => '身份证',
 			'area_id' => '地区id',
 			'area_info' => '地区内容',
@@ -118,6 +119,7 @@ class Store extends CActiveRecord
 		$criteria->compare('store_pass',$this->store_pass,true);
 		$criteria->compare('store_name_auth',$this->store_name_auth);
 		$criteria->compare('grade_id',$this->grade_id);
+		$criteria->compare('store_owner_name',$this->store_owner_name,true);
 		$criteria->compare('store_owner_card',$this->store_owner_card,true);
 		$criteria->compare('area_id',$this->area_id);
 		$criteria->compare('area_info',$this->area_info,true);
@@ -151,5 +153,78 @@ class Store extends CActiveRecord
 	public function addStore()
 	{
 	    return $this->save();
+	}
+	
+	/**
+	 * Count stores' number
+	 */
+	public function storeCount($condition, $link = ' AND '){
+	    $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	        $param[':'.$key] = $value[1];
+	    }
+	    
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	    );
+	    return $this->count($arr);
+	}
+	
+	/**
+	 * Get store list by condition
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function storeList($condition, $order='store_sort DESC', $limit, $offset, $link = ' AND '){
+	     $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	        $param[':'.$key] = $value[1];
+	    }
+	     
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	            'order'=>$order,
+	    );
+	     
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	
+	    return $this->findAll($arr);
+	}
+	
+	/**
+	 * drop one store
+	 * @param $store_id string or int
+	 */
+	public function storeDropOne($store_id){
+	
+	    return $this->deleteByPk($store_id);
+	}
+	
+	/**
+	 * update article
+	 * @param $article_id int
+	 */
+	public function editStore($article_id){
+	    return $this->updateByPk($article_id, $this->attributes);
+	}
+	
+	/**
+	 * drop all store
+	 * @param $store_id array
+	 */
+	public function storeDropAll($store_id){
+	
+	    return $this->deleteAll("store_id IN(".$store_id.")");
 	}
 }

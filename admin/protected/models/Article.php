@@ -152,7 +152,7 @@ class Article extends CActiveRecord
 	 * @param $article_id int
 	 */
 	public function editArticle($article_id){
-	    return $this->updateByPk($article_id, array('ac_id'=>$this->ac_id, 'article_url'=>$this->article_url, 'article_show'=>$this->article_show, 'article_sort'=>$this->article_sort, 'article_title'=>$this->article_title, 'article_content'=>$this->article_content, 'article_time'=>$this->article_time));
+	    return $this->updateByPk($article_id, $this->attributes);
 	}
 	
 	/**

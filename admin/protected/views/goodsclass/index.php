@@ -1,8 +1,8 @@
 <?php
-/* @var $this StoreController */
+/* @var $this GoodsclassController */
 
 $this->breadcrumbs=array(
-	'Store',
+	'Goodsclass',
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
