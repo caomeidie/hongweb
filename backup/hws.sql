@@ -146,22 +146,6 @@ CREATE TABLE `hws_attribute_value` (
 
 /*Data for the table `hws_attribute_value` */
 
-/*Table structure for table `hws_brand` */
-
-DROP TABLE IF EXISTS `hws_brand`;
-
-CREATE TABLE `hws_brand` (
-  `brand_id` mediumint(11) NOT NULL AUTO_INCREMENT COMMENT '索引ID',
-  `brand_name` varchar(100) DEFAULT NULL COMMENT '品牌名称',
-  `brand_class` varchar(50) DEFAULT NULL COMMENT '类别名称',
-  `brand_pic` varchar(100) DEFAULT NULL COMMENT '图片',
-  `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  PRIMARY KEY (`brand_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='品牌表';
-
-/*Data for the table `hws_brand` */
-
 /*Table structure for table `hws_goods` */
 
 DROP TABLE IF EXISTS `hws_goods`;
@@ -190,6 +174,24 @@ CREATE TABLE `hws_goods` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品表';
 
 /*Data for the table `hws_goods` */
+
+/*Table structure for table `hws_goods_brand` */
+
+DROP TABLE IF EXISTS `hws_goods_brand`;
+
+CREATE TABLE `hws_goods_brand` (
+  `brand_id` mediumint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '索引ID',
+  `brand_name` varchar(100) NOT NULL COMMENT '品牌名称',
+  `brand_type` tinyint(2) unsigned NOT NULL DEFAULT '1' COMMENT '品牌类型：0文字，1图片',
+  `brand_pic` varchar(100) DEFAULT NULL COMMENT '图片',
+  `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
+  PRIMARY KEY (`brand_id`),
+  UNIQUE KEY `UNIQUE` (`brand_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='品牌表';
+
+/*Data for the table `hws_goods_brand` */
+
+insert  into `hws_goods_brand`(`brand_id`,`brand_name`,`brand_type`,`brand_pic`,`brand_sort`) values (1,'煌上煌',1,'../data/upload/file/2015/07/1437468977601.png',1),(2,'绿滋肴',1,'../data/upload/file/2015/07/1437469687322.jpg',1),(3,'周黑鸭',0,'',1);
 
 /*Table structure for table `hws_goods_class` */
 
@@ -246,6 +248,47 @@ CREATE TABLE `hws_goods_spec_index` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品与规格对应表';
 
 /*Data for the table `hws_goods_spec_index` */
+
+/*Table structure for table `hws_goods_spec_value` */
+
+DROP TABLE IF EXISTS `hws_goods_spec_value`;
+
+CREATE TABLE `hws_goods_spec_value` (
+  `sp_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格值id',
+  `sp_value_name` varchar(100) NOT NULL COMMENT '规格值名称',
+  `sp_id` int(10) unsigned NOT NULL COMMENT '所属规格id',
+  `sp_value_image` varchar(100) DEFAULT NULL COMMENT '规格图片',
+  `sp_value_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
+  PRIMARY KEY (`sp_value_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格值表';
+
+/*Data for the table `hws_goods_spec_value` */
+
+/*Table structure for table `hws_goods_type` */
+
+DROP TABLE IF EXISTS `hws_goods_type`;
+
+CREATE TABLE `hws_goods_type` (
+  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类型id',
+  `type_name` varchar(100) NOT NULL COMMENT '类型名称',
+  `type_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
+  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
+  `class_name` varchar(100) NOT NULL COMMENT '所属分类名称',
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型表';
+
+/*Data for the table `hws_goods_type` */
+
+/*Table structure for table `hws_goods_type_spec` */
+
+DROP TABLE IF EXISTS `hws_goods_type_spec`;
+
+CREATE TABLE `hws_goods_type_spec` (
+  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
+  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
+
+/*Data for the table `hws_goods_type_spec` */
 
 /*Table structure for table `hws_link` */
 
@@ -431,48 +474,36 @@ CREATE TABLE `hws_spec` (
 
 /*Data for the table `hws_spec` */
 
-/*Table structure for table `hws_spec_value` */
-
-DROP TABLE IF EXISTS `hws_spec_value`;
-
-CREATE TABLE `hws_spec_value` (
-  `sp_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格值id',
-  `sp_value_name` varchar(100) NOT NULL COMMENT '规格值名称',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '所属规格id',
-  `sp_value_image` varchar(100) DEFAULT NULL COMMENT '规格图片',
-  `sp_value_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  PRIMARY KEY (`sp_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格值表';
-
-/*Data for the table `hws_spec_value` */
-
 /*Table structure for table `hws_store` */
 
 DROP TABLE IF EXISTS `hws_store`;
 
 CREATE TABLE `hws_store` (
-  `store_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '店铺索引id',
+  `store_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '店铺索引id',
   `store_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店铺名称',
   `store_pass` varchar(64) NOT NULL DEFAULT '' COMMENT '店铺登录密码',
   `store_name_auth` tinyint(1) NOT NULL DEFAULT '0' COMMENT '店主认证',
   `grade_id` int(11) NOT NULL COMMENT '店铺等级',
-  `store_owner_card` varchar(50) NOT NULL COMMENT '身份证',
-  `area_id` int(11) NOT NULL COMMENT '地区id',
-  `area_info` varchar(100) NOT NULL COMMENT '地区内容',
+  `store_owner_name` varchar(50) DEFAULT '' COMMENT '店主名',
+  `store_owner_card` varchar(50) DEFAULT NULL COMMENT '身份证',
+  `area_id` int(11) NOT NULL DEFAULT '0' COMMENT '地区id',
+  `area_info` varchar(100) DEFAULT '' COMMENT '地区内容',
   `store_address` varchar(100) NOT NULL COMMENT '详细地区',
   `store_zip` varchar(10) NOT NULL COMMENT '邮政编码',
   `store_mobile` varchar(50) NOT NULL COMMENT '电话号码',
   `store_state` tinyint(1) NOT NULL DEFAULT '2' COMMENT '店铺状态，0关闭，1开启，2审核中',
   `store_close_info` varchar(255) DEFAULT NULL COMMENT '店铺关闭原因',
-  `store_sort` int(11) NOT NULL DEFAULT '0' COMMENT '店铺排序',
+  `store_sort` int(11) DEFAULT '0' COMMENT '店铺排序',
   `store_time` varchar(10) NOT NULL COMMENT '店铺添加时间',
   `store_end_time` varchar(10) DEFAULT NULL COMMENT '店铺关闭时间',
   `store_logo` varchar(255) DEFAULT NULL COMMENT '店标',
   `store_workingtime` varchar(100) DEFAULT NULL COMMENT '工作时间',
   PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='店铺数据表';
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='店铺数据表';
 
 /*Data for the table `hws_store` */
+
+insert  into `hws_store`(`store_id`,`store_name`,`store_pass`,`store_name_auth`,`grade_id`,`store_owner_name`,`store_owner_card`,`area_id`,`area_info`,`store_address`,`store_zip`,`store_mobile`,`store_state`,`store_close_info`,`store_sort`,`store_time`,`store_end_time`,`store_logo`,`store_workingtime`) values (0,'小米的店','0192023a7bbd73250516f069df18b500',0,4,'xiaomi','370282198912282335',1,'','红谷大道111号','330000','13767960833',1,NULL,0,'1437371774',NULL,'../data/upload/file/2015/07/1437371774448.jpg',NULL),(15,'大刘的店','0192023a7bbd73250516f069df18b500',0,2,'大刘','370282198912282345',1,'','红谷大道111号','330000','13767960832',1,NULL,0,'1437371938',NULL,'../data/upload/file/2015/07/1437371938102.png',NULL);
 
 /*Table structure for table `hws_store_grade` */
 
@@ -488,43 +519,6 @@ CREATE TABLE `hws_store_grade` (
 /*Data for the table `hws_store_grade` */
 
 insert  into `hws_store_grade`(`sg_id`,`sg_name`,`sg_sort`) values (4,'黄金店铺',20),(2,'普通店铺',10),(3,'白银店铺',10);
-
-/*Table structure for table `hws_type` */
-
-DROP TABLE IF EXISTS `hws_type`;
-
-CREATE TABLE `hws_type` (
-  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类型id',
-  `type_name` varchar(100) NOT NULL COMMENT '类型名称',
-  `type_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  `class_name` varchar(100) NOT NULL COMMENT '所属分类名称',
-  PRIMARY KEY (`type_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型表';
-
-/*Data for the table `hws_type` */
-
-/*Table structure for table `hws_type_brand` */
-
-DROP TABLE IF EXISTS `hws_type_brand`;
-
-CREATE TABLE `hws_type_brand` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `brand_id` int(10) unsigned NOT NULL COMMENT '品牌id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与品牌对应表';
-
-/*Data for the table `hws_type_brand` */
-
-/*Table structure for table `hws_type_spec` */
-
-DROP TABLE IF EXISTS `hws_type_spec`;
-
-CREATE TABLE `hws_type_spec` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
-
-/*Data for the table `hws_type_spec` */
 
 /*Table structure for table `hws_upload` */
 
