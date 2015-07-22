@@ -67,8 +67,8 @@ class StoregradeController extends UserBaseController
 	        }
 	        echo $result;
 	    }else{
-	        $sg_info = $model->findAllByPk($sg_id);
-	        $this->renderPartial('storegrade_edit',array('storegrade'=>$sg_info[0]));
+	        $sg_info = $model->findByPk($sg_id);
+	        $this->renderPartial('storegrade_edit',array('storegrade'=>$sg_info));
 	    }
 	}
 	

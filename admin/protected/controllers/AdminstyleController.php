@@ -82,10 +82,10 @@ class AdminstyleController extends UserBaseController
             echo $result;
         }else{
             $model=new AdminStyle();
-            $style_info = $model->findAllByPk($style_id);
+            $style_info = $model->findByPk($style_id);
             $roles_model = new Roles();
             $roles = $roles_model->getAllRoles();
-            $this->renderPartial('style_edit',array('style'=>$style_info[0], 'roles'=>$roles));
+            $this->renderPartial('style_edit',array('style'=>$style_info, 'roles'=>$roles));
         }
     }
 }

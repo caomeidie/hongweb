@@ -4,7 +4,7 @@
 		<dl>
 			<dt>品牌名称：</dt>
 			<dd>
-		        <input name="name" id="name" type="text" />
+		        <input name="name" id="name" type="text" class="required" />
 		    </dd>
 		</dl>
 		<dl>
