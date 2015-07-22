@@ -71,16 +71,8 @@ public function actionIndex()
 	    if($_POST)
 	    {
 	        $model->brand_name = $_POST['name'];
-	        $model->brand_pass = md5($_POST['pass']);
-	        $model->grade_id = $_POST['brandgrade'];
-	        $model->brand_owner_card = $_POST['idcard'];
-	        $model->brand_owner_name = $_POST['name_auth'];
-	        $model->area_id = 1;
-	        $model->brand_address = $_POST['addr'];
-	        $model->brand_zip = $_POST['zip'];
-	        $model->brand_mobile = $_POST['mobile'];
-	        $model->brand_state = $_POST['state'];
-	        $model->brand_time = time();
+	        $model->brand_sort = $_POST['sort'];
+	        $model->brand_type = $_POST['type'];
 	        if(!empty($_FILES['attach']['tmp_name'])){
 	            $file = new upload();
 	            $file->set_dir('../data/upload/file/','{y}/{m}');
@@ -88,20 +80,17 @@ public function actionIndex()
 	            $file->set_watermark('../data/sys/watermark.png',6,90);
 	            $fs = $file->execute();
 	            
-	            $model->brand_logo = $fs[0]['dir'].$fs[0]['name'];
+	            $model->brand_pic = $fs[0]['dir'].$fs[0]['name'];
 	        }
-	        if($model->editGoodsBrand($brand_id)){
+	        if($model->updateByPk($brand_id, $model->attributes)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
 	            $result = $this->message("修改失败", "300");
 	        }
 	        echo $result;
 	    }else{
-	        $sg_model = new GoodsBrandGrade();
-    	    $condition = array('sg_id'=>array('>=', 1));
-    	    $sg = $sg_model->getSGList($condition,'sg_sort DESC');
-	        $brand_info = $model->findAllByPk($brand_id);
-	        $this->renderPartial('brand_edit',array('brand_info'=>$brand_info[0], 'sg'=>$sg));
+	        $brand_info = $model->findByPk($brand_id);
+	        $this->renderPartial('brand_edit',array('brand_info'=>$brand_info,'model'=>$model));
 	    }
 	}
 }

@@ -95,8 +95,8 @@ class MemberController extends UserBaseController
             }
             echo $result;
         }else{
-            $member_info = $model->findAllByPk($member_id);
-            $this->renderPartial('member_edit',array('member'=>$member_info[0]));
+            $member_info = $model->findByPk($member_id);
+            $this->renderPartial('member_edit',array('member'=>$member_info));
         }
     }
     

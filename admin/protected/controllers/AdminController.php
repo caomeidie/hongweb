@@ -103,10 +103,10 @@ class AdminController extends UserBaseController
             echo $result;
         }else{
             $model=new Admin();
-            $admin_info = $model->findAllByPk($admin_id);
+            $admin_info = $model->findByPk($admin_id);
             $style_model = new AdminStyle();
             $style_list = $style_model->stylesList();
-            $this->renderPartial('admin_edit',array('admin'=>$admin_info[0], 'styles'=>$style_list));
+            $this->renderPartial('admin_edit',array('admin'=>$admin_info, 'styles'=>$style_list));
         }
     }
     

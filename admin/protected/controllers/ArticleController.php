@@ -81,8 +81,8 @@ class ArticleController extends UserBaseController
 	    }else{
 	        $ac_model=new ArticleClass();
 	        $ac = $ac_model->getAllAC();
-	        $article_info = $model->findAllByPk($article_id);
-	        $this->renderPartial('article_edit',array('article_info'=>$article_info[0], 'ac'=>$ac));
+	        $article_info = $model->findByPk($article_id);
+	        $this->renderPartial('article_edit',array('article_info'=>$article_info, 'ac'=>$ac));
 	    }
 	}
 }
