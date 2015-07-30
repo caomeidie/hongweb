@@ -95,7 +95,8 @@ class AdminController extends UserBaseController
         {
             $model=new Admin();
             $model->attributes=$_POST['Admin'];
-            if($model->editAdmin($admin_id)){
+            $model->admin_id = $admin_id;
+            if($model->updateByPk($admin_id, $model->attributes)){
                 $result = $this->message("修改成功", "200");
             }else{
                 $result = $this->message("修改失败", "300");

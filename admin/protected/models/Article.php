@@ -135,7 +135,7 @@ class Article extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function articleList($order='article_sort DESC', $limit, $offset){
+	public function articleList($order='article_sort DESC',  $limit=null, $offset=null){
 	    $arr = array(
 	            'order'=>$order,
 	    );
@@ -145,14 +145,6 @@ class Article extends CActiveRecord
 	
 	    $List = $this->findAll($arr);
 	    return $List;
-	}
-	
-	/**
-	 * update article
-	 * @param $article_id int
-	 */
-	public function editArticle($article_id){
-	    return $this->updateByPk($article_id, $this->attributes);
 	}
 	
 	/**

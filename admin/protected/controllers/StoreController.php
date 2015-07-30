@@ -87,6 +87,7 @@ class StoreController extends UserBaseController
 	
 	    if($_POST)
 	    {
+	        $model->store_id = $store_id;
 	        $model->store_name = $_POST['name'];
 	        $model->store_pass = md5($_POST['pass']);
 	        $model->grade_id = $_POST['storegrade'];
@@ -107,7 +108,7 @@ class StoreController extends UserBaseController
 	            
 	            $model->store_logo = $fs[0]['dir'].$fs[0]['name'];
 	        }
-	        if($model->editStore($store_id)){
+	        if($model->updateByPk($store_id, $model->attributes)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
 	            $result = $this->message("修改失败", "300");

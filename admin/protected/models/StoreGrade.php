@@ -175,17 +175,4 @@ class StoreGrade extends CActiveRecord
 	
 	    return $this->deleteAll("sg_id IN(".$sg_id.")");
 	}
-	
-	/**
-	 * update storegrade
-	 * @param $sg_id int
-	 */
-	public function editSG($sg_id){
-	    $param = array();
-	    foreach($this->attributes as $key=>$val){
-	        if($val != null)
-	            $param[$key] = $val;
-	    }
-	    return $this->updateByPk($sg_id, $param);
-	}
 }

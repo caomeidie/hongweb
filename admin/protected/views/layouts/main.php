@@ -219,6 +219,8 @@ function testConfirmMsg(text, url){
 							<li><a href="?r=goodsspec/add" target="navTab" rel="w_validation">添加商品规格</a></li>
 							<li><a href="?r=goodsbrand/index" target="navTab" rel="w_validation">商品品牌</a></li>
 							<li><a href="?r=goodsbrand/add" target="navTab" rel="w_validation">添加商品品牌</a></li>
+							<li><a href="?r=goodsattr/index" target="navTab" rel="w_validation">商品属性</a></li>
+							<li><a href="?r=goodsattr/add" target="navTab" rel="w_validation">添加商品属性</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">

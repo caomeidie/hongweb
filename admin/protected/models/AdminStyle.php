@@ -122,7 +122,7 @@ class AdminStyle extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function stylesList($order='style_id ASC', $limit=0, $offset=0){
+	public function stylesList($order='style_id ASC', $limit=null, $offset=null){
 	    $arr = array(
 	            'order'=>$order,
 	    );
@@ -159,14 +159,6 @@ class AdminStyle extends CActiveRecord
 	    );
 	
 	    return $this->count('1=1');
-	}
-	
-	/**
-	 * update adminstyle
-	 * @param $style_id int
-	 */
-	public function editStyle($style_id){
-	    return $this->updateByPk($style_id, array('style_value'=>$this->style_value, 'roles'=>serialize($this->roles)));
 	}
 	
 	/**

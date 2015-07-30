@@ -2,7 +2,7 @@
 
 class GoodsbrandController extends UserBaseController
 {
-public function actionIndex()
+    public function actionIndex()
 	{
 		$model = new GoodsBrand();
 		$condition[1] = array('=', 1);
@@ -70,6 +70,7 @@ public function actionIndex()
 	
 	    if($_POST)
 	    {
+	        $model->brand_id = $brand_id;
 	        $model->brand_name = $_POST['name'];
 	        $model->brand_sort = $_POST['sort'];
 	        $model->brand_type = $_POST['type'];

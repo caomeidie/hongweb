@@ -65,6 +65,7 @@ class ArticleController extends UserBaseController
 	
 	    if(isset($_POST['ArticleForm']))
 	    {
+	        $model->article_id = $article_id;
 	        $model->article_title = $_POST['ArticleForm']['aname'];
 	        $model->ac_id = $_POST['ArticleForm']['ac_id'];
 	        $model->article_url = $_POST['ArticleForm']['url'];
@@ -72,7 +73,7 @@ class ArticleController extends UserBaseController
 	        $model->article_sort = $_POST['ArticleForm']['sort'];
 	        $model->article_content = $_POST['ArticleForm']['content'];
 	        $model->article_time = time();
-	        if($model->editArticle($article_id)){
+	        if($model->updateByPk($article_id, $model->attributes)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
 	            $result = $this->message("修改失败", "300");
