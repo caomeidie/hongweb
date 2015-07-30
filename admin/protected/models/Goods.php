@@ -38,7 +38,7 @@ class Goods extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('goods_name, gc_id, goods_image, goods_price, goods_show, goods_recommend', 'required'),
+			array('goods_name, gc_id, goods_image, goods_price, goods_show', 'required'),
 			array('brand_id, goods_num, spec_open, attr_open, goods_show, goods_status, goods_recommend', 'numerical', 'integerOnly'=>true),
 			array('goods_name, goods_image', 'length', 'max'=>100),
 			array('gc_id, type_id, goods_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
@@ -77,7 +77,7 @@ class Goods extends CActiveRecord
 			'goods_price' => '商品价格',
 			'goods_show' => '商品上架',
 			'goods_status' => '商品状态，0开启，1违规下架',
-			'goods_recommend' => '商品推荐',
+			'goods_recommend' => '商品推荐，1推荐，0不推荐',
 			'goods_add_time' => '商品添加时间',
 			'goods_starttime' => '发布开始时间',
 		);
