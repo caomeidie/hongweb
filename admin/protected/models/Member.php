@@ -173,7 +173,7 @@ class Member extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function getMemberList($condition, $order='member_addtime DESC', $limit, $offset, $link = ' AND '){
+	public function getMemberList($condition, $order='member_addtime DESC', $limit=null, $offset=null, $link = ' AND '){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -231,19 +231,6 @@ class Member extends CActiveRecord
 	public function dropAllMember($member_id){
 	
 	    return $this->deleteAll("member_id IN(".$member_id.")");
-	}
-	
-	/**
-	 * update member
-	 * @param $member_id int
-	 */
-	public function editMember($member_id){
-	    $param = array();
-	    foreach($this->attributes as $key=>$val){
-	        if($val != null)
-	            $param[$key] = $val;
-	    }	    
-	    return $this->updateByPk($member_id, $param);
 	}
 	
 	/**

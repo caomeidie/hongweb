@@ -1,23 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "{{goods_brand}}".
+ * This is the model class for table "{{goods_class}}".
  *
- * The followings are the available columns in table '{{goods_brand}}':
- * @property integer $brand_id
- * @property string $brand_name
- * @property string $brand_pic
- * @property integer $brand_type
- * @property integer $brand_sort
+ * The followings are the available columns in table '{{goods_class}}':
+ * @property string $gc_id
+ * @property string $gc_name
+ * @property string $gc_id
+ * @property string $gc_parent_id
+ * @property integer $gc_sort
+ * @property integer $gc_show
  */
-class GoodsBrand extends CActiveRecord
+class GoodsClass extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{goods_brand}}';
+		return '{{goods_class}}';
 	}
 
 	/**
@@ -28,13 +29,14 @@ class GoodsBrand extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('brand_name', 'required'),
-			array('brand_sort, brand_type', 'numerical', 'integerOnly'=>true),
-			array('brand_name, brand_pic', 'length', 'max'=>100),
-		    array('brand_name', 'unique', 'attributeName'=>'brand_name'),
+			array('gc_name', 'required'),
+			array('gc_sort, gc_show', 'numerical', 'integerOnly'=>true),
+			array('gc_name', 'length', 'max'=>100),
+			array('gc_id, gc_parent_id', 'length', 'max'=>10),
+		    array('gc_name', 'unique', 'attributeName'=>'gc_name'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('brand_id, brand_name, brand_type, brand_pic, brand_sort', 'safe', 'on'=>'search'),
+			array('gc_id, gc_name, gc_id, gc_parent_id, gc_sort, gc_show', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,11 +57,12 @@ class GoodsBrand extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'brand_id' => '索引ID',
-			'brand_name' => '品牌名称',
-		    'brand_type' => '品牌类型',
-			'brand_pic' => '图片',
-			'brand_sort' => '排序',
+			'gc_id' => '索引ID',
+			'gc_name' => '分类名称',
+			'gc_id' => '类型id',
+			'gc_parent_id' => '父ID',
+			'gc_sort' => '排序',
+			'gc_show' => '前台显示，0为否，1为是，默认为1',
 		);
 	}
 
@@ -81,11 +84,12 @@ class GoodsBrand extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('brand_id',$this->brand_id);
-		$criteria->compare('brand_name',$this->brand_name,true);
-		$criteria->compare('brand_type',$this->brand_type,true);
-		$criteria->compare('brand_pic',$this->brand_pic,true);
-		$criteria->compare('brand_sort',$this->brand_sort);
+		$criteria->compare('gc_id',$this->gc_id,true);
+		$criteria->compare('gc_name',$this->gc_name,true);
+		$criteria->compare('gc_id',$this->gc_id,true);
+		$criteria->compare('gc_parent_id',$this->gc_parent_id,true);
+		$criteria->compare('gc_sort',$this->gc_sort);
+		$criteria->compare('gc_show',$this->gc_show);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,21 +100,23 @@ class GoodsBrand extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return GoodsBrand the static model class
+	 * @return GoodsClass the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 	
+
 	/**
-	 * Get goodsbrand list by condition
+	 * Get goodsclass by condition
+	 * @param array $condition(二维数组：array(key=>array(operator, value)))
 	 * @param string $order
 	 * @param string $limit
 	 *
 	 * @return array
 	 */
-	public function brandList($condition, $order='brand_sort DESC', $limit=null, $offset=null, $link = ' AND '){
+	public function getGCList($condition, $order='gc_sort DESC', $limit=null, $offset=null, $link = ' AND '){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -123,7 +129,7 @@ class GoodsBrand extends CActiveRecord
 	            'condition'=>$cond,
 	            'params'=>$param,
 	            'order'=>$order,
-	            'index'=> 'brand_id',
+	            'index'=>'gc_id'
 	    );
 	
 	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
@@ -131,11 +137,11 @@ class GoodsBrand extends CActiveRecord
 	
 	    return $this->findAll($arr);
 	}
-	
+		
 	/**
-	 * Count brands' number
+	 * Count goodsclass' number
 	 */
-	public function brandCount($condition, $link = ' AND '){
+	public function countGC($condition, $link = ' AND '){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -143,7 +149,7 @@ class GoodsBrand extends CActiveRecord
 	            $cond .= $link;
 	        $param[':'.$key] = $value[1];
 	    }
-	     
+	
 	    $arr = array(
 	            'condition'=>$cond,
 	            'params'=>$param,

@@ -72,6 +72,7 @@ class AdminstyleController extends UserBaseController
         if(isset($_POST['AdminStyle']))
         {
             $model=new AdminStyle();
+            $model->style_id = $style_id;
             $model->style_value = $_POST['AdminStyle']['style_value'];
             $model->roles = $_POST['AdminStyle']['roles'];
             if($model->editStyle($style_id)){

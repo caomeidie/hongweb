@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "{{goods_brand}}".
+ * This is the model class for table "{{goods_type}}".
  *
- * The followings are the available columns in table '{{goods_brand}}':
- * @property integer $brand_id
- * @property string $brand_name
- * @property string $brand_pic
- * @property integer $brand_type
- * @property integer $brand_sort
+ * The followings are the available columns in table '{{goods_type}}':
+ * @property string $type_id
+ * @property string $type_name
+ * @property string $type_spec
+ * @property string $type_brand
+ * @property integer $type_sort
  */
-class GoodsBrand extends CActiveRecord
+class GoodsType extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{goods_brand}}';
+		return '{{goods_type}}';
 	}
 
 	/**
@@ -28,13 +28,14 @@ class GoodsBrand extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('brand_name', 'required'),
-			array('brand_sort, brand_type', 'numerical', 'integerOnly'=>true),
-			array('brand_name, brand_pic', 'length', 'max'=>100),
-		    array('brand_name', 'unique', 'attributeName'=>'brand_name'),
+			array('type_name', 'required'),
+			array('type_sort', 'numerical', 'integerOnly'=>true),
+			array('type_name', 'length', 'max'=>100),
+			array('type_spec, type_brand, type_attr', 'length', 'max'=>255),
+		    array('type_name', 'unique', 'attributeName'=>'type_name'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('brand_id, brand_name, brand_type, brand_pic, brand_sort', 'safe', 'on'=>'search'),
+			array('type_id, type_name, type_spec, type_brand, type_attr, type_sort', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,11 +56,12 @@ class GoodsBrand extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'brand_id' => '索引ID',
-			'brand_name' => '品牌名称',
-		    'brand_type' => '品牌类型',
-			'brand_pic' => '图片',
-			'brand_sort' => '排序',
+			'type_id' => '类型id',
+			'type_name' => '类型名称',
+			'type_spec' => '类型对应的规格',
+			'type_brand' => '类型对应的品牌',
+		    'type_attr' => '类型对应的属性',
+			'type_sort' => '排序',
 		);
 	}
 
@@ -81,11 +83,12 @@ class GoodsBrand extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('brand_id',$this->brand_id);
-		$criteria->compare('brand_name',$this->brand_name,true);
-		$criteria->compare('brand_type',$this->brand_type,true);
-		$criteria->compare('brand_pic',$this->brand_pic,true);
-		$criteria->compare('brand_sort',$this->brand_sort);
+		$criteria->compare('type_id',$this->type_id,true);
+		$criteria->compare('type_name',$this->type_name,true);
+		$criteria->compare('type_spec',$this->type_spec,true);
+		$criteria->compare('type_brand',$this->type_brand,true);
+		$criteria->compare('type_attr',$this->type_attr,true);
+		$criteria->compare('type_sort',$this->type_sort);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -93,10 +96,10 @@ class GoodsBrand extends CActiveRecord
 	}
 
 	/**
-	 * Returns the static model of the specified AR class.
+	 * Returns the static model of the typeified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return GoodsBrand the static model class
+	 * @return GoodsType the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -104,13 +107,35 @@ class GoodsBrand extends CActiveRecord
 	}
 	
 	/**
-	 * Get goodsbrand list by condition
+	 * Count goodstype's number
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 */
+	public function countType($condition, $link = ' AND '){
+	    $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	        $param[':'.$key] = $value[1];
+	    }
+	
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	    );
+	
+	    return $this->count($arr);
+	}
+	
+	/**
+	 * Get goodstype by condition
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
 	 * @param string $order
 	 * @param string $limit
 	 *
 	 * @return array
 	 */
-	public function brandList($condition, $order='brand_sort DESC', $limit=null, $offset=null, $link = ' AND '){
+	public function getTypeList($condition, $order='type_sort DESC', $limit=null, $offset=null, $link = ' AND '){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -123,31 +148,11 @@ class GoodsBrand extends CActiveRecord
 	            'condition'=>$cond,
 	            'params'=>$param,
 	            'order'=>$order,
-	            'index'=> 'brand_id',
 	    );
 	
 	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
 	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
 	
 	    return $this->findAll($arr);
-	}
-	
-	/**
-	 * Count brands' number
-	 */
-	public function brandCount($condition, $link = ' AND '){
-	    $cond = "";
-	    foreach($condition as $key=>$value){
-	        $cond .= $key.$value[0].':'.$key;
-	        if(current($condition) != end($condition))
-	            $cond .= $link;
-	        $param[':'.$key] = $value[1];
-	    }
-	     
-	    $arr = array(
-	            'condition'=>$cond,
-	            'params'=>$param,
-	    );
-	    return $this->count($arr);
 	}
 }

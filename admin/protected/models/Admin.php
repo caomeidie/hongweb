@@ -141,7 +141,7 @@ class Admin extends CActiveRecord
 	 * 
 	 * @return array
 	 */
-	public function adminList($condition, $order='addtime DESC', $limit, $offset){
+	public function adminList($condition, $order='addtime DESC', $limit=null, $offset=null){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -200,12 +200,4 @@ class Admin extends CActiveRecord
 	     
 	    return $this->deleteAll("admin_id IN(".$admin_id.")");
 	}
-	
-    /**
-     * update admin
-     * @param $admin_id int
-     */
-    public function editAdmin($admin_id){
-        return $this->updateByPk($admin_id, array('admin_name'=>$this->admin_name, 'email'=>$this->email, 'phone'=>$this->phone, 'style_id'=>$this->style_id, 'updatetime'=>time()));
-    }
 }

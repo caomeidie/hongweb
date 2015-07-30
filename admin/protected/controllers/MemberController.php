@@ -88,7 +88,8 @@ class MemberController extends UserBaseController
         if(isset($_POST['MemberForm']))
         {
             $model->attributes=$_POST['MemberForm'];
-            if($model->editMember($member_id)){
+            $model->member_id=$member_id;
+            if($model->updateByPk($member_id, $model->attributes)){
                 $result = $this->message("修改成功", "200");
             }else{
                 $result = $this->message("修改失败", "300");

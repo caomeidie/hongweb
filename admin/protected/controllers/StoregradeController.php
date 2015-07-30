@@ -60,7 +60,8 @@ class StoregradeController extends UserBaseController
 	    if(isset($_POST['SGForm']))
 	    {
 	        $model->attributes=$_POST['SGForm'];
-	        if($model->editSG($sg_id)){
+	        $model->sg_id=$sg_id;
+	        if($model->updateByPk($sg_id, $model->attributes)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
 	            $result = $this->message("修改失败", "300");

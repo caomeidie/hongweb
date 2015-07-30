@@ -61,11 +61,12 @@ class ArticleclassController extends UserBaseController
 	    if(isset($_POST['ACForm']))
 	    {
 	        $model=new ArticleClass();
+	        $model->ac_id = $ac_id;
 	        $model->ac_name = $_POST['ACForm']['acname'];
             $model->ac_code = $_POST['ACForm']['accode'];
             $model->ac_parent_id = $_POST['ACForm']['parent_id'];
             $model->ac_sort = $_POST['ACForm']['acsort'];
-	        if($model->editAC($ac_id)){
+	        if($model->updateByPk($ac_id, $model->attributes)){
 	            $result = $this->message("修改成功", "200");
 	        }else{
 	            $result = $this->message("修改失败", "300");

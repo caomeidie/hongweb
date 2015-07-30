@@ -181,7 +181,7 @@ class Store extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function storeList($condition, $order='store_sort DESC', $limit, $offset, $link = ' AND '){
+	public function storeList($condition, $order='store_sort DESC', $limit=null, $offset=null, $link = ' AND '){
 	     $cond = "";
 	    foreach($condition as $key=>$value){
 	        $cond .= $key.$value[0].':'.$key;
@@ -209,14 +209,6 @@ class Store extends CActiveRecord
 	public function storeDropOne($store_id){
 	
 	    return $this->deleteByPk($store_id);
-	}
-	
-	/**
-	 * update article
-	 * @param $article_id int
-	 */
-	public function editStore($article_id){
-	    return $this->updateByPk($article_id, $this->attributes);
 	}
 	
 	/**

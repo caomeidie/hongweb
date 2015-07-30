@@ -3,7 +3,7 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-<form id="pagerForm" method="post" action="?r=goodsbrand/index">
+<form id="pagerForm" method="post" action="?r=goodstype/index">
 	<input type="hidden" name="status" value="${param.status}">
 	<input type="hidden" name="keywords" value="${param.keywords}" />
 	<input type="hidden" name="pageNum" value="1" />
@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name;
 	<input type="hidden" name="orderField" value="${param.orderField}" />
 </form>
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="?r=goodsbrand/index" method="post">
+	<form onsubmit="return navTabSearch(this);" action="?r=goodstype/index" method="post">
 	<div class="searchBar">
 	    <table class="searchContent">
 			<tr>
@@ -46,8 +46,8 @@ $this->pageTitle=Yii::app()->name;
 	<div class="panelBar">
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
-			<li><a class="add" href="?r=goodsbrand/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=goodsbrand/del&sid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="add" href="?r=goodstype/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="delete" id="delete" href="?r=goodstype/del&uid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -56,24 +56,49 @@ $this->pageTitle=Yii::app()->name;
 		<thead>
 			<tr>
 			    <th width="40"></th>
-				<th width="200">品牌名称</th>
-				<th width="40">品牌图片</th>
-				<th width="40">品牌类型</th>
-				<th width="40">品牌索引</th>
+				<th width="40">id</th>
+				<th>类型名称</th>
+				<th>关联规格</th>
+				<th>关联属性</th>
+				<th>关联品牌</th>
+				<th width="100">排序</th>
 				<th width="80">操作</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach($list as $value): ?>
-    		<tr target="sid" rel="<?php echo $value['brand_id']; ?>">
-    		    <td><label><input type="checkbox" name="check" value="<?php echo $value['brand_id']; ?>" /></label></td>
-        		<td><?php echo $value['brand_name']; ?></td>
-                <td><?php if($value['brand_type']!=0):?><img src="<?php echo $value['brand_pic']; ?>" height="20px"><?php endif;?></td>
-                <td><?php if($value['brand_type']==0):?>文字<?php else:?>图片<?php endif;?></td>
-                <td><?php echo $value['brand_sort']; ?></td>
+    		<tr target="sid" rel="<?php echo $value['type_id']; ?>">
+    		    <td><label><input type="checkbox" name="check" value="<?php echo $value['type_id']; ?>" /></label></td>
+        		<td><?php echo $value['type_id']; ?></td>
+                <td><?php echo $value['type_name']; ?></td>
                 <td>
-                    <a class="delete" href="?r=goodsbrand/del&sid=<?php echo $value['brand_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=goodsbrand/edit&sid=<?php echo $value['brand_id']; ?>" target="navTab"><span>修改</span></a>
+                <?php if($value['type_spec']):?>
+                    <?php $spec = unserialize($value['type_spec']); ?>
+                    <?php foreach ($spec as $spec_val):?>
+                    [<?php echo $spec_list[$spec_val]['spec_name'];?>]
+                    <?php endforeach;?>
+                <?php endif;?>
+                </td>
+                <td>
+                <?php if($value['type_attr']):?>
+                    <?php $attr = unserialize($value['type_attr']); ?>
+                    <?php foreach ($attr as $attr_val):?>
+                    [<?php echo $attr_list[$attr_val]['attr_name'];?>]
+                    <?php endforeach;?>
+                <?php endif;?>
+                </td>
+                <td>
+                <?php if($value['type_brand']):?>
+                    <?php $brand = unserialize($value['type_brand']); ?>
+                    <?php foreach ($brand as $brand_val):?>
+                    [<?php echo $brand_list[$brand_val]['brand_name'];?>]
+                    <?php endforeach;?>
+                <?php endif;?>
+                </td>
+                <td><?php echo $value['type_sort']; ?></td>
+                <td>
+                    <a class="delete" href="?r=goodstype/del&uid=<?php echo $value['type_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+                    <a class="edit" href="?r=goodstype/edit&uid=<?php echo $value['type_id']; ?>" target="navTab"><span>修改</span></a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

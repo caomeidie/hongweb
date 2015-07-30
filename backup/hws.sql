@@ -95,7 +95,7 @@ CREATE TABLE `hws_article` (
 
 /*Data for the table `hws_article` */
 
-insert  into `hws_article`(`article_id`,`ac_id`,`article_url`,`article_show`,`article_sort`,`article_title`,`article_content`,`article_time`) values (1,8,'www.baidu.com',0,255,'一季度各省份GDP出炉','<p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">sdfafasfsafsadfsdafasfsdafdsfasdfsd</p><p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\"><br /></p><p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\"><img src=\"../data/upload/day_150525/201505251553052651.png\" alt=\"\" /><br /></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">人民财经从各省(市、自治区)统计局网站和万得(wind)资讯获悉，今年一季度全国31个省(市、自治区)生产总值(GDP)数据近日已全部出炉。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从经济增速来看，重庆以10.7%的增速领跑全国，GDP增速达到两位数增速的地区仅有3个，分别是重庆10.7%，贵州10.4%，西藏10%。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　与全国一季度GDP增速7%的数据相比，18个地区GDP增速跑赢全国，增速与全国持平的有3个地区，包括北京、上海在内的10个地区GDP增速没有达到7%。而辽宁增速仅为1.9%，成为一季度全国经济增速最低的省区。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从GDP总量来看，一季度广东省以总量1.49万亿元位列全国第一，紧随其后的为江苏省1.46万亿元，位居第三的是山东省1.29万亿元。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　<strong>东北三省经济增速走低</strong></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从数据上看，2014年GDP增速位列全国倒数的东北三省，2015年一季度经济增速依然未见起色。辽宁省一季度GDP增速仅1.9%，黑龙江和吉林分别为4.8%和5.8%，三省GDP增速都远低于全国。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　中央财经大学中国企业研究中心主任刘姝威认为，东北三省正处于经济转型期的阵痛期之中，大量国有大中型企业正在或者已经寻找到了新的经济增长点。而且，随着深化改革的推进、企业制度的改革以及反腐因素的影响，东北三省的经济结构正在向着好的方向发展。另外，她还提出，在东北存在着大量“小而美”的企业和青年创业者，很多新业态和小型企业并未能进入传统统计范畴，但这些新型企业也正是东北未来经济的动力和方向所在。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　<strong>长江经济带沿线保持活力</strong></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　长江经济带沿线11个地区依然保持了较高的经济增速。重庆和贵州两地增速均超过了10%，而江苏、浙江、江西、安徽、湖北、湖南的增速也超过了8%，相对增速较小的四川和云南增速分别达到了7.4%和7.2%，超过了全国水平。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　人大重阳研究院宏观研究部主任贾晋京认为，中部各省的制造业能力某种程度上已经取代了前些年的东部沿海地区，成为新的增长极，而之后一个阶段，中西部地区将继续发挥其优势，成为国内增速最快的地区之一。东部省份则更侧重于产业升级，在高新技术领域以及第三产业中表现突出。</p>',1432540398),(4,8,'www.sina.com.cn',1,255,'测试2','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\">这样就可以过滤掉所有的html标签了。</span></p><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"><br /></span></p><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\">如果想过滤掉除了&lt;img src=&quot;&quot;&gt;之外的所有html标签，则可以这样写：</span></p><br />',1430289514),(5,8,'www.sina.com.cn',1,255,'测试3','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">参数string为要操作的字符串<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">参数start为你要截取的字符串的开始位置，若start为负数时，则表示从倒数第start开始截取length个字符<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">可选参数length为你要截取的字符串长度，若在使用时不指定则默认取到字符串结尾。若length为负数时，则表示从start开始向右截取到末尾倒数第length个字符的位置<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">起初用这个函数时可能感觉到别扭，不过你要是把PHP&nbsp;substr函数的语法搞懂了，那他的功能比asp中的left和right，有过之无不及，非常好用。下面我们举例来看他的用法:</p><br />',1430289530),(7,8,'www.sina.com.cn',1,255,'测试5','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\"></p><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">php</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; //构造字符串</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;原字符串：</span><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;.$str.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; //按各种方式进行截取</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str1 = substr($str,5);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从第5个字符开始取至最后：&quot;.$str1.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str2 = substr($str,9,4);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从第9个字符开始取4个字符：&quot;.$str2.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str3 = substr($str,-5);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;取倒数5个字符：&quot;.$str3.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str4 = substr($str,-8,4);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从倒数第8个字符开始向后取4个字符：&quot;.$str4.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str5 = substr($str,-8,-2);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从倒数第8个字符开始取到倒数第2个字符为止：&quot;.$str5.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp;?&gt;</span><br /><br />',1430289563),(8,8,'www.sina.com.cn',1,255,'测试6','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\"></p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">聂树斌案申诉代理人李树亭律师称，卷宗显示此案没有任何直接人证、物证证明聂树斌实施犯罪，河北方面判决主要依据聂树斌的口供作出，但聂树斌的口供内容先后互相矛盾，包括作案时间、地点、过程、杀人手段、受害人相貌、衣物特征、抛埋衣物地点等，不能自圆其说。比如，聂树斌对案发时被害人身穿连衣裙的外观有过多种不同表述。</p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">王书金多次供述在石家庄市西郊玉米地强奸杀人的犯罪事实，王书金供述的作案时间、地点、受害人相貌、衣物特征等，均得到受害人亲属证言、现场勘查照片及玉米地主人等相关证据印证。真正的凶手更多地指向了王书金而非聂树斌，即使不能确定王书金是此案真凶，也不能确认聂树斌是真凶。</p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">李树亭称，卷宗显示，现场勘查受害人左脚西侧偏南30cm处有一串钥匙</p><br />',1430289587),(9,8,'',1,255,'fegdfgds','full(完全) 默认方式',1432540327);
+insert  into `hws_article`(`article_id`,`ac_id`,`article_url`,`article_show`,`article_sort`,`article_title`,`article_content`,`article_time`) values (1,8,'www.baidu.com',0,255,'一季度各省份GDP出炉123','<p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">sdfafasfsafsadfsdafasfsdafdsfasdfsd</p><p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\"><br /></p><p style=\"text-align: center; margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\"><img src=\"../data/upload/day_150525/201505251553052651.png\" alt=\"\" /><br /></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">人民财经从各省(市、自治区)统计局网站和万得(wind)资讯获悉，今年一季度全国31个省(市、自治区)生产总值(GDP)数据近日已全部出炉。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从经济增速来看，重庆以10.7%的增速领跑全国，GDP增速达到两位数增速的地区仅有3个，分别是重庆10.7%，贵州10.4%，西藏10%。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　与全国一季度GDP增速7%的数据相比，18个地区GDP增速跑赢全国，增速与全国持平的有3个地区，包括北京、上海在内的10个地区GDP增速没有达到7%。而辽宁增速仅为1.9%，成为一季度全国经济增速最低的省区。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从GDP总量来看，一季度广东省以总量1.49万亿元位列全国第一，紧随其后的为江苏省1.46万亿元，位居第三的是山东省1.29万亿元。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　<strong>东北三省经济增速走低</strong></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　从数据上看，2014年GDP增速位列全国倒数的东北三省，2015年一季度经济增速依然未见起色。辽宁省一季度GDP增速仅1.9%，黑龙江和吉林分别为4.8%和5.8%，三省GDP增速都远低于全国。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　中央财经大学中国企业研究中心主任刘姝威认为，东北三省正处于经济转型期的阵痛期之中，大量国有大中型企业正在或者已经寻找到了新的经济增长点。而且，随着深化改革的推进、企业制度的改革以及反腐因素的影响，东北三省的经济结构正在向着好的方向发展。另外，她还提出，在东北存在着大量“小而美”的企业和青年创业者，很多新业态和小型企业并未能进入传统统计范畴，但这些新型企业也正是东北未来经济的动力和方向所在。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　<strong>长江经济带沿线保持活力</strong></p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　长江经济带沿线11个地区依然保持了较高的经济增速。重庆和贵州两地增速均超过了10%，而江苏、浙江、江西、安徽、湖北、湖南的增速也超过了8%，相对增速较小的四川和云南增速分别达到了7.4%和7.2%，超过了全国水平。</p><p style=\"margin: 15px 0px; padding: 0px; font-size: 16px; line-height: 2em; font-family: \'Microsoft YaHei\', u5FAEu8F6Fu96C5u9ED1, Arial, SimSun, u5B8Bu4F53;\">　　人大重阳研究院宏观研究部主任贾晋京认为，中部各省的制造业能力某种程度上已经取代了前些年的东部沿海地区，成为新的增长极，而之后一个阶段，中西部地区将继续发挥其优势，成为国内增速最快的地区之一。东部省份则更侧重于产业升级，在高新技术领域以及第三产业中表现突出。</p>',1437636315),(4,8,'www.sina.com.cn',1,255,'测试2','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\">这样就可以过滤掉所有的html标签了。</span></p><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"><br /></span></p><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\">如果想过滤掉除了&lt;img src=&quot;&quot;&gt;之外的所有html标签，则可以这样写：</span></p><br />',1430289514),(5,8,'www.sina.com.cn',1,255,'测试3','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">参数string为要操作的字符串<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">参数start为你要截取的字符串的开始位置，若start为负数时，则表示从倒数第start开始截取length个字符<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">可选参数length为你要截取的字符串长度，若在使用时不指定则默认取到字符串结尾。若length为负数时，则表示从start开始向右截取到末尾倒数第length个字符的位置<br /></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\">起初用这个函数时可能感觉到别扭，不过你要是把PHP&nbsp;substr函数的语法搞懂了，那他的功能比asp中的left和right，有过之无不及，非常好用。下面我们举例来看他的用法:</p><br />',1430289530),(7,8,'www.sina.com.cn',1,255,'测试5','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\"></p><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">php</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; //构造字符串</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;原字符串：</span><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;.$str.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; //按各种方式进行截取</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str1 = substr($str,5);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从第5个字符开始取至最后：&quot;.$str1.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str2 = substr($str,9,4);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从第9个字符开始取4个字符：&quot;.$str2.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str3 = substr($str,-5);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;取倒数5个字符：&quot;.$str3.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str4 = substr($str,-8,4);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从倒数第8个字符开始向后取4个字符：&quot;.$str4.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; $str5 = substr($str,-8,-2);</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp; echo &quot;从倒数第8个字符开始取到倒数第2个字符为止：&quot;.$str5.&quot;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&quot;;</span><br style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\" /><span style=\"font-family: 微软雅黑, Arial, sans-serif; line-height: 26px;\">&nbsp;?&gt;</span><br /><br />',1430289563),(8,8,'www.sina.com.cn',1,255,'测试6','<span style=\"font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"></span><p style=\"text-indent: 28px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px;\"><span style=\"text-indent: 0px;\"></span></p><p style=\"padding-bottom: 2px; font-size: 16px; line-height: 18px; color: rgb(51, 51, 51); font-family: \'Lucida Grande\', Verdana, Arial, \'Bitstream Vera Sans\', sans-serif, 微软雅黑;\"></p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">聂树斌案申诉代理人李树亭律师称，卷宗显示此案没有任何直接人证、物证证明聂树斌实施犯罪，河北方面判决主要依据聂树斌的口供作出，但聂树斌的口供内容先后互相矛盾，包括作案时间、地点、过程、杀人手段、受害人相貌、衣物特征、抛埋衣物地点等，不能自圆其说。比如，聂树斌对案发时被害人身穿连衣裙的外观有过多种不同表述。</p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">王书金多次供述在石家庄市西郊玉米地强奸杀人的犯罪事实，王书金供述的作案时间、地点、受害人相貌、衣物特征等，均得到受害人亲属证言、现场勘查照片及玉米地主人等相关证据印证。真正的凶手更多地指向了王书金而非聂树斌，即使不能确定王书金是此案真凶，也不能确认聂树斌是真凶。</p><p style=\"margin: 0px 0px 29px; padding: 0px; line-height: 28px; font-family: 宋体, Arial, sans-serif; font-size: 15.9995994567871px; text-indent: 2em;\">李树亭称，卷宗显示，现场勘查受害人左脚西侧偏南30cm处有一串钥匙</p><br />',1430289587),(9,8,'',1,255,'fegdfgds','full(完全) 默认方式',1432540327);
 
 /*Table structure for table `hws_article_class` */
 
@@ -146,22 +146,6 @@ CREATE TABLE `hws_attribute_value` (
 
 /*Data for the table `hws_attribute_value` */
 
-/*Table structure for table `hws_brand` */
-
-DROP TABLE IF EXISTS `hws_brand`;
-
-CREATE TABLE `hws_brand` (
-  `brand_id` mediumint(11) NOT NULL AUTO_INCREMENT COMMENT '索引ID',
-  `brand_name` varchar(100) DEFAULT NULL COMMENT '品牌名称',
-  `brand_class` varchar(50) DEFAULT NULL COMMENT '类别名称',
-  `brand_pic` varchar(100) DEFAULT NULL COMMENT '图片',
-  `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  PRIMARY KEY (`brand_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='品牌表';
-
-/*Data for the table `hws_brand` */
-
 /*Table structure for table `hws_goods` */
 
 DROP TABLE IF EXISTS `hws_goods`;
@@ -191,6 +175,40 @@ CREATE TABLE `hws_goods` (
 
 /*Data for the table `hws_goods` */
 
+/*Table structure for table `hws_goods_attr` */
+
+DROP TABLE IF EXISTS `hws_goods_attr`;
+
+CREATE TABLE `hws_goods_attr` (
+  `attr_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `attr_name` varchar(100) NOT NULL,
+  `attr_value` varchar(255) NOT NULL,
+  `attr_sort` tinyint(1) unsigned DEFAULT NULL,
+  PRIMARY KEY (`attr_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*Data for the table `hws_goods_attr` */
+
+insert  into `hws_goods_attr`(`attr_id`,`attr_name`,`attr_value`,`attr_sort`) values (2,'衣服款式','a:5:{i:0;s:6:\"长袖\";i:1;s:6:\"短袖\";i:2;s:7:\"T恤衫\";i:3;s:6:\"衬衫\";i:4;s:6:\"卫衣\";}',NULL),(5,'衣服材质','a:4:{i:0;s:3:\"棉\";i:1;s:6:\"氨纶\";i:2;s:6:\"涤纶\";i:3;s:6:\"尼龙\";}',NULL),(6,'屏幕尺寸','a:7:{i:0;s:3:\"3.7\";i:1;s:3:\"4.0\";i:2;s:3:\"4.7\";i:3;s:3:\"5.0\";i:4;s:3:\"5.5\";i:5;s:3:\"6.0\";i:6;s:3:\"7.0\";}',NULL);
+
+/*Table structure for table `hws_goods_brand` */
+
+DROP TABLE IF EXISTS `hws_goods_brand`;
+
+CREATE TABLE `hws_goods_brand` (
+  `brand_id` mediumint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '索引ID',
+  `brand_name` varchar(100) NOT NULL COMMENT '品牌名称',
+  `brand_type` tinyint(2) unsigned NOT NULL DEFAULT '1' COMMENT '品牌类型：0文字，1图片',
+  `brand_pic` varchar(100) DEFAULT NULL COMMENT '图片',
+  `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
+  PRIMARY KEY (`brand_id`),
+  UNIQUE KEY `UNIQUE` (`brand_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='品牌表';
+
+/*Data for the table `hws_goods_brand` */
+
+insert  into `hws_goods_brand`(`brand_id`,`brand_name`,`brand_type`,`brand_pic`,`brand_sort`) values (1,'煌上煌',1,'../data/upload/file/2015/07/1437636217140.jpg',1),(2,'绿滋肴',1,'../data/upload/file/2015/07/1437469687322.jpg',1),(3,'周黑鸭',0,'',1),(4,'GXG',0,'',NULL),(5,'G2000',0,'',NULL),(6,'JACK JONES',0,'',NULL);
+
 /*Table structure for table `hws_goods_class` */
 
 DROP TABLE IF EXISTS `hws_goods_class`;
@@ -199,37 +217,33 @@ CREATE TABLE `hws_goods_class` (
   `gc_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '索引ID',
   `gc_name` varchar(100) NOT NULL COMMENT '分类名称',
   `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `type_name` varchar(100) NOT NULL COMMENT '类型名称',
   `gc_parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '父ID',
   `gc_sort` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   `gc_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '前台显示，0为否，1为是，默认为1',
-  `gc_title` varchar(200) NOT NULL COMMENT '名称',
-  `gc_keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键词',
-  `gc_description` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
   PRIMARY KEY (`gc_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='商品分类表';
 
 /*Data for the table `hws_goods_class` */
+
+insert  into `hws_goods_class`(`gc_id`,`gc_name`,`type_id`,`gc_parent_id`,`gc_sort`,`gc_show`) values (1,'服装',1,0,2,1),(2,'测试',0,0,2,1),(3,'男装',1,1,0,1),(4,'女装',1,1,0,1),(5,'测试1',0,2,0,1),(7,'上衣',1,3,0,1),(8,'背心',1,7,0,1);
 
 /*Table structure for table `hws_goods_spec` */
 
 DROP TABLE IF EXISTS `hws_goods_spec`;
 
 CREATE TABLE `hws_goods_spec` (
-  `spec_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品规格索引id',
-  `goods_id` int(11) NOT NULL COMMENT '商品id',
+  `spec_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品规格索引id',
   `spec_name` varchar(255) NOT NULL COMMENT '规格名称',
-  `spec_goods_price` decimal(10,2) NOT NULL COMMENT '规格商品价格',
-  `spec_goods_storage` int(11) NOT NULL COMMENT '规格商品库存',
-  `spec_salenum` int(11) NOT NULL DEFAULT '0' COMMENT '订出数量',
-  `spec_goods_color` varchar(20) NOT NULL COMMENT '规格商品颜色',
-  `spec_goods_serial` varchar(50) NOT NULL COMMENT '规格商品编号',
-  `spec_goods_spec` text NOT NULL COMMENT '商品规格序列化',
+  `spec_value` varchar(255) NOT NULL COMMENT '规格值',
+  `spec_type` int(11) unsigned DEFAULT '1' COMMENT '规格类型：0系统自带，不可删除；1：用户添加，可删除',
+  `spec_sort` tinyint(1) unsigned DEFAULT '1' COMMENT '规格索引',
   PRIMARY KEY (`spec_id`),
-  KEY `goods_id` (`goods_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格表';
+  UNIQUE KEY `UNIQUE` (`spec_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='商品规格表';
 
 /*Data for the table `hws_goods_spec` */
+
+insert  into `hws_goods_spec`(`spec_id`,`spec_name`,`spec_value`,`spec_type`,`spec_sort`) values (1,'颜色','a:9:{i:0;s:6:\"白色\";i:1;s:6:\"黑色\";i:2;s:6:\"绿色\";i:3;s:6:\"蓝色\";i:4;s:6:\"红色\";i:5;s:6:\"黄色\";i:6;s:6:\"紫色\";i:7;s:6:\"橙色\";i:8;s:6:\"青色\";}',1,1),(6,'季节','a:4:{i:0;s:6:\"春季\";i:1;s:6:\"夏季\";i:2;s:6:\"秋季\";i:3;s:6:\"冬季\";}',1,NULL);
 
 /*Table structure for table `hws_goods_spec_index` */
 
@@ -246,6 +260,51 @@ CREATE TABLE `hws_goods_spec_index` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品与规格对应表';
 
 /*Data for the table `hws_goods_spec_index` */
+
+/*Table structure for table `hws_goods_spec_value` */
+
+DROP TABLE IF EXISTS `hws_goods_spec_value`;
+
+CREATE TABLE `hws_goods_spec_value` (
+  `sp_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格值id',
+  `sp_value_name` varchar(100) NOT NULL COMMENT '规格值名称',
+  `sp_id` int(10) unsigned NOT NULL COMMENT '所属规格id',
+  `sp_value_image` varchar(100) DEFAULT NULL COMMENT '规格图片',
+  `sp_value_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
+  PRIMARY KEY (`sp_value_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格值表';
+
+/*Data for the table `hws_goods_spec_value` */
+
+/*Table structure for table `hws_goods_type` */
+
+DROP TABLE IF EXISTS `hws_goods_type`;
+
+CREATE TABLE `hws_goods_type` (
+  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类型id',
+  `type_name` varchar(100) NOT NULL COMMENT '类型名称',
+  `type_spec` varchar(255) DEFAULT NULL COMMENT '类型对应的规格',
+  `type_brand` varchar(255) DEFAULT NULL COMMENT '类型对应的品牌',
+  `type_attr` varchar(255) DEFAULT NULL COMMENT '类型对应的属性',
+  `type_sort` tinyint(1) unsigned DEFAULT NULL COMMENT '排序',
+  PRIMARY KEY (`type_id`),
+  UNIQUE KEY `UNIQUE` (`type_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='商品类型表';
+
+/*Data for the table `hws_goods_type` */
+
+insert  into `hws_goods_type`(`type_id`,`type_name`,`type_spec`,`type_brand`,`type_attr`,`type_sort`) values (1,'服装','a:2:{i:0;s:1:\"1\";i:1;s:1:\"6\";}','a:3:{i:0;s:1:\"4\";i:1;s:1:\"5\";i:2;s:1:\"6\";}','a:2:{i:0;s:1:\"2\";i:1;s:1:\"5\";}',1),(6,'手机','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',1),(7,'aaa','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',NULL);
+
+/*Table structure for table `hws_goods_type_spec` */
+
+DROP TABLE IF EXISTS `hws_goods_type_spec`;
+
+CREATE TABLE `hws_goods_type_spec` (
+  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
+  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
+
+/*Data for the table `hws_goods_type_spec` */
 
 /*Table structure for table `hws_link` */
 
@@ -414,65 +473,36 @@ CREATE TABLE `hws_sms` (
 
 /*Data for the table `hws_sms` */
 
-/*Table structure for table `hws_spec` */
-
-DROP TABLE IF EXISTS `hws_spec`;
-
-CREATE TABLE `hws_spec` (
-  `sp_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格id',
-  `sp_name` varchar(100) NOT NULL COMMENT '规格名称',
-  `sp_format` enum('text','image') NOT NULL COMMENT '显示类型',
-  `sp_value` text NOT NULL COMMENT '规格值列',
-  `sp_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  `class_name` varchar(100) DEFAULT NULL COMMENT '所属分类名称',
-  PRIMARY KEY (`sp_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格表';
-
-/*Data for the table `hws_spec` */
-
-/*Table structure for table `hws_spec_value` */
-
-DROP TABLE IF EXISTS `hws_spec_value`;
-
-CREATE TABLE `hws_spec_value` (
-  `sp_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格值id',
-  `sp_value_name` varchar(100) NOT NULL COMMENT '规格值名称',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '所属规格id',
-  `sp_value_image` varchar(100) DEFAULT NULL COMMENT '规格图片',
-  `sp_value_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  PRIMARY KEY (`sp_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格值表';
-
-/*Data for the table `hws_spec_value` */
-
 /*Table structure for table `hws_store` */
 
 DROP TABLE IF EXISTS `hws_store`;
 
 CREATE TABLE `hws_store` (
-  `store_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '店铺索引id',
+  `store_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '店铺索引id',
   `store_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店铺名称',
   `store_pass` varchar(64) NOT NULL DEFAULT '' COMMENT '店铺登录密码',
   `store_name_auth` tinyint(1) NOT NULL DEFAULT '0' COMMENT '店主认证',
   `grade_id` int(11) NOT NULL COMMENT '店铺等级',
-  `store_owner_card` varchar(50) NOT NULL COMMENT '身份证',
-  `area_id` int(11) NOT NULL COMMENT '地区id',
-  `area_info` varchar(100) NOT NULL COMMENT '地区内容',
+  `store_owner_name` varchar(50) DEFAULT '' COMMENT '店主名',
+  `store_owner_card` varchar(50) DEFAULT NULL COMMENT '身份证',
+  `area_id` int(11) NOT NULL DEFAULT '0' COMMENT '地区id',
+  `area_info` varchar(100) DEFAULT '' COMMENT '地区内容',
   `store_address` varchar(100) NOT NULL COMMENT '详细地区',
   `store_zip` varchar(10) NOT NULL COMMENT '邮政编码',
   `store_mobile` varchar(50) NOT NULL COMMENT '电话号码',
   `store_state` tinyint(1) NOT NULL DEFAULT '2' COMMENT '店铺状态，0关闭，1开启，2审核中',
   `store_close_info` varchar(255) DEFAULT NULL COMMENT '店铺关闭原因',
-  `store_sort` int(11) NOT NULL DEFAULT '0' COMMENT '店铺排序',
+  `store_sort` int(11) DEFAULT '0' COMMENT '店铺排序',
   `store_time` varchar(10) NOT NULL COMMENT '店铺添加时间',
   `store_end_time` varchar(10) DEFAULT NULL COMMENT '店铺关闭时间',
   `store_logo` varchar(255) DEFAULT NULL COMMENT '店标',
   `store_workingtime` varchar(100) DEFAULT NULL COMMENT '工作时间',
   PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='店铺数据表';
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='店铺数据表';
 
 /*Data for the table `hws_store` */
+
+insert  into `hws_store`(`store_id`,`store_name`,`store_pass`,`store_name_auth`,`grade_id`,`store_owner_name`,`store_owner_card`,`area_id`,`area_info`,`store_address`,`store_zip`,`store_mobile`,`store_state`,`store_close_info`,`store_sort`,`store_time`,`store_end_time`,`store_logo`,`store_workingtime`) values (0,'小米的店','0192023a7bbd73250516f069df18b500',0,4,'xiaomi','370282198912282335',1,'','红谷大道111号','330000','13767960833',1,NULL,0,'1437371774',NULL,'../data/upload/file/2015/07/1437371774448.jpg',NULL),(15,'大刘的店','0192023a7bbd73250516f069df18b500',0,2,'大刘','370282198912282345',1,'','红谷大道111号','330000','13767960832',1,NULL,0,'1437371938',NULL,'../data/upload/file/2015/07/1437371938102.png',NULL);
 
 /*Table structure for table `hws_store_grade` */
 
@@ -488,43 +518,6 @@ CREATE TABLE `hws_store_grade` (
 /*Data for the table `hws_store_grade` */
 
 insert  into `hws_store_grade`(`sg_id`,`sg_name`,`sg_sort`) values (4,'黄金店铺',20),(2,'普通店铺',10),(3,'白银店铺',10);
-
-/*Table structure for table `hws_type` */
-
-DROP TABLE IF EXISTS `hws_type`;
-
-CREATE TABLE `hws_type` (
-  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类型id',
-  `type_name` varchar(100) NOT NULL COMMENT '类型名称',
-  `type_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  `class_name` varchar(100) NOT NULL COMMENT '所属分类名称',
-  PRIMARY KEY (`type_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型表';
-
-/*Data for the table `hws_type` */
-
-/*Table structure for table `hws_type_brand` */
-
-DROP TABLE IF EXISTS `hws_type_brand`;
-
-CREATE TABLE `hws_type_brand` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `brand_id` int(10) unsigned NOT NULL COMMENT '品牌id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与品牌对应表';
-
-/*Data for the table `hws_type_brand` */
-
-/*Table structure for table `hws_type_spec` */
-
-DROP TABLE IF EXISTS `hws_type_spec`;
-
-CREATE TABLE `hws_type_spec` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
-
-/*Data for the table `hws_type_spec` */
 
 /*Table structure for table `hws_upload` */
 
