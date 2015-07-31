@@ -19,14 +19,22 @@ class GoodsController extends UserBaseController
 	    $model = new Goods();
 	    if(isset($_POST['GoodsForm']))
 	    {
-	        $model->goods_title = $_POST['GoodsForm']['aname'];
-	        $model->goods_id = $_POST['GoodsForm']['goods_id'];
-	        $model->goods_url = $_POST['GoodsForm']['url'];
-	        $model->goods_show = $_POST['GoodsForm']['isshow'];
-	        $model->goods_sort = $_POST['GoodsForm']['sort'];
-	        $model->goods_content = $_POST['GoodsForm']['content'];
-	        $model->goods_time = time();
-	        if($model->addGoods()){
+	        $model->goods_name = $_POST['GoodsForm']['goods_name'];
+	        $model->gc_id = $_POST['GoodsForm']['gc_id'];
+	        $model->goods_num = $_POST['GoodsForm']['goods_num'];
+	        $model->goods_price = $_POST['GoodsForm']['goods_price'];
+	        $model->goods_storage = $_POST['GoodsForm']['goods_storage'];
+	        $model->goods_show = $_POST['GoodsForm']['goods_show'];
+	        $model->goods_recommend = $_POST['GoodsForm']['goods_recommend'];
+	        $model->goods_image = $_POST['GoodsForm']['image'][0];
+	        $model->brand_id = 0;
+	        $model->type_id = 0;
+	        $model->spec_open = 0;
+	        $model->attr_open = 0;
+	        $model->goods_status = 1;
+	        $model->goods_add_time = time();
+	        $model->goods_starttime = time();
+	        if($model->save()){
 	            $result = $this->message("添加成功");
 	        }else{
 	            $result = $this->message("添加失败", "300");
@@ -48,12 +56,42 @@ class GoodsController extends UserBaseController
 	        
 	    }else{
 	        if(isset($_POST['goodsclass']))
-	        {
+	        {   
 	            $gc_id = $_POST['goodsclass'];
-        	    $gc_model = new GoodsClass();
-        	    $gc_info = $gc_model->findByPk($gc_id);
-        	    if($gc_info['type_id']){
-        	        $this->renderPartial('goods_add_two', array('gc_id'=>$gc_id));        	        
+	            $gc_model = new GoodsClass();
+	            $gc_info = $gc_model->findByPk($gc_id);
+        	    if($gc_info['type_id']){            	    
+            	    $type_model = new GoodsType();
+            	    $type_info = $type_model->findByPk($gc_info['type_id']);
+            	    
+            	    $attr_arr = unserialize($type_info['type_attr']);
+            	    $attr_cond = '';
+            	    foreach($attr_arr as $attr){
+            	        $attr_cond .= $attr.',';
+            	    }
+            	    $attr_cond = '('.substr($attr_cond, 0, strlen($attr_cond)-1).')';
+            	    $attr_model = new GoodsAttr();
+            	    $attr_info = $attr_model->findAll('attr_id IN '.$attr_cond);
+            	            	    
+            	    $spec_arr = unserialize($type_info['type_spec']);
+            	    $spec_cond = '';
+            	    foreach($spec_arr as $spec){
+            	        $spec_cond .= $spec.',';
+            	    }
+            	    $spec_cond = '('.substr($spec_cond, 0, strlen($spec_cond)-1).')';
+            	    $spec_model = new GoodsSpec();
+            	    $spec_info = $spec_model->findAll('spec_id IN '.$spec_cond);
+            	    
+            	    $brand_arr = unserialize($type_info['type_brand']);
+            	    $brand_cond = '';
+            	    foreach($brand_arr as $brand){
+            	        $brand_cond .= $brand.',';
+            	    }
+            	    $brand_cond = '('.substr($brand_cond, 0, strlen($brand_cond)-1).')';
+            	    $brand_model = new GoodsBrand();
+            	    $brand_info = $brand_model->findAll('brand_id IN '.$brand_cond);
+            	    
+        	        $this->renderPartial('goods_add_two', array('gc_id'=>$gc_id, 'type_id'=>$gc_info['type_id'], 'attr_info'=>$attr_info, 'spec_info'=>$spec_info, 'brand_info'=>$brand_info));        	        
         	    }else{
         	        $this->renderPartial('goods_add_two', array('gc_id'=>$gc_id));
         	    }
@@ -124,5 +162,29 @@ class GoodsController extends UserBaseController
 	        }
 	    }
 	    return $tree;
+	}
+	
+	public function actionUpload(){
+	    if($_FILES){
+	        $file = new upload();
+	        $file->set_dir('../data/upload/goods/','{y}/{m}');
+	        $file->set_thumb(100,80);
+	        $file->set_watermark('../data/sys/watermark.png',6,90);
+	        $fs = $file->execute();
+	        
+	        if($fs[0]){
+	            $atta_model = new Attachment();
+	            $atta_model->atta_name = $fs[0]['dir'].$fs[0]['name'];
+	            $atta_model->atta_thumb = $fs[0]['dir'].$fs[0]['thumb'];
+	            $atta_model->atta_type = 'goods';
+	            $atta_model->add_time = time();	            
+	            $atta_model->save();
+	            
+	            $result = $this->message($fs[0]['dir'].$fs[0]['name'], "200");	            
+	        }else{
+	            $result = $this->message("上传失败", "300");
+	        }
+	        echo $result;
+	    }
 	}
 }

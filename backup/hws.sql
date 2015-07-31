@@ -115,6 +115,24 @@ CREATE TABLE `hws_article_class` (
 
 insert  into `hws_article_class`(`ac_id`,`ac_code`,`ac_name`,`ac_parent_id`,`ac_sort`) values (7,'sysnotice','系统公告',6,255),(8,'platform','平台公告',6,255),(6,'notice','公告',0,1);
 
+/*Table structure for table `hws_attachment` */
+
+DROP TABLE IF EXISTS `hws_attachment`;
+
+CREATE TABLE `hws_attachment` (
+  `atta_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '索引ID',
+  `related_id` int(11) unsigned DEFAULT NULL COMMENT '关联ID',
+  `atta_name` varchar(100) NOT NULL COMMENT '文件名',
+  `atta_thumb` varchar(100) DEFAULT NULL COMMENT '缩微图片路径',
+  `atta_type` varchar(100) NOT NULL COMMENT '文件类型',
+  `add_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  PRIMARY KEY (`atta_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=utf8 COMMENT='上传文件表';
+
+/*Data for the table `hws_attachment` */
+
+insert  into `hws_attachment`(`atta_id`,`related_id`,`atta_name`,`atta_thumb`,`atta_type`,`add_time`) values (79,NULL,'../data/upload/goods/2015/07/1438313611670.jpg','../data/upload/goods/2015/07/thumb_1438313611670.jpg','goods',1438313611),(80,NULL,'../data/upload/goods/2015/07/1438314168360.jpg','../data/upload/goods/2015/07/thumb_1438314168360.jpg','goods',1438314168),(81,NULL,'../data/upload/goods/2015/07/1438314489475.jpg','../data/upload/goods/2015/07/thumb_1438314489475.jpg','goods',1438314489),(82,NULL,'../data/upload/goods/2015/07/1438314597480.jpg','../data/upload/goods/2015/07/thumb_1438314597480.jpg','goods',1438314597),(83,NULL,'../data/upload/goods/2015/07/1438314878521.jpg','../data/upload/goods/2015/07/thumb_1438314878521.jpg','goods',1438314878),(84,NULL,'../data/upload/goods/2015/07/1438314878880.jpg','../data/upload/goods/2015/07/thumb_1438314878880.jpg','goods',1438314878);
+
 /*Table structure for table `hws_attribute` */
 
 DROP TABLE IF EXISTS `hws_attribute`;
@@ -156,24 +174,23 @@ CREATE TABLE `hws_goods` (
   `gc_id` int(10) unsigned NOT NULL COMMENT '商品分类id',
   `brand_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT '商品品牌id',
   `type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '类型id',
-  `store_id` int(10) unsigned NOT NULL COMMENT '店铺id',
+  `goods_num` int(11) DEFAULT NULL COMMENT '商品货号',
   `spec_open` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品规格开启状态，1开启，0关闭',
+  `attr_open` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品属性开启状态，1开启，0关闭',
   `goods_image` varchar(100) NOT NULL COMMENT '商品默认封面图片',
-  `goods_store_price` decimal(10,2) NOT NULL COMMENT '商品店铺价格',
+  `goods_price` decimal(10,2) NOT NULL COMMENT '商品价格',
+  `goods_storage` int(11) NOT NULL DEFAULT '999' COMMENT '商品库存',
   `goods_show` tinyint(1) NOT NULL COMMENT '商品上架',
-  `goods_click` int(11) NOT NULL DEFAULT '1' COMMENT '商品浏览数',
   `goods_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品状态，0开启，1违规下架',
-  `goods_commend` tinyint(1) NOT NULL COMMENT '商品推荐',
+  `goods_recommend` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品推荐，1推荐，0不推荐',
   `goods_add_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品添加时间',
   `goods_starttime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发布开始时间',
-  `goods_endtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发布结束时间',
-  `city_id` mediumint(8) unsigned DEFAULT '0' COMMENT '商品所在地(市)',
-  `province_id` mediumint(8) unsigned DEFAULT '0' COMMENT '商品所在地(省)',
-  `goods_specNames` varchar(254) DEFAULT NULL COMMENT '商品规格',
   PRIMARY KEY (`goods_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品表';
 
 /*Data for the table `hws_goods` */
+
+insert  into `hws_goods`(`goods_id`,`goods_name`,`gc_id`,`brand_id`,`type_id`,`goods_num`,`spec_open`,`attr_open`,`goods_image`,`goods_price`,`goods_storage`,`goods_show`,`goods_status`,`goods_recommend`,`goods_add_time`,`goods_starttime`) values (1,'苹果',8,0,0,123,0,0,'../data/upload/goods/2015/07/1438314597480.jpg','12.00',123,1,1,1,1438314641,1438314641),(2,'西瓜',8,0,0,100,0,0,'../data/upload/goods/2015/07/1438314878521.jpg','10.50',999,1,1,1,1438314910,1438314910);
 
 /*Table structure for table `hws_goods_attr` */
 
@@ -225,7 +242,7 @@ CREATE TABLE `hws_goods_class` (
 
 /*Data for the table `hws_goods_class` */
 
-insert  into `hws_goods_class`(`gc_id`,`gc_name`,`type_id`,`gc_parent_id`,`gc_sort`,`gc_show`) values (1,'服装',1,0,2,1),(2,'测试',0,0,2,1),(3,'男装',1,1,0,1),(4,'女装',1,1,0,1),(5,'测试1',0,2,0,1),(7,'上衣',1,3,0,1),(8,'背心',1,7,0,1);
+insert  into `hws_goods_class`(`gc_id`,`gc_name`,`type_id`,`gc_parent_id`,`gc_sort`,`gc_show`) values (1,'服装',1,0,2,1),(2,'测试',0,0,2,1),(3,'男装',1,1,0,1),(4,'女装',1,1,0,1),(5,'测试1',0,2,0,1),(7,'上衣',1,3,0,1),(8,'背心',0,7,0,1);
 
 /*Table structure for table `hws_goods_spec` */
 
@@ -245,34 +262,21 @@ CREATE TABLE `hws_goods_spec` (
 
 insert  into `hws_goods_spec`(`spec_id`,`spec_name`,`spec_value`,`spec_type`,`spec_sort`) values (1,'颜色','a:9:{i:0;s:6:\"白色\";i:1;s:6:\"黑色\";i:2;s:6:\"绿色\";i:3;s:6:\"蓝色\";i:4;s:6:\"红色\";i:5;s:6:\"黄色\";i:6;s:6:\"紫色\";i:7;s:6:\"橙色\";i:8;s:6:\"青色\";}',1,1),(6,'季节','a:4:{i:0;s:6:\"春季\";i:1;s:6:\"夏季\";i:2;s:6:\"秋季\";i:3;s:6:\"冬季\";}',1,NULL);
 
-/*Table structure for table `hws_goods_spec_index` */
-
-DROP TABLE IF EXISTS `hws_goods_spec_index`;
-
-CREATE TABLE `hws_goods_spec_index` (
-  `goods_id` int(10) unsigned NOT NULL COMMENT '商品id',
-  `gc_id` int(10) unsigned NOT NULL COMMENT '商品分类id',
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id',
-  `sp_value_id` int(10) unsigned NOT NULL COMMENT '规格值id',
-  `sp_value_name` varchar(100) DEFAULT NULL COMMENT '规格值名称',
-  PRIMARY KEY (`goods_id`,`gc_id`,`sp_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品与规格对应表';
-
-/*Data for the table `hws_goods_spec_index` */
-
 /*Table structure for table `hws_goods_spec_value` */
 
 DROP TABLE IF EXISTS `hws_goods_spec_value`;
 
 CREATE TABLE `hws_goods_spec_value` (
-  `sp_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格值id',
-  `sp_value_name` varchar(100) NOT NULL COMMENT '规格值名称',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '所属规格id',
-  `sp_value_image` varchar(100) DEFAULT NULL COMMENT '规格图片',
-  `sp_value_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  PRIMARY KEY (`sp_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格值表';
+  `value_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` int(11) NOT NULL COMMENT '商品id',
+  `spec_id` int(11) NOT NULL COMMENT '商品规格索引id',
+  `spec_name` varchar(255) NOT NULL COMMENT '规格名称',
+  `spec_goods_price` decimal(10,2) NOT NULL COMMENT '规格商品价格',
+  `spec_goods_storage` int(11) DEFAULT '999' COMMENT '规格商品库存',
+  `spec_salenum` int(11) NOT NULL DEFAULT '0' COMMENT '订出数量',
+  `spec_goods_spec` text NOT NULL COMMENT '商品规格序列化',
+  PRIMARY KEY (`value_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=381 DEFAULT CHARSET=utf8 COMMENT='商品规格价格对照表';
 
 /*Data for the table `hws_goods_spec_value` */
 
@@ -294,17 +298,6 @@ CREATE TABLE `hws_goods_type` (
 /*Data for the table `hws_goods_type` */
 
 insert  into `hws_goods_type`(`type_id`,`type_name`,`type_spec`,`type_brand`,`type_attr`,`type_sort`) values (1,'服装','a:2:{i:0;s:1:\"1\";i:1;s:1:\"6\";}','a:3:{i:0;s:1:\"4\";i:1;s:1:\"5\";i:2;s:1:\"6\";}','a:2:{i:0;s:1:\"2\";i:1;s:1:\"5\";}',1),(6,'手机','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',1),(7,'aaa','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',NULL);
-
-/*Table structure for table `hws_goods_type_spec` */
-
-DROP TABLE IF EXISTS `hws_goods_type_spec`;
-
-CREATE TABLE `hws_goods_type_spec` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
-
-/*Data for the table `hws_goods_type_spec` */
 
 /*Table structure for table `hws_link` */
 
@@ -518,25 +511,6 @@ CREATE TABLE `hws_store_grade` (
 /*Data for the table `hws_store_grade` */
 
 insert  into `hws_store_grade`(`sg_id`,`sg_name`,`sg_sort`) values (4,'黄金店铺',20),(2,'普通店铺',10),(3,'白银店铺',10);
-
-/*Table structure for table `hws_upload` */
-
-DROP TABLE IF EXISTS `hws_upload`;
-
-CREATE TABLE `hws_upload` (
-  `upload_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '索引ID',
-  `file_name` varchar(100) DEFAULT NULL COMMENT '文件名',
-  `file_thumb` varchar(100) DEFAULT NULL COMMENT '缩微图片',
-  `file_wm` varchar(100) DEFAULT NULL COMMENT '水印图片',
-  `file_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '文件大小',
-  `store_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '餐厅ID，0为管理员',
-  `upload_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '文件类别，0为无，1为文章图片，默认为0，2为商品切换图片，3为商品内容图片，4为系统文章图片',
-  `upload_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
-  `item_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '信息ID',
-  PRIMARY KEY (`upload_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 COMMENT='上传文件表';
-
-/*Data for the table `hws_upload` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
