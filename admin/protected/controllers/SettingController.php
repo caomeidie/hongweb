@@ -11,7 +11,6 @@ class SettingController extends UserBaseController
 	
 	public function actionSave()
 	{
-	    //require_once  dirname(Yii::app()->basePath).'/../framework/utils/upload.php';
 	    $model = new Setting();	    
 	    
 	    $res[] = $model->updateAll(array('setting_val'=>$_POST['name']),'setting_key=:key',array(':key'=>'site_name'));

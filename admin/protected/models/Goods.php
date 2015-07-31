@@ -14,6 +14,7 @@
  * @property integer $attr_open
  * @property string $goods_image
  * @property string $goods_price
+ * @property integer $goods_storage
  * @property integer $goods_show
  * @property integer $goods_status
  * @property integer $goods_recommend
@@ -39,12 +40,12 @@ class Goods extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('goods_name, gc_id, goods_image, goods_price, goods_show', 'required'),
-			array('brand_id, goods_num, spec_open, attr_open, goods_show, goods_status, goods_recommend', 'numerical', 'integerOnly'=>true),
+			array('brand_id, goods_num, spec_open, attr_open, goods_storage, goods_show, goods_status, goods_recommend', 'numerical', 'integerOnly'=>true),
 			array('goods_name, goods_image', 'length', 'max'=>100),
 			array('gc_id, type_id, goods_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('goods_id, goods_name, gc_id, brand_id, type_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
+			array('goods_id, goods_name, gc_id, brand_id, type_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_storage, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +76,7 @@ class Goods extends CActiveRecord
 			'attr_open' => '商品属性开启状态，1开启，0关闭',
 			'goods_image' => '商品默认封面图片',
 			'goods_price' => '商品价格',
+			'goods_storage' => '商品库存',
 			'goods_show' => '商品上架',
 			'goods_status' => '商品状态，0开启，1违规下架',
 			'goods_recommend' => '商品推荐，1推荐，0不推荐',
@@ -111,6 +113,7 @@ class Goods extends CActiveRecord
 		$criteria->compare('attr_open',$this->attr_open);
 		$criteria->compare('goods_image',$this->goods_image,true);
 		$criteria->compare('goods_price',$this->goods_price,true);
+		$criteria->compare('goods_storage',$this->goods_storage);
 		$criteria->compare('goods_show',$this->goods_show);
 		$criteria->compare('goods_status',$this->goods_status);
 		$criteria->compare('goods_recommend',$this->goods_recommend);

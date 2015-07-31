@@ -35,24 +35,92 @@
 		        <input name="GoodsForm[goods_num]" id="GoodsForm_goods_num" type="text" />
 		    </dd>
 		</dl>
+		<?php if(isset($type_id)):?>
+		    <?php if($spec_info):?>
+		    <dl>
+    			<dt>商品规格：</dt>
+    			<dd><?php $spec_num = 1;?>
+    		        <?php foreach($spec_info as $spec):?>
+    		            <div class="spec spec<?php echo $spec_num;?>" mrtype="<?php echo $spec_num;?>" value="<?php echo $spec['spec_id'];?>"><strong><?php echo $spec['spec_name'];?>:</strong>
+    		                <?php $spec_arr = unserialize($spec['spec_value']);?>
+    		                <?php foreach ($spec_arr as $key=>$val):?>
+    		                    <input type="checkbox" name="GoodsForm[goods_spec][]" value="<?php echo $key;?>" /><?php echo $val;?>
+    		                <?php endforeach;?>
+    		            </div>
+    		            <?php $spec_num++;?>
+    		        <?php endforeach;?>
+    		    </dd>
+    		</dl>
+		    <?php endif;?>
+		    
+		    <?php if($attr_info):?>
+		    <dl>
+    			<dt>商品属性：</dt>
+    			<dd>
+    		        <?php foreach($attr_info as $attr):?>
+    		            <div style="height: 30px;"><strong><?php echo $attr['attr_name'];?>:</strong>
+    		                <?php $attr_arr = unserialize($attr['attr_value']);?>
+    		                <select name="GoodsForm[goods_attr]" id="GoodsForm_goods_attr" style="float: none;">
+    		                    <option value="0">其他</option>
+    		                <?php foreach ($attr_arr as $key=>$val):?>
+    		                    <option value="<?php echo $key;?>"><?php echo $val;?></option>
+    		                <?php endforeach;?>
+    		                </select>
+    		            </div>
+    		        <?php endforeach;?>
+    		    </dd>
+    		</dl>
+		    <?php endif;?>
+		    
+		    <?php if($brand_info):?>
+		    <dl>
+    			<dt>商品品牌：</dt>
+    			<dd>
+    		        <select name="GoodsForm[goods_brand]" id="GoodsForm_goods_brand">
+    		            <option value="0">其他</option>
+    		        <?php foreach($brand_info as $brand):?>
+    		            <option value="<?php echo $brand['brand_id'];?>"><?php echo $brand['brand_name'];?></option>
+    		        <?php endforeach;?>
+    		        </select>
+    		    </dd>
+    		</dl>
+		    <?php endif;?>
+		    <dl id="mix_type">
+		        
+		    </dl>
+		<?php endif;?>
 		<dl>
-		    <input id="testFileInput2" type="file" name="image2" 
-        		uploaderOption="{
-        			swf:'<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/uploadify/uploadify.swf',
-        			uploader:'demo/common/ajaxDone.html',
-        			formData:{PHPSESSID:'xxx', ajax:1},
-        			queueID:'fileQueue',
-        			buttonImage:'<?php echo Yii::app()->request->baseUrl; ?>/images/uploadify/img/add.jpg',
-        			buttonClass:'my-uploadify-button',
-        			width:102,
-        			auto:false
-        		}"
-        	/>
-        	
-        	<div id="fileQueue" class="fileQueue"></div>
-        	
-        	<input type="image" src="<?php echo Yii::app()->request->baseUrl; ?>/images/uploadify/img/upload.jpg" onclick="$('#testFileInput2').uploadify('upload', '*');"/>
-        	<input type="image" src="<?php echo Yii::app()->request->baseUrl; ?>/images/uploadify/img/cancel.jpg" onclick="$('#testFileInput2').uploadify('cancel', '*');"/>
+			<dt>商品价格：</dt>
+			<dd>
+		        <input name="GoodsForm[goods_price]" id="GoodsForm_goods_price" type="text" class="required" />
+		    </dd>
+		</dl>
+		<dl>
+			<dt>商品库存：</dt>
+			<dd>
+		        <input name="GoodsForm[goods_storage]" id="GoodsForm_goods_storage" type="text" class="required" />
+		    </dd>
+		</dl>
+		<dl>
+		    <dt>商品图片：</dt>
+			<dd>
+        		<input id="testFileInput" type="file" name="attach[]" 
+            		uploaderOption="{
+            			swf:'<?php echo Yii::app()->request->baseUrl; ?>/js/dwz/uploadify/uploadify.swf',
+            			uploader:'?r=goods/upload',
+            			formData:{PHPSESSID:'xxx', ajax:1},
+            			buttonText:'上传图片',
+            			fileSizeLimit:'200KB',
+            			fileTypeDesc:'*.jpg;*.jpeg;*.gif;*.png;',
+            			fileTypeExts:'*.jpg;*.jpeg;*.gif;*.png;',
+            			auto:true,
+            			multi:true,
+            			onUploadSuccess:uploadifySuccess
+            		}"
+            	/>
+		    </dd>
+		    <dd id="image">
+		    </dd>
 		</dl>
 		<dl>
 			<dt>上架：</dt>
@@ -79,3 +147,39 @@
 		</div>
 	</form>
 </div>
+<script type="text/javascript">
+function uploadifySuccess(file, data, response){
+	data = eval ("(" + data + ")");
+	if(data['statusCode'] == 200){
+		var time = new Date().getTime();
+		$("#image").append('<div class="'+time+'"><input type="hidden" name="GoodsForm[image][]" value="'+data['message']+'" /><img src="'+data['message']+'" width="60px" height="60px" /><a class="drop_img" value="'+time+'">删除</a></div>');
+	}else{
+	    alert(data['message']);
+	}
+}
+$("#image").on('click',".drop_img",function(){
+	var val = $(this).attr('value');
+	$("."+val+"").remove();
+})
+
+var count_spec = $(".spec").size();
+
+$(".spec :checkbox").click(function(){
+	var mrtype = $(this).parent().attr('mrtype');
+	var mrtype_count = 0;
+    for(var i = 1; i <= count_spec; i++){
+        if(i != mrtype){
+            var count_box = $(".spec"+i).find(":checked").size();
+            if(count_box == 0){
+                break;
+            }
+        	mrtype_count++;
+        }
+    }
+
+    if(mrtype_count >= count_spec-1){
+        alert(mrtype_count);
+        $("#image").append();
+    }
+});
+</script>
