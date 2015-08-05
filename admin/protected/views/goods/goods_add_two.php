@@ -44,7 +44,7 @@
     		            <div class="spec spec<?php echo $spec_num;?>" mrtype="<?php echo $spec_num;?>" value="<?php echo $spec['spec_id'];?>"><strong><?php echo $spec['spec_name'];?>:</strong>
     		                <?php $spec_arr = unserialize($spec['spec_value']);?>
     		                <?php foreach ($spec_arr as $key=>$val):?>
-    		                    <input type="checkbox" name="GoodsForm[goods_spec][]" value="<?php echo $key;?>" /><?php echo $val;?>
+    		                    <input type="checkbox" name="GoodsForm[goods_spec][]" value="<?php echo $key;?>" value_name="<?php echo $val;?>" spec_id="<?php echo $spec['spec_id'];?>" /><?php echo $val;?>
     		                <?php endforeach;?>
     		            </div>
     		            <?php $spec_num++;?>
@@ -178,8 +178,63 @@ $(".spec :checkbox").click(function(){
     }
 
     if(mrtype_count >= count_spec-1){
-        alert(mrtype_count);
-        $("#image").append();
+        var j = 0;
+        var spec_arr = new Array();
+        while(j < count_spec){
+        	spec_arr[j] = new Array();
+        	var index = j+1;
+        	var k = 0;
+        	$(".spec"+index).find(":checked").each(function(){
+            	var value = $(this).val();
+            	spec_arr[j][k] = new Array();
+        		//spec_arr[j][k]['value'] = ".spec"+index+"_"+value;
+            	spec_arr[j][k]['value'] = value;
+        		spec_arr[j][k]['spec_id'] = $(this).attr('spec_id');
+        		spec_arr[j][k]['name'] = $(this).attr('value_name');
+        		k++;
+            });
+        	j++;
+        }
+
+        var final_arr = new Array();
+        var temp_arr = new Array();
+        var mix_arr = new Array();
+        var y = 0;
+        for(var n=0; n<spec_arr.length; n++){
+            for(var m=0; m<spec_arr[n].length; m++){
+            	//alert(spec_arr[n][m]['value']);
+            	//$("#mix_type").append();
+            	if(n == 0){
+            		mix_arr[y] = spec_arr[n][m]['spec_id']+'.'+spec_arr[n][m]['value'];
+            	}else{
+            		temp_arr = [];
+            	    temp_arr = mix_arr;
+            	    mix_arr = [];
+            	    for(var x=0; x<temp_arr.length; x++){
+            	    	mix_arr[x] = temp_arr[x]+'-'+spec_arr[n][m]['spec_id']+'.'+spec_arr[n][m]['value'];
+            	    	//alert(mix_arr[x]);
+                	}
+                }
+                y++;
+            }
+            y++;
+        }
+        
+        for(var n=0; n<mix_arr.length; n++){
+            alert(mix_arr[n]);
+        }
+        
+        /*for(var n=0; n<spec_arr.length; n++){
+            for(var x=0; x<spec_arr[n].length; x++){
+            	final_arr[y] = spec_arr[n]['value'];
+            	y++;
+            }
+            y++;
+        }*/
+        //alert(final_arr[0]);
+        /*for(var z=0; z<final_arr.length; z++){
+            alert(final_arr[z]);
+        } */     
     }
-});
+})
 </script>

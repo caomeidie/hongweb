@@ -190,13 +190,8 @@ CREATE TABLE `hws_goods` (
 
 /*Data for the table `hws_goods` */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 insert  into `hws_goods`(`goods_id`,`goods_name`,`gc_id`,`brand_id`,`type_id`,`goods_num`,`spec_open`,`attr_open`,`goods_image`,`goods_price`,`goods_storage`,`goods_show`,`goods_status`,`goods_recommend`,`goods_add_time`,`goods_starttime`) values (1,'苹果',8,0,0,123,0,0,'../data/upload/goods/2015/07/1438314597480.jpg','12.00',123,1,1,1,1438314641,1438314641),(2,'西瓜',8,0,0,100,0,0,'../data/upload/goods/2015/07/1438314878521.jpg','10.50',999,1,1,1,1438314910,1438314910);
 
->>>>>>> dev
 /*Table structure for table `hws_goods_attr` */
 
 DROP TABLE IF EXISTS `hws_goods_attr`;
@@ -213,7 +208,6 @@ CREATE TABLE `hws_goods_attr` (
 
 insert  into `hws_goods_attr`(`attr_id`,`attr_name`,`attr_value`,`attr_sort`) values (2,'衣服款式','a:5:{i:0;s:6:\"长袖\";i:1;s:6:\"短袖\";i:2;s:7:\"T恤衫\";i:3;s:6:\"衬衫\";i:4;s:6:\"卫衣\";}',NULL),(5,'衣服材质','a:4:{i:0;s:3:\"棉\";i:1;s:6:\"氨纶\";i:2;s:6:\"涤纶\";i:3;s:6:\"尼龙\";}',NULL),(6,'屏幕尺寸','a:7:{i:0;s:3:\"3.7\";i:1;s:3:\"4.0\";i:2;s:3:\"4.7\";i:3;s:3:\"5.0\";i:4;s:3:\"5.5\";i:5;s:3:\"6.0\";i:6;s:3:\"7.0\";}',NULL);
 
->>>>>>> dev
 /*Table structure for table `hws_goods_brand` */
 
 DROP TABLE IF EXISTS `hws_goods_brand`;
@@ -226,19 +220,11 @@ CREATE TABLE `hws_goods_brand` (
   `brand_sort` tinyint(3) unsigned DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`brand_id`),
   UNIQUE KEY `UNIQUE` (`brand_name`)
-<<<<<<< HEAD
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='品牌表';
-
-/*Data for the table `hws_goods_brand` */
-
-insert  into `hws_goods_brand`(`brand_id`,`brand_name`,`brand_type`,`brand_pic`,`brand_sort`) values (1,'煌上煌',1,'../data/upload/file/2015/07/1437468977601.png',1),(2,'绿滋肴',1,'../data/upload/file/2015/07/1437469687322.jpg',1),(3,'周黑鸭',0,'',1);
-=======
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='品牌表';
 
 /*Data for the table `hws_goods_brand` */
 
 insert  into `hws_goods_brand`(`brand_id`,`brand_name`,`brand_type`,`brand_pic`,`brand_sort`) values (1,'煌上煌',1,'../data/upload/file/2015/07/1437636217140.jpg',1),(2,'绿滋肴',1,'../data/upload/file/2015/07/1437469687322.jpg',1),(3,'周黑鸭',0,'',1),(4,'GXG',0,'',NULL),(5,'G2000',0,'',NULL),(6,'JACK JONES',0,'',NULL);
->>>>>>> dev
 
 /*Table structure for table `hws_goods_class` */
 
@@ -301,16 +287,6 @@ DROP TABLE IF EXISTS `hws_goods_type`;
 CREATE TABLE `hws_goods_type` (
   `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类型id',
   `type_name` varchar(100) NOT NULL COMMENT '类型名称',
-<<<<<<< HEAD
-  `type_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  `class_name` varchar(100) NOT NULL COMMENT '所属分类名称',
-  PRIMARY KEY (`type_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型表';
-
-/*Data for the table `hws_goods_type` */
-
-=======
   `type_spec` varchar(255) DEFAULT NULL COMMENT '类型对应的规格',
   `type_brand` varchar(255) DEFAULT NULL COMMENT '类型对应的品牌',
   `type_attr` varchar(255) DEFAULT NULL COMMENT '类型对应的属性',
@@ -323,21 +299,6 @@ CREATE TABLE `hws_goods_type` (
 
 insert  into `hws_goods_type`(`type_id`,`type_name`,`type_spec`,`type_brand`,`type_attr`,`type_sort`) values (1,'服装','a:2:{i:0;s:1:\"1\";i:1;s:1:\"6\";}','a:3:{i:0;s:1:\"4\";i:1;s:1:\"5\";i:2;s:1:\"6\";}','a:2:{i:0;s:1:\"2\";i:1;s:1:\"5\";}',1),(6,'手机','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',1),(7,'aaa','a:1:{i:0;s:1:\"1\";}','','a:1:{i:0;s:1:\"6\";}',NULL);
 
-<<<<<<< HEAD
->>>>>>> dev
-/*Table structure for table `hws_goods_type_spec` */
-
-DROP TABLE IF EXISTS `hws_goods_type_spec`;
-
-CREATE TABLE `hws_goods_type_spec` (
-  `type_id` int(10) unsigned NOT NULL COMMENT '类型id',
-  `sp_id` int(10) unsigned NOT NULL COMMENT '规格id'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品类型与规格对应表';
-
-/*Data for the table `hws_goods_type_spec` */
-
-=======
->>>>>>> dev
 /*Table structure for table `hws_link` */
 
 DROP TABLE IF EXISTS `hws_link`;
@@ -505,26 +466,6 @@ CREATE TABLE `hws_sms` (
 
 /*Data for the table `hws_sms` */
 
-<<<<<<< HEAD
-/*Table structure for table `hws_spec` */
-
-DROP TABLE IF EXISTS `hws_spec`;
-
-CREATE TABLE `hws_spec` (
-  `sp_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格id',
-  `sp_name` varchar(100) NOT NULL COMMENT '规格名称',
-  `sp_format` enum('text','image') NOT NULL COMMENT '显示类型',
-  `sp_value` text NOT NULL COMMENT '规格值列',
-  `sp_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  `class_id` int(10) unsigned DEFAULT '0' COMMENT '所属分类id',
-  `class_name` varchar(100) DEFAULT NULL COMMENT '所属分类名称',
-  PRIMARY KEY (`sp_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品规格表';
-
-/*Data for the table `hws_spec` */
-
-=======
->>>>>>> dev
 /*Table structure for table `hws_store` */
 
 DROP TABLE IF EXISTS `hws_store`;
