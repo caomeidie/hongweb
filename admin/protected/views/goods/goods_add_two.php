@@ -223,18 +223,6 @@ $(".spec :checkbox").click(function(){
         for(var n=0; n<mix_arr.length; n++){
             alert(mix_arr[n]);
         }
-        
-        /*for(var n=0; n<spec_arr.length; n++){
-            for(var x=0; x<spec_arr[n].length; x++){
-            	final_arr[y] = spec_arr[n]['value'];
-            	y++;
-            }
-            y++;
-        }*/
-        //alert(final_arr[0]);
-        /*for(var z=0; z<final_arr.length; z++){
-            alert(final_arr[z]);
-        } */     
     }
 })
 </script>
