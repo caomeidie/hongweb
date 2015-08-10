@@ -51,6 +51,9 @@
     		        <?php endforeach;?>
     		    </dd>
     		</dl>
+		    <dl id="mix_type">
+		        
+		    </dl>
 		    <?php endif;?>
 		    
 		    <?php if($attr_info):?>
@@ -85,9 +88,6 @@
     		    </dd>
     		</dl>
 		    <?php endif;?>
-		    <dl id="mix_type">
-		        
-		    </dl>
 		<?php endif;?>
 		<dl>
 			<dt>商品价格：</dt>
@@ -176,7 +176,6 @@ $(".spec :checkbox").click(function(){
         	mrtype_count++;
         }
     }
-
     if(mrtype_count >= count_spec-1){
         var j = 0;
         var spec_arr = new Array();
@@ -187,10 +186,10 @@ $(".spec :checkbox").click(function(){
         	$(".spec"+index).find(":checked").each(function(){
             	var value = $(this).val();
             	spec_arr[j][k] = new Array();
-        		//spec_arr[j][k]['value'] = ".spec"+index+"_"+value;
             	spec_arr[j][k]['value'] = value;
         		spec_arr[j][k]['spec_id'] = $(this).attr('spec_id');
         		spec_arr[j][k]['name'] = $(this).attr('value_name');
+        		spec_arr[j][k]['keys'] = spec_arr[j][k]['spec_id'] + '.' + spec_arr[j][k]['value'];
         		k++;
             });
         	j++;
@@ -198,30 +197,67 @@ $(".spec :checkbox").click(function(){
 
         var final_arr = new Array();
         var temp_arr = new Array();
-        var mix_arr = new Array();
         var y = 0;
-        for(var n=0; n<spec_arr.length; n++){
-            for(var m=0; m<spec_arr[n].length; m++){
-            	//alert(spec_arr[n][m]['value']);
-            	//$("#mix_type").append();
-            	if(n == 0){
-            		mix_arr[y] = spec_arr[n][m]['spec_id']+'.'+spec_arr[n][m]['value'];
-            	}else{
-            		temp_arr = [];
-            	    temp_arr = mix_arr;
-            	    mix_arr = [];
-            	    for(var x=0; x<temp_arr.length; x++){
-            	    	mix_arr[x] = temp_arr[x]+'-'+spec_arr[n][m]['spec_id']+'.'+spec_arr[n][m]['value'];
-            	    	//alert(mix_arr[x]);
-                	}
+        for(var n=1; n<spec_arr.length; n++){
+                if(n == 1){
+                    var n1 = n-1;
+                    y = spec_arr[n].length * spec_arr[n1].length - 1;
+                    for(var m=0; m<spec_arr[n].length; m++){
+                    	for(var p=0; p<spec_arr[n1].length; p++){
+                    		temp_arr[y] = new Array();
+                        	temp_arr[y]['id'] = spec_arr[n][m]['keys']+'-'+spec_arr[n1][p]['keys'];
+                        	temp_arr[y]['name'] = spec_arr[n][m]['name']+'-'+spec_arr[n1][p]['name'];
+                        	y--;
+                        }
+                    }
+                    final_arr = temp_arr;
+                	temp_arr = [];
+                }else{
+                	y = spec_arr[n].length * final_arr.length - 1;
+                    for(var m=0; m<spec_arr[n].length; m++){
+                    	for(var p=0; p<final_arr.length; p++){
+                    		temp_arr[y] = new Array();
+                        	temp_arr[y]['id'] = spec_arr[n][m]['keys']+'-'+final_arr[p]['id'];
+                        	temp_arr[y]['name'] = spec_arr[n][m]['name']+'-'+final_arr[p]['name'];
+                        	y--;
+                        }
+                    }
+                    final_arr = temp_arr;
+                	temp_arr = [];
                 }
-                y++;
-            }
-            y++;
         }
         
-        for(var n=0; n<mix_arr.length; n++){
-            alert(mix_arr[n]);
+        for(var n=0; n<final_arr.length; n++){
+            var leng = $("#mix_type").find("[data='"+final_arr[n]['id']+"']").length;
+            if(leng == 0){
+            	$("#mix_type").append('<div class="types" data="'+final_arr[n]['id']+'"><strong>'+final_arr[n]['name']+':</strong> 价格<input type="text" name="price[]" class="required" />库存<input type="text" name="storage[]" class="required" /><input type="hidden" name="specs[]" value="'+final_arr[n]['id']+'"/></div>');
+            }
+        }
+
+        $(".types").each(function(){
+            var data = $(this).attr('data');
+            var flag = false;
+            for(var q=0; q<final_arr.length; q++){
+                if(data == final_arr[q]['id']){
+                    flag = true;
+                    break;
+                }
+            }
+            
+            if(flag == false){
+                $(this).remove();
+            }
+        });
+        if($(".types").length >0){
+            $("#GoodsForm_goods_price").attr("readonly", true);
+            $("#GoodsForm_goods_storage").attr("readonly", true);
+            $("#GoodsForm_goods_price").removeClass("required");
+            $("#GoodsForm_goods_storage").removeClass("required");
+        }else{
+        	$("#GoodsForm_goods_price").attr("readonly", false);
+            $("#GoodsForm_goods_storage").attr("readonly", false);
+            $("#GoodsForm_goods_price").addClass("required");
+            $("#GoodsForm_goods_storage").addClass("required");
         }
     }
 })
