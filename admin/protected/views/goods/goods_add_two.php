@@ -63,10 +63,10 @@
     		        <?php foreach($attr_info as $attr):?>
     		            <div style="height: 30px;"><strong><?php echo $attr['attr_name'];?>:</strong>
     		                <?php $attr_arr = unserialize($attr['attr_value']);?>
-    		                <select name="GoodsForm[goods_attr]" id="GoodsForm_goods_attr" style="float: none;">
+    		                <select name="GoodsForm[goods_attr][]" style="float: none;">
     		                    <option value="0">其他</option>
     		                <?php foreach ($attr_arr as $key=>$val):?>
-    		                    <option value="<?php echo $key;?>"><?php echo $val;?></option>
+    		                    <option value="<?php echo $attr['attr_id'].'_'.$key;?>"><?php echo $val;?></option>
     		                <?php endforeach;?>
     		                </select>
     		            </div>
@@ -230,7 +230,7 @@ $(".spec :checkbox").click(function(){
         for(var n=0; n<final_arr.length; n++){
             var leng = $("#mix_type").find("[data='"+final_arr[n]['id']+"']").length;
             if(leng == 0){
-            	$("#mix_type").append('<div class="types" data="'+final_arr[n]['id']+'"><strong>'+final_arr[n]['name']+':</strong> 价格<input type="text" name="price[]" class="required" />库存<input type="text" name="storage[]" class="required" /><input type="hidden" name="specs[]" value="'+final_arr[n]['id']+'"/></div>');
+            	$("#mix_type").append('<div class="types" data="'+final_arr[n]['id']+'"><strong>'+final_arr[n]['name']+':</strong> 价格<input type="text" name="GoodsForm[price_spec][]" class="required" />库存<input type="text" name="GoodsForm[storage_spec][]" class="required" /><input type="hidden" name="GoodsForm[specs][]" value="'+final_arr[n]['id']+'"/></div>');
             }
         }
 

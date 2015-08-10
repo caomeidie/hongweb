@@ -22,16 +22,15 @@ class GoodsController extends UserBaseController
 	        $model->goods_name = $_POST['GoodsForm']['goods_name'];
 	        $model->gc_id = $_POST['GoodsForm']['gc_id'];
 	        $model->goods_num = $_POST['GoodsForm']['goods_num'];
-	        $model->goods_price = $_POST['GoodsForm']['goods_price'];
-	        $model->goods_storage = $_POST['GoodsForm']['goods_storage'];
+	        $model->goods_price = $_POST['GoodsForm']['goods_price'] ? $_POST['GoodsForm']['goods_price'] : 0.00;
+	        $model->goods_storage = $_POST['GoodsForm']['goods_storage'] ? $_POST['GoodsForm']['goods_storage'] : -1;
 	        $model->goods_show = $_POST['GoodsForm']['goods_show'];
 	        $model->goods_recommend = $_POST['GoodsForm']['goods_recommend'];
 	        $model->goods_image = $_POST['GoodsForm']['image'][0];
-	        $model->brand_id = 0;
-	        $model->type_id = 0;
-	        $model->spec_open = 0;
-	        $model->attr_open = 0;
-	        $model->goods_status = 1;
+	        $model->brand_id = $_POST['GoodsForm']['goods_brand'];
+	        $model->spec_open = $_POST['GoodsForm']['goods_price'] ? 0 : 1;
+	        $model->attr_open = $_POST['GoodsForm']['goods_attr'] ? 1 : 0;
+	        $model->goods_status = 0;
 	        $model->goods_add_time = time();
 	        $model->goods_starttime = time();
 	        if($model->save()){
@@ -100,7 +99,6 @@ class GoodsController extends UserBaseController
 	            echo $result;
 	            exit;
 	        }
-	        
 	    }
 	}
 	

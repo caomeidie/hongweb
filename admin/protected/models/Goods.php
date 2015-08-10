@@ -8,7 +8,6 @@
  * @property string $goods_name
  * @property string $gc_id
  * @property integer $brand_id
- * @property string $type_id
  * @property integer $goods_num
  * @property integer $spec_open
  * @property integer $attr_open
@@ -42,10 +41,10 @@ class Goods extends CActiveRecord
 			array('goods_name, gc_id, goods_image, goods_price, goods_show', 'required'),
 			array('brand_id, goods_num, spec_open, attr_open, goods_storage, goods_show, goods_status, goods_recommend', 'numerical', 'integerOnly'=>true),
 			array('goods_name, goods_image', 'length', 'max'=>100),
-			array('gc_id, type_id, goods_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
+			array('gc_id, goods_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('goods_id, goods_name, gc_id, brand_id, type_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_storage, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
+			array('goods_id, goods_name, gc_id, brand_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_storage, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +69,6 @@ class Goods extends CActiveRecord
 			'goods_name' => '商品名称',
 			'gc_id' => '商品分类id',
 			'brand_id' => '商品品牌id',
-			'type_id' => '类型id',
 			'goods_num' => '商品货号',
 			'spec_open' => '商品规格开启状态，1开启，0关闭',
 			'attr_open' => '商品属性开启状态，1开启，0关闭',
@@ -107,7 +105,6 @@ class Goods extends CActiveRecord
 		$criteria->compare('goods_name',$this->goods_name,true);
 		$criteria->compare('gc_id',$this->gc_id,true);
 		$criteria->compare('brand_id',$this->brand_id);
-		$criteria->compare('type_id',$this->type_id,true);
 		$criteria->compare('goods_num',$this->goods_num);
 		$criteria->compare('spec_open',$this->spec_open);
 		$criteria->compare('attr_open',$this->attr_open);
