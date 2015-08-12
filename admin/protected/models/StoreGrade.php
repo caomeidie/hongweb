@@ -157,22 +157,4 @@ class StoreGrade extends CActiveRecord
 	
 	    return $this->findAll($arr);
 	}
-	
-	/**
-	 * drop storegrade
-	 * @param $sg_id string or int
-	 */
-	public function dropOneSG($sg_id){
-	
-	    return $this->deleteByPk($sg_id);
-	}
-	
-	/**
-	 * drop storegrade
-	 * @param $sg_id array
-	 */
-	public function dropAllSG($sg_id){
-	
-	    return $this->deleteAll("sg_id IN(".$sg_id.")");
-	}
 }

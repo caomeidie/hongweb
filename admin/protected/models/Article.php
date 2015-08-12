@@ -145,24 +145,5 @@ class Article extends CActiveRecord
 	
 	    $List = $this->findAll($arr);
 	    return $List;
-	}
-	
-	/**
-	 * drop one article
-	 * @param $article_id string or int
-	 */
-	public function articleDropOne($article_id){
-	
-	    return $this->deleteByPk($article_id);
-	}
-	
-	/**
-	 * drop all article
-	 * @param $article_id array
-	 */
-	public function articleDropAll($article_id){
-	
-	    return $this->deleteAll("article_id IN(".$article_id.")");
-	}
-	
+	}	
 }

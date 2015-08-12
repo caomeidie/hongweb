@@ -182,22 +182,4 @@ class Admin extends CActiveRecord
 	
 	    return $this->count($arr);
 	}
-	
-	/**
-	 * drop admin
-	 * @param $admin_id string or int
-	 */
-	public function adminDropOne($admin_id){
-	    
-	    return $this->deleteByPk($admin_id);
-	}
-	
-	/**
-	 * drop admin
-	 * @param $admin_id array
-	 */
-	public function adminDropAll($admin_id){
-	     
-	    return $this->deleteAll("admin_id IN(".$admin_id.")");
-	}
 }

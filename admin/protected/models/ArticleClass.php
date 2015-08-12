@@ -149,22 +149,4 @@ class ArticleClass extends CActiveRecord
 	    $ACList = $this->findAll($arr);
 	    return $ACList;
 	}
-	
-	/**
-	 * drop AC
-	 * @param $ac_id string or int
-	 */
-	public function ACDropOne($ac_id){
-	
-	    return $this->deleteByPk($ac_id);
-	}
-	
-	/**
-	 * drop AC all
-	 * @param $ac_id array
-	 */
-	public function ACDropAll($ac_id){
-	
-	    return $this->deleteAll("ac_id IN(".$ac_id.")");
-	}
 }

@@ -201,22 +201,4 @@ class Store extends CActiveRecord
 	
 	    return $this->findAll($arr);
 	}
-	
-	/**
-	 * drop one store
-	 * @param $store_id string or int
-	 */
-	public function storeDropOne($store_id){
-	
-	    return $this->deleteByPk($store_id);
-	}
-	
-	/**
-	 * drop all store
-	 * @param $store_id array
-	 */
-	public function storeDropAll($store_id){
-	
-	    return $this->deleteAll("store_id IN(".$store_id.")");
-	}
 }

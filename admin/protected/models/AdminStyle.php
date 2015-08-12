@@ -160,22 +160,4 @@ class AdminStyle extends CActiveRecord
 	
 	    return $this->count('1=1');
 	}
-	
-	/**
-	 * drop style
-	 * @param $style_id string or int
-	 */
-	public function styleDropOne($style_id){
-	     
-	    return $this->deleteByPk($style_id);
-	}
-	
-	/**
-	 * drop styles
-	 * @param $style_id array
-	 */
-	public function styleDropAll($style_id){
-	
-	    return $this->deleteAll("style_id IN(".$style_id.")");
-	}
 }

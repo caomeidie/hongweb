@@ -214,25 +214,6 @@ class Member extends CActiveRecord
 	
 	    return $this->count($arr);
 	}
-	
-	/**
-	 * drop member
-	 * @param $member_id string or int
-	 */
-	public function dropOneMember($member_id){
-	     
-	    return $this->deleteByPk($member_id);
-	}
-	
-	/**
-	 * drop member
-	 * @param $member_id array
-	 */
-	public function dropAllMember($member_id){
-	
-	    return $this->deleteAll("member_id IN(".$member_id.")");
-	}
-	
 	/**
 	 * @return boolean whether add member is successful
 	 */
