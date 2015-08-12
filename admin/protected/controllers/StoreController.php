@@ -63,16 +63,16 @@ class StoreController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $store_id = Yii::app()->request->getParam('sid');
+	    $store_id = Yii::app()->request->getParam('check');
 	    $model = new Store();
 	    $store_arr = explode(',', $store_id);
 	    if(count($store_arr) <= 1){
-	        if($model->storeDropOne($store_id))
+	        if($model->deleteByPk($store_id))
 	            $result = $this->message("删除成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");
 	    }else{
-	        if($count = $model->storeDropAll($store_id))
+	        if($count = $model->deleteAll("store_id IN(".$store_id.")"))
 	            $result = $this->message("删除{$count}条成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");

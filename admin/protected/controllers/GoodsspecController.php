@@ -38,7 +38,7 @@ class GoodsspecController extends UserBaseController
 	
 	public function actionEdit()
 	{
-	    $spec_id = Yii::app()->request->getParam('uid');
+	    $spec_id = Yii::app()->request->getParam('check');
 	    $model=new GoodsSpec();
 	
 	    if(isset($_POST['SpecForm']))

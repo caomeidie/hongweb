@@ -63,16 +63,16 @@ class MemberController extends UserBaseController
     
     public function actionDel()
     {
-        $member_id = Yii::app()->request->getParam('uid');
+        $member_id = Yii::app()->request->getParam('check');
         $member_model = new Member();
         $member_arr = explode(',', $member_id);
         if(count($member_arr) <= 1){
-            if($member_model->dropOneMember($member_id))
+            if($member_model->deleteByPk($member_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $member_model->dropAllMember($member_id))
+            if($count = $member_model->deleteAll("member_id IN(".$member_id.")"))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");

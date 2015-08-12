@@ -41,16 +41,16 @@ class ArticleController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $article_id = Yii::app()->request->getParam('sid');
+	    $article_id = Yii::app()->request->getParam('check');
 	    $model = new Article();
 	    $article_arr = explode(',', $article_id);
 	    if(count($article_arr) <= 1){
-	        if($model->articleDropOne($article_id))
+	        if($model->deleteByPk($article_id))
 	            $result = $this->message("删除成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");
 	    }else{
-	        if($count = $model->articleDropAll($article_id))
+	        if($count = $model->deleteAll("article_id IN(".$article_id.")"))
 	            $result = $this->message("删除{$count}条成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");

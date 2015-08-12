@@ -47,7 +47,7 @@ $this->pageTitle=Yii::app()->name;
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
 			<li><a class="add" href="?r=admin/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=admin/del&uid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="check" postType="string" href="?r=admin/del" class="delete"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -82,8 +82,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['status']; ?></td>
                 <td><?php echo $value['style_id']; ?></td>
                 <td>
-                    <a class="delete" href="?r=admin/del&uid=<?php echo $value['admin_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=admin/edit&uid=<?php echo $value['admin_id']; ?>" target="navTab"><span>修改</span></a>
+                    <a title="删除" target="ajaxTodo" href="?r=admin/del&uid=<?php echo $value['admin_id']; ?>" class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="?r=admin/edit&uid=<?php echo $value['admin_id']; ?>" class="btnEdit">编辑</a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

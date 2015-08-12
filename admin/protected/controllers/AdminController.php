@@ -70,16 +70,16 @@ class AdminController extends UserBaseController
     
     public function actionDel()
     {
-        $admin_id = Yii::app()->request->getParam('sid');
+        $admin_id = Yii::app()->request->getParam('check');
         $admin_model = new Admin();
         $admin_arr = explode(',', $admin_id);
         if(count($admin_arr) <= 1){
-            if($admin_model->adminDropOne($admin_id))
+            if($admin_model->deleteByPk($admin_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $admin_model->adminDropAll($admin_id))
+            if($count = $admin_model->deleteAll("admin_id IN(".$admin_id.")"))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");

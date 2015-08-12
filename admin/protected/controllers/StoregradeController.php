@@ -35,16 +35,16 @@ class StoregradeController extends UserBaseController
 	
     public function actionDel()
     {
-        $sg_id = Yii::app()->request->getParam('uid');
+        $sg_id = Yii::app()->request->getParam('check');
         $sg_model = new StoreGrade();
         $sg_arr = explode(',', $sg_id);
         if(count($sg_arr) <= 1){
-            if($sg_model->dropOneSG($sg_id))
+            if($sg_model->deleteByPk($sg_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $sg_model->dropAllSG($sg_id))
+            if($count = $sg_model->deleteAll("sg_id IN(".$sg_id.")"))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");

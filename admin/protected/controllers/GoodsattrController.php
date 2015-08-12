@@ -72,7 +72,7 @@ public function actionIndex()
 
 	public function actionDel()
 	{
-	    $attr_id = Yii::app()->request->getParam('uid');
+	    $attr_id = Yii::app()->request->getParam('check');
 	    $model = new GoodsAttr();
 	    $attr_arr = explode(',', $attr_id);
 	    if(count($attr_arr) <= 1){

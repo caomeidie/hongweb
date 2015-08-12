@@ -16,20 +16,17 @@ $this->pageTitle=Yii::app()->name;
 	    <table class="searchContent">
 			<tr>
 				<td>
-					我的客户：<input type="text" name="keyword" />
+					商品名称：<input type="text" name="keyword" />
 				</td>
 				<td>
 					<select class="combox" name="province">
-						<option value="">所有省市</option>
-						<option value="北京">北京</option>
-						<option value="上海">上海</option>
-						<option value="天津">天津</option>
-						<option value="重庆">重庆</option>
-						<option value="广东">广东</option>
+						<option value="">所有状态</option>
+						<option value="1">正常</option>
+						<option value="0">违规</option>
 					</select>
 				</td>
 				<td>
-					建档日期：<input type="text" class="date" readonly="true" />
+					添加日期：<input type="text" class="date" readonly="true" />
 				</td>
 			</tr>
 		</table>
@@ -47,7 +44,7 @@ $this->pageTitle=Yii::app()->name;
 		<ul class="toolBar">
 		    <li><a class="all edit"><span>全选</span></a></li>
 			<li><a class="add" href="?r=goods/add" target="navTab"><span>添加</span></a></li>
-			<li><a class="delete" id="delete" href="?r=goods/del&uid={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="check" postType="string" href="?r=goods/del" class="delete"><span>删除</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -84,8 +81,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php if($value['goods_recommend'] == 1):?>是<?php else:?>否<?php endif;?></td>
                 <td><?php echo date('Y-m-d H:i:s',$value['goods_add_time']); ?></td>
                 <td>
-                    <a class="delete" href="?r=goods/del&uid=<?php echo $value['goods_id']; ?>" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
-                    <a class="edit" href="?r=goods/edit&uid=<?php echo $value['goods_id']; ?>" target="navTab"><span>修改</span></a>
+                    <a title="删除" target="ajaxTodo" href="?r=goods/del&uid=<?php echo $value['goods_id']; ?>" class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="?r=goods/edit&uid=<?php echo $value['goods_id']; ?>" class="btnEdit">编辑</a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

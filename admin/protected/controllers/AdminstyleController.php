@@ -48,16 +48,16 @@ class AdminstyleController extends UserBaseController
     
     public function actionDel()
     {
-        $style_id = Yii::app()->request->getParam('sid');
+        $style_id = Yii::app()->request->getParam('check');
         $adminstyle_model = new Adminstyle();
         $style_arr = explode(',', $style_id);
         if(count($style_arr) <= 1){
-            if($adminstyle_model->styleDropOne($style_id))
+            if($adminstyle_model->deleteByPk($style_id))
                 $result = $this->message("删除成功", "200");
             else
                 $result = $this->message("删除失败", "300");
         }else{
-            if($count = $adminstyle_model->styleDropAll($style_id))
+            if($count = $adminstyle_model->deleteAll("style_id IN(".$style_id.")"))
                 $result = $this->message("删除{$count}条成功", "200");
             else
                 $result = $this->message("删除失败", "300");

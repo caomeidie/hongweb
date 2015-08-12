@@ -46,16 +46,16 @@ class GoodsbrandController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $brand_id = Yii::app()->request->getParam('sid');
+	    $brand_id = Yii::app()->request->getParam('check');
 	    $model = new GoodsBrand();
 	    $brand_arr = explode(',', $brand_id);
 	    if(count($brand_arr) <= 1){
-	        if($model->brandDropOne($brand_id))
+	        if($model->deleteByPk($brand_id))
 	            $result = $this->message("删除成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");
 	    }else{
-	        if($count = $model->brandDropAll($brand_id))
+	        if($count = $model->deleteAll("brand_id IN(".$brand_id.")"))
 	            $result = $this->message("删除{$count}条成功", "200");
 	        else
 	            $result = $this->message("删除失败", "300");

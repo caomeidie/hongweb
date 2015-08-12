@@ -105,15 +105,7 @@ function testConfirmMsg(text, url){
 					<li><a href="https://me.alipay.com/dwzteam" target="_blank">消息（0）</a></li>
 					<li><a href="<?php Yii::app()->request->getUrl(); ?>?r=site/logout">退出</a></li>
 				</ul>
-				<ul class="themeList" id="themeList">
-					<li theme="default"><div class="selected">蓝色</div></li>
-					<li theme="green"><div>绿色</div></li>
-					<!--<li theme="red"><div>红色</div></li>-->
-					<li theme="purple"><div>紫色</div></li>
-					<li theme="silver"><div>银色</div></li>
-					<li theme="azure"><div>天蓝</div></li>
-				</ul>
-			</div>
+		    </div>
 
 			<!-- navMenu -->
 			
