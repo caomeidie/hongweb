@@ -1,24 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "{{goods_spec_value}}".
+ * This is the model class for table "{{goods_attr_value}}".
  *
- * The followings are the available columns in table '{{goods_spec_value}}':
- * @property string $svalue_id
+ * The followings are the available columns in table '{{goods_attr_value}}':
+ * @property string $avalue_id
  * @property string $goods_id
- * @property string $spec_goods_seri
- * @property string $spec_goods_price
- * @property integer $spec_goods_storage
- * @property integer $spec_salenum
+ * @property string $attr_id
+ * @property string $attr_value
  */
-class GoodsSpecValue extends CActiveRecord
+class GoodsAttrValue extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '{{goods_spec_value}}';
+		return '{{goods_attr_value}}';
 	}
 
 	/**
@@ -29,13 +27,12 @@ class GoodsSpecValue extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('goods_id, spec_goods_seri, spec_goods_price', 'required'),
-			array('spec_goods_storage, spec_salenum', 'numerical', 'integerOnly'=>true),
-			array('goods_id', 'length', 'max'=>11),
-			array('spec_goods_price', 'length', 'max'=>10),
+			array('goods_id, attr_id, attr_value', 'required'),
+			array('goods_id, attr_id', 'length', 'max'=>11),
+			array('attr_value', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('svalue_id, goods_id, spec_goods_seri, spec_goods_price, spec_goods_storage, spec_salenum', 'safe', 'on'=>'search'),
+			array('avalue_id, goods_id, attr_id, attr_value', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,12 +53,10 @@ class GoodsSpecValue extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'svalue_id' => 'Svalue',
-			'goods_id' => '商品id',
-			'spec_goods_seri' => '商品规格序列化',
-			'spec_goods_price' => '规格商品价格',
-			'spec_goods_storage' => '规格商品库存',
-			'spec_salenum' => '订出数量',
+			'avalue_id' => 'Avalue',
+			'goods_id' => 'Goods',
+			'attr_id' => 'Attr',
+			'attr_value' => 'Attr Value',
 		);
 	}
 
@@ -83,12 +78,10 @@ class GoodsSpecValue extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('svalue_id',$this->svalue_id,true);
+		$criteria->compare('avalue_id',$this->avalue_id,true);
 		$criteria->compare('goods_id',$this->goods_id,true);
-		$criteria->compare('spec_goods_seri',$this->spec_goods_seri,true);
-		$criteria->compare('spec_goods_price',$this->spec_goods_price,true);
-		$criteria->compare('spec_goods_storage',$this->spec_goods_storage);
-		$criteria->compare('spec_salenum',$this->spec_salenum);
+		$criteria->compare('attr_id',$this->attr_id,true);
+		$criteria->compare('attr_value',$this->attr_value,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -99,7 +92,7 @@ class GoodsSpecValue extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return GoodsSpecValue the static model class
+	 * @return GoodsAttrValue the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

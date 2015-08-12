@@ -48,6 +48,7 @@ class GoodsClass extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		        'gc'=>array(self::HAS_MANY, 'Goods', 'gc_id', 'order'=>'gc_id DESC')
 		);
 	}
 

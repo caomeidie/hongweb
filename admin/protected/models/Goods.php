@@ -13,6 +13,8 @@
  * @property integer $attr_open
  * @property string $goods_image
  * @property string $goods_price
+ * @property string $goods_max_price
+ * @property string $goods_min_price
  * @property integer $goods_storage
  * @property integer $goods_show
  * @property integer $goods_status
@@ -38,13 +40,13 @@ class Goods extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('goods_name, gc_id, goods_image, goods_price, goods_show', 'required'),
+			array('goods_name, gc_id, goods_show', 'required'),
 			array('brand_id, goods_num, spec_open, attr_open, goods_storage, goods_show, goods_status, goods_recommend', 'numerical', 'integerOnly'=>true),
 			array('goods_name, goods_image', 'length', 'max'=>100),
-			array('gc_id, goods_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
+			array('gc_id, goods_price, goods_max_price, goods_min_price, goods_add_time, goods_starttime', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('goods_id, goods_name, gc_id, brand_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_storage, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
+			array('goods_id, goods_name, gc_id, brand_id, goods_num, spec_open, attr_open, goods_image, goods_price, goods_max_price, goods_min_price, goods_storage, goods_show, goods_status, goods_recommend, goods_add_time, goods_starttime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Goods extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+		        'gc'=>array(self::BELONGS_TO, 'GoodsClass', 'gc_id')
 		);
 	}
 
@@ -74,9 +77,11 @@ class Goods extends CActiveRecord
 			'attr_open' => '商品属性开启状态，1开启，0关闭',
 			'goods_image' => '商品默认封面图片',
 			'goods_price' => '商品价格',
+			'goods_max_price' => '商品最高价格',
+			'goods_min_price' => '商品最低价格',
 			'goods_storage' => '商品库存',
 			'goods_show' => '商品上架',
-			'goods_status' => '商品状态，0开启，1违规下架',
+			'goods_status' => '商品状态，1开启，0违规下架',
 			'goods_recommend' => '商品推荐，1推荐，0不推荐',
 			'goods_add_time' => '商品添加时间',
 			'goods_starttime' => '发布开始时间',
@@ -110,6 +115,8 @@ class Goods extends CActiveRecord
 		$criteria->compare('attr_open',$this->attr_open);
 		$criteria->compare('goods_image',$this->goods_image,true);
 		$criteria->compare('goods_price',$this->goods_price,true);
+		$criteria->compare('goods_max_price',$this->goods_max_price,true);
+		$criteria->compare('goods_min_price',$this->goods_min_price,true);
 		$criteria->compare('goods_storage',$this->goods_storage);
 		$criteria->compare('goods_show',$this->goods_show);
 		$criteria->compare('goods_status',$this->goods_status);
@@ -131,5 +138,74 @@ class Goods extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	/**
+	 * Get goods by condition
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function getGoodsList($condition, $order='goods_add_time DESC', $limit=null, $offset=null, $link = ' AND '){
+	    $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	        $param[':'.$key] = $value[1];
+	    }
+	
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	            'order'=>$order,
+	    );
+	
+	    $arr = $limit ? array_merge($arr, array('limit'=>$limit)) : $arr;
+	    $arr = $limit && $offset ? array_merge($arr, array('offset'=>$offset)) : $arr;
+	
+	    return $this->findAll($arr);
+	}
+	
+	/**
+	 * Get goods by condition
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 * @param string $order
+	 * @param string $limit
+	 *
+	 * @return array
+	 */
+	public function getGoodsListFull($condition, $order='goods_add_time DESC', $limit=null, $offset=null, $link = ' AND '){
+	    $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].$value[1];
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	    }
+	    $result = yii::app()->db->createCommand('select t.*, gc.gc_name from {{goods}} t LEFT JOIN {{goods_class}} gc ON gc.gc_id = t.gc_id WHERE '.$cond.' ORDER BY '.$order.' LIMIT '.$offset.','.$limit);
+	    return $result->queryAll();
+	}
+	
+	/**
+	 * Count goods's number
+	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
+	 */
+	public function countGoods($condition, $link = ' AND '){
+	    $cond = "";
+	    foreach($condition as $key=>$value){
+	        $cond .= $key.$value[0].':'.$key;
+	        if(current($condition) != end($condition))
+	            $cond .= $link;
+	        $param[':'.$key] = $value[1];
+	    }
+	
+	    $arr = array(
+	            'condition'=>$cond,
+	            'params'=>$param,
+	    );
+	
+	    return $this->count($arr);
 	}
 }

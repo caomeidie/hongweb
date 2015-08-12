@@ -127,42 +127,11 @@ CREATE TABLE `hws_attachment` (
   `atta_type` varchar(100) NOT NULL COMMENT '文件类型',
   `add_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
   PRIMARY KEY (`atta_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COMMENT='上传文件表';
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COMMENT='上传文件表';
 
 /*Data for the table `hws_attachment` */
 
-insert  into `hws_attachment`(`atta_id`,`related_id`,`atta_name`,`atta_thumb`,`atta_type`,`add_time`) values (79,NULL,'../data/upload/goods/2015/07/1438313611670.jpg','../data/upload/goods/2015/07/thumb_1438313611670.jpg','goods',1438313611),(80,NULL,'../data/upload/goods/2015/07/1438314168360.jpg','../data/upload/goods/2015/07/thumb_1438314168360.jpg','goods',1438314168),(81,NULL,'../data/upload/goods/2015/07/1438314489475.jpg','../data/upload/goods/2015/07/thumb_1438314489475.jpg','goods',1438314489),(82,NULL,'../data/upload/goods/2015/07/1438314597480.jpg','../data/upload/goods/2015/07/thumb_1438314597480.jpg','goods',1438314597),(83,NULL,'../data/upload/goods/2015/07/1438314878521.jpg','../data/upload/goods/2015/07/thumb_1438314878521.jpg','goods',1438314878),(84,NULL,'../data/upload/goods/2015/07/1438314878880.jpg','../data/upload/goods/2015/07/thumb_1438314878880.jpg','goods',1438314878),(85,NULL,'../data/upload/goods/2015/08/1439196360355.jpg','../data/upload/goods/2015/08/thumb_1439196360355.jpg','goods',1439196361);
-
-/*Table structure for table `hws_attribute` */
-
-DROP TABLE IF EXISTS `hws_attribute`;
-
-CREATE TABLE `hws_attribute` (
-  `attr_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性id',
-  `attr_name` varchar(100) NOT NULL COMMENT '属性名称',
-  `type_id` int(10) unsigned NOT NULL COMMENT '所属类型id',
-  `attr_value` text NOT NULL COMMENT '属性值列',
-  `attr_show` tinyint(1) unsigned NOT NULL COMMENT '是否显示。0为不显示、1为显示',
-  `attr_sort` tinyint(1) unsigned NOT NULL COMMENT '排序',
-  PRIMARY KEY (`attr_id`),
-  KEY `attr_id` (`attr_id`,`type_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商品属性表';
-
-/*Data for the table `hws_attribute` */
-
-/*Table structure for table `hws_attribute_value` */
-
-DROP TABLE IF EXISTS `hws_attribute_value`;
-
-CREATE TABLE `hws_attribute_value` (
-  `attr_value_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性值id',
-  `attr_value_name` varchar(100) NOT NULL COMMENT '属性值名称',
-  `attr_id` int(10) unsigned NOT NULL COMMENT '所属属性id',
-  `attr_value_sort` tinyint(1) unsigned NOT NULL COMMENT '属性值排序',
-  PRIMARY KEY (`attr_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COMMENT='商品属性值表';
-
-/*Data for the table `hws_attribute_value` */
+insert  into `hws_attachment`(`atta_id`,`related_id`,`atta_name`,`atta_thumb`,`atta_type`,`add_time`) values (79,NULL,'../data/upload/goods/2015/07/1438313611670.jpg','../data/upload/goods/2015/07/thumb_1438313611670.jpg','goods',1438313611),(80,NULL,'../data/upload/goods/2015/07/1438314168360.jpg','../data/upload/goods/2015/07/thumb_1438314168360.jpg','goods',1438314168),(81,NULL,'../data/upload/goods/2015/07/1438314489475.jpg','../data/upload/goods/2015/07/thumb_1438314489475.jpg','goods',1438314489),(82,NULL,'../data/upload/goods/2015/07/1438314597480.jpg','../data/upload/goods/2015/07/thumb_1438314597480.jpg','goods',1438314597),(83,NULL,'../data/upload/goods/2015/07/1438314878521.jpg','../data/upload/goods/2015/07/thumb_1438314878521.jpg','goods',1438314878),(84,NULL,'../data/upload/goods/2015/07/1438314878880.jpg','../data/upload/goods/2015/07/thumb_1438314878880.jpg','goods',1438314878),(85,NULL,'../data/upload/goods/2015/08/1439196360355.jpg','../data/upload/goods/2015/08/thumb_1439196360355.jpg','goods',1439196361),(86,NULL,'../data/upload/goods/2015/08/1439259758773.jpg','../data/upload/goods/2015/08/thumb_1439259758773.jpg','goods',1439259758),(87,NULL,'../data/upload/goods/2015/08/1439274434365.jpg','../data/upload/goods/2015/08/thumb_1439274434365.jpg','goods',1439274434),(88,NULL,'../data/upload/goods/2015/08/1439362370350.jpg','../data/upload/goods/2015/08/thumb_1439362370350.jpg','goods',1439362371),(89,NULL,'../data/upload/goods/2015/08/1439362401671.png','../data/upload/goods/2015/08/thumb_1439362401671.png','goods',1439362402),(90,NULL,'../data/upload/goods/2015/08/1439362402823.jpg','../data/upload/goods/2015/08/thumb_1439362402823.jpg','goods',1439362402),(96,NULL,'../data/upload/goods/2015/08/1439364641395.jpg','../data/upload/goods/2015/08/thumb_1439364641395.jpg','goods',1439364641),(104,18,'../data/upload/goods/2015/08/1439364641395.jpg','../data/upload/goods/2015/08/thumb_1439364641395.jpg','goods',1439365122),(105,18,'../data/upload/goods/2015/08/1439362402823.jpg','../data/upload/goods/2015/08/thumb_1439362402823.jpg','goods',1439365122),(103,18,'../data/upload/goods/2015/08/1439362401671.png','../data/upload/goods/2015/08/thumb_1439362401671.png','goods',1439365122);
 
 /*Table structure for table `hws_goods` */
 
@@ -176,8 +145,10 @@ CREATE TABLE `hws_goods` (
   `goods_num` int(11) DEFAULT NULL COMMENT '商品货号',
   `spec_open` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品规格开启状态，1开启，0关闭',
   `attr_open` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品属性开启状态，1开启，0关闭',
-  `goods_image` varchar(100) NOT NULL COMMENT '商品默认封面图片',
-  `goods_price` decimal(10,2) NOT NULL COMMENT '商品价格',
+  `goods_image` varchar(100) NOT NULL DEFAULT '' COMMENT '商品默认封面图片',
+  `goods_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品价格',
+  `goods_max_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品最高价格',
+  `goods_min_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品最低价格',
   `goods_storage` int(11) NOT NULL DEFAULT '999' COMMENT '商品库存',
   `goods_show` tinyint(1) NOT NULL COMMENT '商品上架',
   `goods_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '商品状态，1开启，0违规下架',
@@ -185,11 +156,11 @@ CREATE TABLE `hws_goods` (
   `goods_add_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商品添加时间',
   `goods_starttime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '发布开始时间',
   PRIMARY KEY (`goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='商品表';
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='商品表';
 
 /*Data for the table `hws_goods` */
 
-insert  into `hws_goods`(`goods_id`,`goods_name`,`gc_id`,`brand_id`,`goods_num`,`spec_open`,`attr_open`,`goods_image`,`goods_price`,`goods_storage`,`goods_show`,`goods_status`,`goods_recommend`,`goods_add_time`,`goods_starttime`) values (1,'苹果',8,0,123,0,0,'../data/upload/goods/2015/07/1438314597480.jpg','12.00',123,1,1,1,1438314641,1438314641),(2,'西瓜',8,0,100,0,0,'../data/upload/goods/2015/07/1438314878521.jpg','10.50',999,1,1,1,1438314910,1438314910),(3,'男士衬衫',1,4,360000000,0,1,'../data/upload/goods/2015/08/1439196360355.jpg','120.00',100,1,1,1,1439196377,1439196377);
+insert  into `hws_goods`(`goods_id`,`goods_name`,`gc_id`,`brand_id`,`goods_num`,`spec_open`,`attr_open`,`goods_image`,`goods_price`,`goods_max_price`,`goods_min_price`,`goods_storage`,`goods_show`,`goods_status`,`goods_recommend`,`goods_add_time`,`goods_starttime`) values (18,'男士T恤衫',1,6,3600012,1,1,'../data/upload/goods/2015/08/1439362401671.png','150.00','245.00','150.00',78,1,1,0,1439365122,1439365122),(2,'西瓜',8,0,100,0,0,'../data/upload/goods/2015/07/1438314878521.jpg','10.50','0.00','0.00',999,1,1,1,1438314910,1438314910),(14,'女士衬衫',1,4,360000001,1,1,'../data/upload/goods/2015/08/1439259758773.jpg','0.00','0.00','0.00',0,1,1,1,1439262959,1439262959),(16,'女士裙子',4,0,36000004,1,1,'../data/upload/goods/2015/08/1439274434365.jpg','36.00','36.00','36.00',0,0,1,1,1439274440,1439274440),(17,'女士裙子2',4,0,36000005,1,1,'../data/upload/goods/2015/08/1439274434365.jpg','34.00','48.00','34.00',138,1,1,1,1439274491,1439274491);
 
 /*Table structure for table `hws_goods_attr` */
 
@@ -206,6 +177,22 @@ CREATE TABLE `hws_goods_attr` (
 /*Data for the table `hws_goods_attr` */
 
 insert  into `hws_goods_attr`(`attr_id`,`attr_name`,`attr_value`,`attr_sort`) values (2,'衣服款式','a:5:{i:0;s:6:\"长袖\";i:1;s:6:\"短袖\";i:2;s:7:\"T恤衫\";i:3;s:6:\"衬衫\";i:4;s:6:\"卫衣\";}',NULL),(5,'衣服材质','a:4:{i:0;s:3:\"棉\";i:1;s:6:\"氨纶\";i:2;s:6:\"涤纶\";i:3;s:6:\"尼龙\";}',NULL),(6,'屏幕尺寸','a:7:{i:0;s:3:\"3.7\";i:1;s:3:\"4.0\";i:2;s:3:\"4.7\";i:3;s:3:\"5.0\";i:4;s:3:\"5.5\";i:5;s:3:\"6.0\";i:6;s:3:\"7.0\";}',NULL);
+
+/*Table structure for table `hws_goods_attr_value` */
+
+DROP TABLE IF EXISTS `hws_goods_attr_value`;
+
+CREATE TABLE `hws_goods_attr_value` (
+  `avalue_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` int(11) unsigned NOT NULL,
+  `attr_id` int(11) unsigned NOT NULL,
+  `attr_value` varchar(255) NOT NULL,
+  PRIMARY KEY (`avalue_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+/*Data for the table `hws_goods_attr_value` */
+
+insert  into `hws_goods_attr_value`(`avalue_id`,`goods_id`,`attr_id`,`attr_value`) values (2,14,2,'1'),(3,14,5,'0'),(4,15,5,'0'),(5,16,5,'0'),(6,17,5,'0'),(16,18,5,'0'),(15,18,2,'0');
 
 /*Table structure for table `hws_goods_brand` */
 
@@ -266,18 +253,18 @@ insert  into `hws_goods_spec`(`spec_id`,`spec_name`,`spec_value`,`spec_type`,`sp
 DROP TABLE IF EXISTS `hws_goods_spec_value`;
 
 CREATE TABLE `hws_goods_spec_value` (
-  `value_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `goods_id` int(11) NOT NULL COMMENT '商品id',
-  `spec_id` int(11) NOT NULL COMMENT '商品规格索引id',
-  `spec_name` varchar(255) NOT NULL COMMENT '规格名称',
+  `svalue_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` int(11) unsigned NOT NULL COMMENT '商品id',
+  `spec_goods_seri` text NOT NULL COMMENT '商品规格序列化',
   `spec_goods_price` decimal(10,2) NOT NULL COMMENT '规格商品价格',
-  `spec_goods_storage` int(11) DEFAULT '999' COMMENT '规格商品库存',
+  `spec_goods_storage` int(11) NOT NULL DEFAULT '999' COMMENT '规格商品库存',
   `spec_salenum` int(11) NOT NULL DEFAULT '0' COMMENT '订出数量',
-  `spec_goods_spec` text NOT NULL COMMENT '商品规格序列化',
-  PRIMARY KEY (`value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=381 DEFAULT CHARSET=utf8 COMMENT='商品规格价格对照表';
+  PRIMARY KEY (`svalue_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='商品规格价格对照表';
 
 /*Data for the table `hws_goods_spec_value` */
+
+insert  into `hws_goods_spec_value`(`svalue_id`,`goods_id`,`spec_goods_seri`,`spec_goods_price`,`spec_goods_storage`,`spec_salenum`) values (9,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.6\";}','52.00',120,0),(8,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.1\";}','51.00',110,0),(7,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.0\";}','50.00',100,0),(10,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.0\";i:2;s:3:\"1.0\";}','53.00',130,0),(11,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.0\";i:2;s:3:\"1.1\";}','54.00',140,0),(12,14,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.0\";i:2;s:3:\"1.6\";}','55.00',150,0),(13,15,'a:3:{i:0;s:3:\"7.2\";i:1;s:3:\"6.1\";i:2;s:3:\"1.3\";}','100.00',50,0),(14,15,'a:3:{i:0;s:3:\"7.2\";i:1;s:3:\"6.1\";i:2;s:3:\"1.5\";}','100.00',50,0),(15,15,'a:3:{i:0;s:3:\"7.2\";i:1;s:3:\"6.1\";i:2;s:3:\"1.6\";}','100.00',50,0),(16,15,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.1\";i:2;s:3:\"1.3\";}','100.00',50,0),(17,15,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.1\";i:2;s:3:\"1.5\";}','100.00',50,0),(18,15,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.1\";i:2;s:3:\"1.6\";}','100.00',50,0),(19,16,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.0\";}','36.00',46,0),(20,16,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.1\";}','36.00',46,0),(21,16,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.5\";}','36.00',46,0),(22,17,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.0\";}','34.00',46,0),(23,17,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.1\";}','36.00',46,0),(24,17,'a:3:{i:0;s:3:\"7.4\";i:1;s:3:\"6.1\";i:2;s:3:\"1.5\";}','48.00',46,0),(51,18,'a:3:{i:0;s:3:\"7.3\";i:1;s:3:\"6.2\";i:2;s:3:\"1.0\";}','245.00',13,0),(50,18,'a:3:{i:0;s:3:\"7.3\";i:1;s:3:\"6.2\";i:2;s:3:\"1.1\";}','230.00',12,0),(49,18,'a:3:{i:0;s:3:\"7.3\";i:1;s:3:\"6.2\";i:2;s:3:\"1.3\";}','222.00',10,0),(48,18,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.2\";i:2;s:3:\"1.0\";}','178.00',15,0),(47,18,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.2\";i:2;s:3:\"1.1\";}','168.00',12,0),(46,18,'a:3:{i:0;s:3:\"7.1\";i:1;s:3:\"6.2\";i:2;s:3:\"1.3\";}','150.00',16,0);
 
 /*Table structure for table `hws_goods_type` */
 
