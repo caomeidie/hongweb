@@ -177,33 +177,31 @@ class Goods extends CActiveRecord
 	 *
 	 * @return array
 	 */
-	public function getGoodsListFull($condition, $order='goods_add_time DESC', $limit=null, $offset=null, $link = ' AND '){
+	public function getGoodsListFull($condition, $order='goods_add_time DESC', $limit=null, $offset=null){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
-	        $cond .= $key.$value[0].$value[1];
-	        if(current($condition) != end($condition))
-	            $cond .= $link;
+	        $cond .= $value[0].$value[1]."'".$value[2]."'";
+	        if($key < count($condition)-1)
+	            $cond .= ' AND ';
 	    }
 	    $result = yii::app()->db->createCommand('select t.*, gc.gc_name from {{goods}} t LEFT JOIN {{goods_class}} gc ON gc.gc_id = t.gc_id WHERE '.$cond.' ORDER BY '.$order.' LIMIT '.$offset.','.$limit);
 	    return $result->queryAll();
 	}
 	
 	/**
-	 * Count goods's number
+	 * Count goods' number
 	 * @param array $condition(二维数组：array(key=>array(operator, valuea)))
 	 */
-	public function countGoods($condition, $link = ' AND '){
+	public function countGoods($condition){
 	    $cond = "";
 	    foreach($condition as $key=>$value){
-	        $cond .= $key.$value[0].':'.$key;
-	        if(current($condition) != end($condition))
-	            $cond .= $link;
-	        $param[':'.$key] = $value[1];
+	        $cond .= $value[0].$value[1]."'".$value[2]."'";
+	        if($key < count($condition)-1)
+	            $cond .= ' AND ';
 	    }
 	
 	    $arr = array(
-	            'condition'=>$cond,
-	            'params'=>$param,
+	            'condition'=>$cond
 	    );
 	
 	    return $this->count($arr);

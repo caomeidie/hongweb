@@ -48,7 +48,7 @@ class AdminstyleController extends UserBaseController
     
     public function actionDel()
     {
-        $style_id = Yii::app()->request->getParam('check');
+        $style_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
         $adminstyle_model = new Adminstyle();
         $style_arr = explode(',', $style_id);
         if(count($style_arr) <= 1){
@@ -67,7 +67,7 @@ class AdminstyleController extends UserBaseController
     
     public function actionEdit()
     {
-        $style_id = Yii::app()->request->getParam('sid');
+        $style_id = Yii::app()->request->getParam('uid');
         
         if(isset($_POST['AdminStyle']))
         {

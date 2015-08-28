@@ -10,7 +10,7 @@
 		<dl>
 			<dt>手机号：</dt>
 			<dd>
-			    <input name="MemberForm[member_mobile]" id="MemberForm_member_mobile" type="text"  class="phone">
+			    <input name="MemberForm[member_mobile]" id="MemberForm_member_mobile" type="text"  class="phone required">
 		    </dd>
 		</dl>
 		<dl>

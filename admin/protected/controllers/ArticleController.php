@@ -41,7 +41,7 @@ class ArticleController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $article_id = Yii::app()->request->getParam('check');
+	    $article_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new Article();
 	    $article_arr = explode(',', $article_id);
 	    if(count($article_arr) <= 1){
@@ -60,7 +60,7 @@ class ArticleController extends UserBaseController
 	
 	public function actionEdit()
 	{
-	    $article_id = Yii::app()->request->getParam('sid');
+	    $article_id = Yii::app()->request->getParam('uid');
 	    $model=new Article();
 	
 	    if(isset($_POST['ArticleForm']))

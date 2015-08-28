@@ -35,7 +35,7 @@ class StoregradeController extends UserBaseController
 	
     public function actionDel()
     {
-        $sg_id = Yii::app()->request->getParam('check');
+        $sg_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
         $sg_model = new StoreGrade();
         $sg_arr = explode(',', $sg_id);
         if(count($sg_arr) <= 1){

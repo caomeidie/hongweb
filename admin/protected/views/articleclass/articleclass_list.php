@@ -72,8 +72,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php echo $value['ac_name']; ?></td>
                 <td><?php echo $value['ac_code']; ?></td>
                 <td>
-                    <a title="删除" target="ajaxTodo" href="?r=articleclass/del&sid=<?php echo $value['ac_id']; ?>" class="btnDel">删除</a>
-					<a title="编辑" target="navTab" href="?r=articleclass/edit&sid=<?php echo $value['ac_id']; ?>" class="btnEdit">编辑</a>
+                    <a title="删除" target="ajaxTodo" href="?r=articleclass/del&uid=<?php echo $value['ac_id']; ?>" class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="?r=articleclass/edit&uid=<?php echo $value['ac_id']; ?>" class="btnEdit">编辑</a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

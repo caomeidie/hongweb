@@ -63,7 +63,7 @@ class StoreController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $store_id = Yii::app()->request->getParam('check');
+	    $store_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new Store();
 	    $store_arr = explode(',', $store_id);
 	    if(count($store_arr) <= 1){

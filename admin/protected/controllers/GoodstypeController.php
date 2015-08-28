@@ -98,7 +98,7 @@ class GoodstypeController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $type_id = Yii::app()->request->getParam('check');
+	    $type_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new GoodsType();
 	    $type_arr = explode(',', $type_id);
 	    if(count($type_arr) <= 1){

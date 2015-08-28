@@ -63,7 +63,7 @@ class MemberController extends UserBaseController
     
     public function actionDel()
     {
-        $member_id = Yii::app()->request->getParam('check');
+        $member_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
         $member_model = new Member();
         $member_arr = explode(',', $member_id);
         if(count($member_arr) <= 1){

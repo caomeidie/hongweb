@@ -5,7 +5,8 @@ $this->pageTitle=Yii::app()->name;
 ?>
 <form id="pagerForm" method="post" action="?r=goods/index">
 	<input type="hidden" name="status" value="${param.status}">
-	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="goods_name" value="${param.goods_name}" />
+	<input type="hidden" name="add_time" value="${param.add_time}">
 	<input type="hidden" name="pageNum" value="1" />
 	<input type="hidden" name="numPerPage" value="<?php echo $pagination['perpage']; ?>" />
 	<input type="hidden" name="orderField" value="${param.orderField}" />
@@ -16,17 +17,17 @@ $this->pageTitle=Yii::app()->name;
 	    <table class="searchContent">
 			<tr>
 				<td>
-					商品名称：<input type="text" name="keyword" />
+					商品名称：<input type="text" name="goods_name" />
 				</td>
 				<td>
-					<select class="combox" name="province">
+					<select class="combox" name="status">
 						<option value="">所有状态</option>
 						<option value="1">正常</option>
 						<option value="0">违规</option>
 					</select>
 				</td>
 				<td>
-					添加日期：<input type="text" class="date" readonly="true" />
+					添加日期：<input type="text" class="date" name="add_time" readonly="true" />
 				</td>
 			</tr>
 		</table>
@@ -57,12 +58,12 @@ $this->pageTitle=Yii::app()->name;
 				<th>商品名</th>
 				<th width="100">所属分类</th>
 				<th width="120">商品图片</th>
-				<th width="120">商品价格</th>
-				<th width="80">商品库存</th>
+				<th width="120" orderField="goods_price" class="asc">商品价格</th>
+				<th width="80" orderField="goods_storage" class="asc">商品库存</th>
 				<th width="60">上架</th>
 				<th width="40">状态</th>
 				<th width="40">推荐</th>
-				<th width="130">添加时间</th>
+				<th width="130" orderField="goods_add_time" class="asc">添加时间</th>
 				<th width="80">操作</th>
 			</tr>
 		</thead>

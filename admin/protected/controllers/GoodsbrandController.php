@@ -46,7 +46,7 @@ class GoodsbrandController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $brand_id = Yii::app()->request->getParam('check');
+	    $brand_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new GoodsBrand();
 	    $brand_arr = explode(',', $brand_id);
 	    if(count($brand_arr) <= 1){
@@ -65,7 +65,7 @@ class GoodsbrandController extends UserBaseController
 	
 	public function actionEdit()
 	{
-	    $brand_id = Yii::app()->request->getParam('sid');
+	    $brand_id = Yii::app()->request->getParam('uid');
 	    $model=new GoodsBrand();
 	
 	    if($_POST)

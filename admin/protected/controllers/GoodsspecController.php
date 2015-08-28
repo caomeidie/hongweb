@@ -38,7 +38,7 @@ class GoodsspecController extends UserBaseController
 	
 	public function actionEdit()
 	{
-	    $spec_id = Yii::app()->request->getParam('check');
+	    $spec_id = Yii::app()->request->getParam('uid');
 	    $model=new GoodsSpec();
 	
 	    if(isset($_POST['SpecForm']))
@@ -73,7 +73,7 @@ class GoodsspecController extends UserBaseController
 
 	public function actionDel()
 	{
-	    $spec_id = Yii::app()->request->getParam('uid');
+	    $spec_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new GoodsSpec();
 	    $spec_arr = explode(',', $spec_id);
 	    if(count($spec_arr) <= 1){

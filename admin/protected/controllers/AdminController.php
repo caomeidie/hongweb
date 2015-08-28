@@ -70,7 +70,7 @@ class AdminController extends UserBaseController
     
     public function actionDel()
     {
-        $admin_id = Yii::app()->request->getParam('check');
+        $admin_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
         $admin_model = new Admin();
         $admin_arr = explode(',', $admin_id);
         if(count($admin_arr) <= 1){

@@ -92,7 +92,7 @@ class GoodsclassController extends UserBaseController
 	
 	public function actionDel()
 	{
-	    $gc_id = Yii::app()->request->getParam('check');
+	    $gc_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new GoodsClass();
 	    $gc_arr = explode(',', $gc_id);
 	    if(count($gc_arr) <= 1){

@@ -72,8 +72,8 @@ $this->pageTitle=Yii::app()->name;
                 <td><?php if($value['brand_type']==0):?>文字<?php else:?>图片<?php endif;?></td>
                 <td><?php echo $value['brand_sort']; ?></td>
                 <td>
-                    <a title="删除" target="ajaxTodo" href="?r=goodsbrand/del&sid=<?php echo $value['brand_id']; ?>" class="btnDel">删除</a>
-					<a title="编辑" target="navTab" href="?r=goodsbrand/edit&sid=<?php echo $value['brand_id']; ?>" class="btnEdit">编辑</a>
+                    <a title="删除" target="ajaxTodo" href="?r=goodsbrand/del&uid=<?php echo $value['brand_id']; ?>" class="btnDel">删除</a>
+					<a title="编辑" target="navTab" href="?r=goodsbrand/edit&uid=<?php echo $value['brand_id']; ?>" class="btnEdit">编辑</a>
                 </td>
 			</tr>
 		<?php endforeach; ?>

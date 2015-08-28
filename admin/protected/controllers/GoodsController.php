@@ -5,23 +5,34 @@ class GoodsController extends UserBaseController
 	public function actionIndex()
 	{
 		$model = new Goods();
-		$condition = array('goods_id'=>array('>=', 1));
+		$condition[] = array('t.goods_id', '>=', 1);
+		if($_POST['status'] && $_POST['status'] != '' && $_POST['status'] != '${param.status}'){
+		    $condition[] = array('goods_status', '=', $_POST['status']);
+		}
+		if($_POST['goods_name'] && $_POST['goods_name'] != '' && $_POST['goods_name'] != '${param.goods_name}'){
+		    $condition[] = array('goods_name', '=', $_POST['goods_name']);
+		}
+		if($_POST['add_time'] && $_POST['add_time'] != '' && $_POST['add_time'] != '${param.add_time}'){
+		    $condition[] = array('goods_add_time', '>=', strtotime($_POST['add_time']));
+		}
 		if($s = Yii::app()->request->getParam('s')){
 		    switch ($s){
 		        case 'notshow':
-		            $condition = array_merge($condition, array('goods_show'=>array('=', 0)));
+		            $condition[] = array('goods_show', '=', 0);
 		            break;
 		        case 'runout':
-		            $condition = array_merge($condition, array('goods_storage'=>array('=', 0)));
+		            $condition[] = array('goods_storage', '=', 0);
 		            break;
 		    }
 		}
+		
+	    $order = $_POST['orderField'] ? $order = $_POST['orderField']." ASC" : 'goods_add_time DESC';
         $pagination['count'] = $model->countGoods($condition);
         $pagination['page'] = is_numeric(Yii::app()->request->getPost('pageNum')) ? Yii::app()->request->getPost('pageNum')-1 : 0;
         $pagination['perpage'] = is_numeric(Yii::app()->request->getPost('numPerPage')) ? Yii::app()->request->getPost('numPerPage') : 5;
         $pagination['pagenum'] = ceil($pagination['count'] / $pagination['perpage']);
         $pagination['offset'] = $pagination['page'] * $pagination['perpage'];
-        $list = $model->getGoodsListFull($condition, 'goods_add_time DESC', $pagination['perpage'], $pagination['offset']);
+        $list = $model->getGoodsListFull($condition, $order, $pagination['perpage'], $pagination['offset']);
 		$this->renderPartial('goods_list', array('list'=>$list, 'pagination'=>$pagination));
 	}
 	
@@ -128,7 +139,7 @@ class GoodsController extends UserBaseController
     	    $this->renderPartial('goods_add_one',array('model'=>$model, 'gc_list'=>$list_tree));
 	    }else{
 	        if(isset($_POST['goodsclass']))
-	        {   
+	        {
 	            $gc_id = $_POST['goodsclass'];
 	            $gc_model = new GoodsClass();
 	            $gc_info = $gc_model->findByPk($gc_id);
@@ -177,7 +188,7 @@ class GoodsController extends UserBaseController
 	
     public function actionDel()
 	{
-	    $goods_id = Yii::app()->request->getParam('check');
+	    $goods_id = Yii::app()->request->getParam('check') ? Yii::app()->request->getParam('check') : Yii::app()->request->getParam('uid');
 	    $model = new Goods();
 	    $goods_arr = explode(',', $goods_id);
 	    if(count($goods_arr) <= 1){
